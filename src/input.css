@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tag {
+  @apply bg-[#CBDCEB] text-[#6D94C5] w-[260px] h-[80px] flex items-center justify-center rounded-[32.28px] text-[25px] font-figtree font-semibold flex-shrink-0;
+}
+
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('../public/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontspringheavy';
+  src: url('../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontspringmedium';
+  src: url('../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf') format('truetype');
+  font-style: normal;
+}
+
+
+
+@layer utilities {
+  .clip-circle {
+    clip-path: circle(0% at 95% 10%);
+  }
+  .clip-circle-open {
+    clip-path: circle(150% at 95% 10%);
+  }
+}
+

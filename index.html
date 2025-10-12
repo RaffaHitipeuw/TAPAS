@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tapas Menu</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="./src/js/script.js" defer></script>
+  </head>
+
+  <body class="bg-white flex flex-col items-center justify-center min-h-screen overflow-x-hidden pt-11">
+
+    <!-- ! MENU BUTTON ! -->
+    <button
+      id="menuBtn"
+      class="fixed top-[68px] right-[120px] flex flex-col items-center justify-center rounded-full shadow-lg w-12 h-12 md:w-14 md:h-14 bg-white cursor-pointer z-[4001]"
+    >
+      <span class="line1 block w-[26px] h-[2px] rounded bg-black transition-transform duration-300"></span>
+      <span class="line2 block w-[26px] h-[2px] rounded bg-black mt-[6px] transition-transform duration-300"></span>
+    </button>
+
+    <!-- SCROLL CONTAINER -->
+    <div data-scroll-container class="relative w-full flex flex-col items-center">
+
+      <!-- * HERO * -->
+      <header
+        class="relative w-[90%] h-[700px] bg-black rounded-[54px] shadow-2xl flex flex-col items-center justify-center mb-[-80px] z-10 bg-cover bg-center"
+        style="background-image: url('public/assets/medias/bghero.png')">
+
+       <!-- ! NAVIGASI ! --> 
+        <nav
+          class="fixed top-[50px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]"
+        >
+          <div id="logo"></div>
+          <div class="absolute left-1/2 -translate-x-1/2 mt-[50px]">
+            <span class="text-xl font-fontspringheavy font-bold tracking-tighter text-white">Tapas</span>
+          </div>
+        </nav>
+
+        <!-- ! TEKS HERO ! -->
+        <div class="text-center z-10 -mt-[100px]">
+          <h1 class="text-white font-fontspringmedium text-[111px] leading-[100px]">SOLUTION TO</h1>
+          <h1 class="text-white font-fontspringmedium text-[111px] leading-[100px]">YOUR POLLUTION</h1>
+          <h1 class="text-white font-fontspringmedium text-[111px] leading-[100px]">AND TRAFFIC</h1>
+          <p class="text-white font-figtree text-[20px] mt-[30px]">Zero emission, Full ambition.</p>
+        </div>
+
+
+        <!-- ! ABSOLUTE SEPEDA ! -->
+        <div class="absolute bottom-0 left-0 w-full flex justify-center">
+          <img
+            src="public/assets/medias/sepedah.png"
+            alt="Bicycle"
+            class="h-[640px] w-[1500px] object-contain"
+          />
+        </div>
+      </header>
+
+      <!-- * PARALLAX SECTION * -->
+      <section
+        data-scroll-section
+        class="relative w-full h-[200px] bg-[#F5EFE6] flex items-center justify-center rounded-t-[50px] z-[4002]"
+      >
+
+      <!-- ! TEKS ! -->
+      <h2 class="text-[40px] font-semibold text-[#6D94C5] mt-[350px] tracking-tighter">
+          <span class="font-fontspringheavy font-bold">TAPAS</span> aims to reduce Indonesia’s
+      </h2>
+
+      <!-- ! MARQUEE ! -->
+      <div class="fixed left-0 w-screen -translate-y-1/2 mt-[650px] overflow-hidden z-50">
+          <div id="marquee" class="overflow-hidden">
+            <div class="marquee-track inline-flex">
+              <h1 class="tag">Noise Pollution</h1>
+              <h1 class="tag">Polluted Cities</h1>
+              <h1 class="tag">Fuel Usage</h1>
+              <h1 class="tag">Traffic Jam</h1>
+              <h1 class="tag">Emissions</h1>
+              <h1 class="tag">Urban Heat</h1>
+              <h1 class="tag">Maintenance Costs</h1>
+              <h1 class="tag">Noise Pollution</h1>
+            </div>
+          </div>
+      </div>
+
+        
+      </section>
+
+      <!-- * MASALAH * -->
+      <section
+        data-scroll-section
+        class="w-full h-[800px] bg-[#F5EFE6] -mt-[50px] flex flex-row items-center justify-center z-[4001]"> <!-- Changed justify-evenly to justify-center -->
+          
+        <!-- * card 1 -->
+        <div class="card w-[500px] rounded-[40px] p-[1px] relative flex items-center justify-center mr-4 mt-[200px]"> <!-- Added margin-right to add some space between the cards -->
+          <div class="shine-border"></div>
+          <div class="relative w-full h-[320px] rounded-[40px] text-white bg-[linear-gradient(225deg,hsla(208,52%,78%,1)_46%,hsla(209,19%,51%,1)_100%)] flex flex-col justify-center p-6 overflow-hidden">
+            <h2 class="text-[17px] mb-1 font-figtree">The Problem</h2>
+            <h1 class="text-2xl font-bold font-fontspringmedium leading-tight">WHAT WE'RE</h1>
+            <h1 class="text-2xl font-bold font-fontspringmedium -mt-1">TRYING TO FIX</h1>
+            <p class="text-[19px] text-white font-figtree mt-[100px]">
+              Indonesia was ranked as the most polluted country in Southeast Asia
+              and 15th worst globally, scores that should not be taken lightly.
+            </p>
+          </div>
+        </div>
+      
+        <!-- * card 2 -->
+        <div class="card w-[500px] rounded-[40px] p-[1px] bg-black relative flex items-center justify-center ml-4 mt-[200px]"> <!-- Added margin-left for spacing between the cards -->
+          <div class="shine-border"></div>
+          <div class="relative w-full h-[320px] rounded-[40px] text-white bg-cover bg-center bg-no-repeat flex flex-col justify-center p-6 overflow-hidden">
+            <h2 class="text-[17px] mb-1 font-figtree">The Problem</h2>
+            <h1 class="text-2xl font-bold font-fontspringmedium leading-tight">what we</h1>
+            <h1 class="text-2xl font-bold font-fontspringmedium -mt-1">wanna do</h1>
+            <p class="text-[19px] text-white font-figtree mt-[60px]">
+              We wanna provide easy access to Electric vehicles to reduce greenhouse gas emissions from transportation, lower fuel and maintenance costs, improve public health by cutting air pollution
+            </p>
+          </div>
+        </div>
+      
+      </section>
+
+      <!-- * HOVER * -->
+         
+      <section
+        data-scroll-section
+        class="bg-[#E8DFCA] z-[5000] w-full h-[1000px] rounded-t-[50px] -mt-[20px] flex flex-col items-center justify-center space-y-8 overflow-hidden">
+
+
+        <!-- ! IMAGE 1 ! -->
+        <div class="relative w-full max-w-[1100px] flex justify-start overflow-hidden">
+          <h2 class="absolute mt-[30px] ml-[40px] text-[40px] font-semibold text-[#6D94C5] tracking-tighter z-0 leading-tight">
+            <span class="font-fontspringheavy font-bold block">TAPAS</span>
+            <span class="block text-[24px] font-figtree mt-2">offers rentable electric vehicles</span>
+            <span class="block text-[24px] font-figtree">across the cities in Indonesia</span>
+          </h2>
+        
+        
+          <div class="overflow-hidden w-full relative rounded-r-[75px]">
+            <div class="transition-transform duration-[2000ms] ease-in-out hover:translate-x-[40%]">
+              <img src="public/assets/medias/sepeda1.png" alt=""
+                class="w-auto h-[200px] object-contain">
+            </div>
+          </div>
+        </div>
+      
+        <!-- ! IMAGE 2 ! -->
+        <div class="relative w-full max-w-[1100px] flex justify-end overflow-hidden">
+          <h2 class="absolute mt-[50px] mr-[40px] text-end text-[40px] font-semibold text-[#6D94C5] tracking-tighter z-0 leading-tight">
+            <span class="block text-[24px] font-figtree font-semibold">Ride across the city</span>
+            <span class="block text-[24px] font-figtree font-semibold">with ease and mobility</span>
+            <span class="block text-[24px] font-figtree font-semibold">and with zero emission.</span>
+          </h2>
+        
+        
+          <div class="overflow-hidden w-full relative rounded-l-[75px]">
+            <div class="transition-transform duration-[2000ms] ease-in-out hover:translate-x-[-40%]">
+              <img src="public/assets/medias/sepeda2.png" alt=""
+                class="w-auto h-[200px] object-contain">
+            </div>
+          </div>
+        </div>
+      
+        <!-- ! IMAGE 3 ! -->
+        <div class="relative w-full max-w-[1100px] flex justify-start overflow-hidden">
+          <h2 class="absolute mt-[50px] ml-[40px] text-[40px] font-semibold text-[#6D94C5] tracking-tighter z-0 leading-tight">
+            <span class="block text-[24px] font-figtree font-semibold">Now available across</span>
+            <span class="block text-[24px] font-figtree font-semibold">5 different cities in</span>
+            <span class="block text-[24px] font-figtree font-semibold">Indonesia.</span>
+          </h2>
+        
+        
+          <div class="overflow-hidden w-full relative rounded-r-[75px]">
+            <div class="transition-transform duration-[2000ms] ease-in-out hover:translate-x-[40%]">
+              <img src="public/assets/medias/sepeda3.png" alt=""
+                class="w-auto h-[200px] object-contain">
+            </div>
+          </div>
+        </div>
+      
+      </section>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 backdrop-blur-xl z-[4003] flex items-end justify-center transition-[clip-path] duration-1000 ease-out opacity-0 pointer-events-none"
+      style="clip-path: circle(0% at 95% 10%)"
+    >
+      <ul class="menu-list grid grid-cols-2 gap-8 mb-16 text-center text-white"></ul>
+    </div>
+
+  </body>
+</html>

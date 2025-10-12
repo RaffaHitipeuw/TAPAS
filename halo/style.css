@@ -1,0 +1,36 @@
+.card {
+        position: relative;
+        overflow: visible;
+      }
+
+      /* subtle glowing edge */
+      .shine-border {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(203, 220, 240, 0.6),
+          rgba(168, 189, 210, 0.5),
+          rgba(255, 255, 255, 0.8)
+        );
+        background-size: 300% 300%;
+        filter: blur(18px);
+        animation: gentleGlow 8s ease-in-out infinite;
+        border-radius: 50px;
+        transform: scale(1.05);
+        opacity: 0.7;
+        z-index: 0;
+      }
+
+      @keyframes gentleGlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tapas Menu</title>
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"/>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
-    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <script src="./src/js/script.js" defer></script>
   </head>
 
@@ -130,7 +130,7 @@
          
       <section
         data-scroll-section
-        class="bg-[#E8DFCA] z-[5000] w-full h-[1000px] rounded-t-[50px] -mt-[20px] flex flex-col items-center justify-center space-y-8 overflow-hidden">
+        class="bg-[#E8DFCA] z-[4001] w-full h-[1000px] rounded-t-[50px] -mt-[20px] flex flex-col items-center justify-center space-y-8 overflow-hidden">
 
 
         <!-- ! IMAGE 1 ! -->
@@ -176,15 +176,72 @@
           </h2>
         
         
-          <div class="overflow-hidden w-full relative rounded-r-[75px]">
+          <div class="overflow-hidden w-full relative rounded-r-[75px] pb-[80px]">
             <div class="transition-transform duration-[2000ms] ease-in-out hover:translate-x-[40%]">
               <img src="public/assets/medias/sepeda3.png" alt=""
                 class="w-auto h-[200px] object-contain">
             </div>
           </div>
         </div>
-      
+        
+        <h2 class="text-[40px] font-semibold text-[#6D94C5] tracking-tighter">
+          <span class="font-fontspringheavy font-bold">TAPAS</span> offers a lot more than just solution.
+      </h2>
       </section>
+
+      <!-- * FADE * -->
+      <section
+      data-scroll-section
+      class="bg-[#E8DFCA] z-[4001] h-[400px] w-full -mt-[20px]">
+
+      <!-- ! ASSET DAUN ! -->
+      <div class="flex flex-row justify-center mt-[120px]">
+        <img src="public/assets/medias/leaves.png" alt="">
+      </div>
+
+      </section>
+
+      <!-- * SEKITAR KITA * -->
+      <section
+      data-scroll-section
+      class="bg-white z-[4001] h-screen w-full rounded-t-[50px] -mt-[80px] flex flex-col items-center justify-center">
+
+  <!-- Wrapper tombol -->
+        <div class="flex flex-col items-center justify-center space-y-4 -mt-[700px]">
+          <button class="flex items-center bg-[#E0F0FF] text-[#6D94C5] py-4 px-14 rounded-[35px] rotate-[-4deg] translate-x-4 shadow-md hover:rotate-0 transition-transform duration-300">
+            <img src="/public/assets/medias/easily.png" alt="Icon" class="w-10 h-10 mr-5"/>
+            <span class="font-figtree font-bold text-[30px]">Easily accessible</span>
+          </button>
+        
+          <button class="flex items-center bg-[#D5E7FA] text-[#6D94C5] py-4 px-14 rounded-[35px] rotate-[2deg] -translate-x-2 shadow-md hover:rotate-0 transition-transform duration-300">
+            <img src="/public/assets/medias/eco.png" alt="Icon" class="w-10 h-10 mr-5"/>
+            <span class="font-figtree font-bold text-[30px]">Eco Friendly</span>
+          </button>
+        
+          <button class="flex items-center bg-[#C9DEF3] text-[#6D94C5] py-4 px-14 rounded-[35px] rotate-[-3deg] translate-x-3 shadow-md hover:rotate-0 transition-transform duration-300">
+            <img src="/public/assets/medias/mobility.png" alt="Icon" class="w-10 h-10 mr-5"/>
+            <span class="font-figtree font-bold text-[30px]">Mobility & Safety</span>
+          </button>
+        
+          <button class="flex items-center bg-[#BED4EE] text-[#6D94C5] py-4 px-14 rounded-[35px] rotate-[3deg] -translate-x-3 shadow-md hover:rotate-0 transition-transform duration-300">
+            <img src="/public/assets/medias/made.png" alt="Icon" class="w-10 h-10 mr-5"/>
+            <span class="font-figtree font-bold text-[30px]">Made in Indonesia</span>
+          </button>
+        </div>
+
+  <!-- Teks bawah -->
+  <div>
+    <h2 class="text-[40px] font-semibold text-[#6D94C5] tracking-tighter text-center mt-[200px]">
+      Find <span class="font-fontspringheavy font-bold">TAPAS</span> near you!
+    </h2>
+  </div>
+      </section>
+
+
+      <!-- * HORIZONTAL * -->    
+       
+    </div>
+
 
     <!-- OVERLAY -->
     <div

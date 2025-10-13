@@ -37,12 +37,17 @@
   }
 }
 
-.outer {
-  position: relative;
-  width: 100%;
+/* #horizontal {
+  width: 400vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
   overflow: hidden;
+  position: relative;
+  z-index: 9999;
 }
-.slider section img {
-  width: 100%;
-  height: auto;
-}
+#horizontal .content {
+  width: 100vw;
+  height: 100vh;
+  flex: 0 0 auto;
+} */

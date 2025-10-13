@@ -26,16 +26,75 @@ let targetX = 0;
 
 items.forEach((item) => {
   const li = document.createElement("li");
+  li.className =
+    "flex items-center justify-between border-b border-white pb-6 group w-full mt-[80px]";
   const a = document.createElement("a");
   a.href = item.href;
   a.textContent = item.label;
   a.className =
-    "block font-fontspringheavy text-white text-[90px] leading-none font-bold hover:text-gray-400 transition-colors duration-300";
-  li.appendChild(a);
+    "font-fontspringheavy text-white text-[80px] mr-[800px] leading-none font-bold tracking-tight text-left group-hover:opacity-70 transition-opacity duration-300";
+  const arrow = document.createElement("span");
+  arrow.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2" class="w-10 h-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+    </svg>
+  `;
+  li.append(a, arrow);
   list.appendChild(li);
 });
 
-// tombol aman
+const hoverCircle = document.createElement("div");
+hoverCircle.id = "hoverCircle";
+hoverCircle.className =
+  "fixed top-0 left-0 w-40 h-40 rounded-full flex flex-col items-center justify-center pointer-events-none";
+hoverCircle.style.zIndex = "9999";
+hoverCircle.style.background = "#E0F0FF";
+hoverCircle.style.transition = "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+hoverCircle.style.transform = "scale(0)";
+hoverCircle.innerHTML = `
+  <span class="font-fontspringheavy text-[#6D94C5] text-lg select-none">GO</span>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6D94C5" stroke-width="2" class="w-6 h-6 mt-1">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+  </svg>
+`;
+document.body.appendChild(hoverCircle);
+
+const menuLinks = document.querySelectorAll(".menu-list a");
+let cursorTargetX = 0;
+let cursorTargetY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+menuLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    document.body.classList.add("cursor-none");
+    document.documentElement.classList.add("cursor-none");
+    hoverCircle.style.transition = "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+    hoverCircle.style.transform = "scale(1)";
+  });
+
+  link.addEventListener("mouseleave", () => {
+    document.body.classList.remove("cursor-none");
+    document.documentElement.classList.remove("cursor-none");
+    hoverCircle.style.transition = "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+    hoverCircle.style.transform = "scale(0)";
+  });
+});
+
+window.addEventListener("mousemove", (e) => {
+  cursorTargetX = e.clientX - 80;
+  cursorTargetY = e.clientY - 80;
+});
+
+function animateCircle() {
+  cursorX += (cursorTargetX - cursorX) * 0.2;
+  cursorY += (cursorTargetY - cursorY) * 0.2;
+  hoverCircle.style.left = `${cursorX}px`;
+  hoverCircle.style.top = `${cursorY}px`;
+  requestAnimationFrame(animateCircle);
+}
+animateCircle();
+
 btn.addEventListener("click", () => {
   isOpen = !isOpen;
   btn.querySelector(".line1").classList.toggle("rotate-45", isOpen);
@@ -44,6 +103,7 @@ btn.addEventListener("click", () => {
   btn.querySelector(".line2").classList.toggle("-translate-y-[4px]", isOpen);
 
   if (isOpen) {
+    btn.style.zIndex = "5001";
     overlay.style.opacity = "1";
     overlay.style.pointerEvents = "auto";
     requestAnimationFrame(() => {
@@ -57,6 +117,7 @@ btn.addEventListener("click", () => {
         if (!isOpen) {
           overlay.style.opacity = "0";
           overlay.style.pointerEvents = "none";
+          btn.style.zIndex = "4001";
         }
       },
       { once: true }
@@ -64,13 +125,11 @@ btn.addEventListener("click", () => {
   }
 });
 
-
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   lerp: 0.08,
 });
-
 
 window.addEventListener("resize", () => scroll.update());
 
@@ -91,3 +150,27 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+
+const slidesRight = document.querySelectorAll(".image-slide-right");
+  const slidesLeft = document.querySelectorAll(".image-slide-left");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("image-slide-right")) {
+            entry.target.classList.add("translate-x-[40%]");
+          } else if (entry.target.classList.contains("image-slide-left")) {
+            entry.target.classList.add("translate-x-[-40%]");
+          }
+        } else {
+          entry.target.classList.remove("translate-x-[40%]");
+          entry.target.classList.remove("translate-x-[-40%]");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  slidesRight.forEach((el) => observer.observe(el));
+  slidesLeft.forEach((el) => observer.observe(el));

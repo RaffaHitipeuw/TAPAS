@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.tag {
-  @apply bg-[#CBDCEB] text-[#6D94C5] w-[260px] h-[80px] flex items-center justify-center rounded-[32.28px] text-[25px] font-figtree font-semibold flex-shrink-0;
-}
-
-
+/* *FONT* */
 @font-face {
   font-family: 'Figtree';
   src: url('../public/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
@@ -26,28 +22,109 @@
   font-style: normal;
 }
 
+/* *COLOR* */
+:root {
+  --primary-color: #6D94C5;
+  --white: #ffffff;
+  --hero-bg: #000000;
+  --section-bg-light: #F5EFE6;
+  --section-bg-dark: #E8DFCA;
 
+  --btn-easily-bg: #E0F0FF;
+  --btn-eco-bg: #D5E7FA;
+  --btn-mobility-bg: #C9DEF3;
+  --btn-made-bg: #BED4EE;
 
-@layer utilities {
-  .clip-circle {
-    clip-path: circle(0% at 95% 10%);
-  }
-  .clip-circle-open {
-    clip-path: circle(150% at 95% 10%);
-  }
+  --card-gradient-start: hsla(208,52%,78%,1);
+  --card-gradient-end: hsla(209,19%,51%,1);
+
+  --marquee-bg: #CBDCEB;
+  --marquee-text: #6D94C5;
 }
 
-/* #horizontal {
-  width: 400vw;
-  height: 100vh;
+/* *BUTTON* */
+.btn {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  position: relative;
-  z-index: 9999;
+  align-items: center;
+  border-radius: 35px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-family: 'Figtree', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 1rem 3.5rem;
+  color: var(--primary-color);
 }
-#horizontal .content {
-  width: 100vw;
-  height: 100vh;
-  flex: 0 0 auto;
-} */
+
+.btn-easily { background-color: var(--btn-easily-bg); }
+.btn-eco { background-color: var(--btn-eco-bg); }
+.btn-mobility { background-color: var(--btn-mobility-bg); }
+.btn-made { background-color: var(--btn-made-bg); }
+
+/* *CARD* */
+.card {
+  border-radius: 40px;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 650px;
+}
+
+.card-gradient {
+  background: linear-gradient(
+    225deg,
+    var(--card-gradient-start) 46%,
+    var(--card-gradient-end) 100%
+  );
+  color: var(--white);
+  padding: 10px;
+  font-family: 'Figtree', sans-serif;
+  overflow: hidden;
+}
+
+/* *SECTION* */
+.section-light { background-color: var(--section-bg-light); }
+.section-dark { background-color: var(--section-bg-dark); }
+.section-white { background-color: var(--white); }
+
+/* *MARQUEE* */
+.tag {
+  @apply w-[260px] h-[80px] flex items-center justify-center rounded-[32.28px] text-[25px] font-figtree font-semibold flex-shrink-0;
+  background-color: var(--marquee-bg);
+  color: var(--marquee-text);
+}
+
+/* *ANIMATION* */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* *UTILITYS* */
+@layer utilities {
+  .clip-circle { clip-path: circle(0% at 95% 10%); }
+  .clip-circle-open { clip-path: circle(150% at 95% 10%); }
+}
+
+
+/* ! Section horizontal full-screen */
+.horizontal-section {
+  width: 100%;
+  overflow-x: auto;            /* Aktifkan scroll horizontal */
+  overflow-y: hidden;          /* Sembunyikan scroll vertikal */
+  white-space: nowrap;         /* Pertahankan elemen berjejer */
+}
+/* Container track sebagai flex row */
+.horizontal-track {
+  display: inline-flex;
+  width: max-content; /* Lebar sesuai total elemen */
+}
+
+

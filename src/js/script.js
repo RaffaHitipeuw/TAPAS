@@ -2,7 +2,7 @@ const overlay = document.getElementById("overlay");
 const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
 const marquee = document.getElementById("marquee");
-const track = document.createElement("div");
+const marqueeTrack = document.createElement("div");
 
 const items = [
   { label: "HOME", href: "#" },
@@ -15,10 +15,10 @@ let isOpen = false;
 const centerX = 90;
 const centerY = 13;
 
-track.className = "marquee-track inline-flex";
-track.innerHTML = marquee.innerHTML + marquee.innerHTML;
+marqueeTrack.className = "marquee-track inline-flex";
+marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
 marquee.innerHTML = "";
-marquee.appendChild(track);
+marquee.appendChild(marqueeTrack);
 
 let lastScrollY = 0;
 let currentX = 0;
@@ -129,6 +129,7 @@ const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   lerp: 0.08,
+  gestureDirection: 'both',
 });
 
 window.addEventListener("resize", () => scroll.update());
@@ -139,38 +140,87 @@ scroll.on("scroll", (obj) => {
   targetX += delta * 0.6;
 });
 
-function animate() {
+function animateMarquee() {
   currentX += (targetX - currentX) * 0.1;
-  const halfWidth = track.scrollWidth / 2;
+  const halfWidth = marqueeTrack.scrollWidth / 2;
   if (currentX > halfWidth) {
     currentX -= halfWidth;
     targetX -= halfWidth;
   }
-  track.style.transform = `translateX(${-currentX}px)`;
-  requestAnimationFrame(animate);
+  marqueeTrack.style.transform = `translateX(${-currentX}px)`;
+  requestAnimationFrame(animateMarquee);
 }
-animate();
+animateMarquee();
 
+// IMAGE SLIDE
 const slidesRight = document.querySelectorAll(".image-slide-right");
-  const slidesLeft = document.querySelectorAll(".image-slide-left");
+const slidesLeft = document.querySelectorAll(".image-slide-left");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains("image-slide-right")) {
-            entry.target.classList.add("translate-x-[40%]");
-          } else if (entry.target.classList.contains("image-slide-left")) {
-            entry.target.classList.add("translate-x-[-40%]");
-          }
-        } else {
-          entry.target.classList.remove("translate-x-[40%]");
-          entry.target.classList.remove("translate-x-[-40%]");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains("image-slide-right")) {
+          entry.target.classList.add("translate-x-[40%]");
+        } else if (entry.target.classList.contains("image-slide-left")) {
+          entry.target.classList.add("translate-x-[-40%]");
         }
-      });
-    },
-    { threshold: 0.5 }
-  );
+      } else {
+        entry.target.classList.remove("translate-x-[40%]");
+        entry.target.classList.remove("translate-x-[-40%]");
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
 
-  slidesRight.forEach((el) => observer.observe(el));
-  slidesLeft.forEach((el) => observer.observe(el));
+slidesRight.forEach((el) => observer.observe(el));
+slidesLeft.forEach((el) => observer.observe(el));
+
+// FADE UP
+const fadeUpElements = document.querySelectorAll(".fade-up");
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("fade-up-active");
+    } else {
+      entry.target.classList.remove("fade-up-active");
+    }
+  });
+}, { threshold: 0.5 });
+fadeUpElements.forEach(el => fadeObserver.observe(el));
+
+// ! HORIZONTAL SCROLL LOCK
+const horizontalSection = document.querySelector("#horizontal-section");
+const horizontalTrack = horizontalSection.querySelector(".horizontal-track");
+
+let targetScroll = 0;
+let currentScroll = 0;
+const ease = 0.08; // nilai kecil = makin halus
+
+function smoothScroll() {
+  currentScroll += (targetScroll - currentScroll) * ease;
+  horizontalSection.scrollLeft = currentScroll;
+  requestAnimationFrame(smoothScroll);
+}
+smoothScroll();
+
+horizontalSection.addEventListener(
+  "wheel",
+  (evt) => {
+    evt.preventDefault();
+
+    const deltaY = evt.deltaY;
+    const maxScroll = horizontalTrack.scrollWidth - horizontalSection.offsetWidth;
+
+    targetScroll += deltaY;
+    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+
+    if (horizontalSection.scrollLeft <= 0) {
+      scroll.start();
+    } else {
+      scroll.stop();
+    }
+  },
+  { passive: false }
+);

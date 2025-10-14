@@ -193,33 +193,93 @@ fadeUpElements.forEach(el => fadeObserver.observe(el));
 // ! HORIZONTAL SCROLL LOCK
 const horizontalSection = document.querySelector("#horizontal-section");
 const horizontalTrack = horizontalSection.querySelector(".horizontal-track");
+let inHorizontal = false;
+let scrollX = 0;
+let cooldown = false;
+let lockTriggered = false;
 
-let targetScroll = 0;
-let currentScroll = 0;
-const ease = 0.08; // nilai kecil = makin halus
 
-function smoothScroll() {
-  currentScroll += (targetScroll - currentScroll) * ease;
-  horizontalSection.scrollLeft = currentScroll;
-  requestAnimationFrame(smoothScroll);
-}
-smoothScroll();
+document.body.style.overscrollBehavior = "none";
+document.documentElement.style.overscrollBehavior = "none";
 
-horizontalSection.addEventListener(
-  "wheel",
-  (evt) => {
-    evt.preventDefault();
 
-    const deltaY = evt.deltaY;
-    const maxScroll = horizontalTrack.scrollWidth - horizontalSection.offsetWidth;
+scroll.on("scroll", () => {
+  const rect = horizontalSection.getBoundingClientRect();
+  const vh = window.innerHeight;
 
-    targetScroll += deltaY;
-    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
-    if (horizontalSection.scrollLeft <= 0) {
-      scroll.start();
-    } else {
+  const fullyInView = rect.top <= 0 && rect.bottom >= vh;
+
+  if (!inHorizontal && fullyInView && !lockTriggered) {
+    lockTriggered = true;
+
+    scroll.scrollTo(horizontalSection, {
+      offset: 0,
+      duration: 300,
+      easing: [0.25, 0.1, 0.25, 1],
+    });
+
+
+    setTimeout(() => {
       scroll.stop();
+      document.body.style.overflow = "hidden";
+      document.body.style.scrollBehavior = "auto";
+      inHorizontal = true;
+    }, 310);
+  }
+
+  const outOfView = rect.bottom < vh * 0.95 || rect.top > vh * 0.05;
+  if (inHorizontal && outOfView) {
+    document.body.style.overflow = "";
+    scroll.start();
+    inHorizontal = false;
+    lockTriggered = false;
+  }
+});
+
+window.addEventListener(
+  "wheel",
+  (e) => {
+    if (!inHorizontal || cooldown) return;
+    e.preventDefault();
+
+    const maxScroll =
+      horizontalTrack.scrollWidth - horizontalSection.clientWidth;
+
+    scrollX += e.deltaY * 0.8; 
+    scrollX = Math.max(0, Math.min(maxScroll, scrollX));
+    horizontalSection.scrollLeft = scrollX;
+
+    if (scrollX >= maxScroll && e.deltaY > 0) {
+      cooldown = true;
+      setTimeout(() => {
+        document.body.style.overflow = "";
+        scroll.start();
+        inHorizontal = false;
+        lockTriggered = false;
+        cooldown = false;
+        scroll.scrollTo(horizontalSection.nextElementSibling, {
+          offset: 0,
+          duration: 500,
+          easing: [0.25, 0.1, 0.25, 1],
+        });
+      }, 200);
+    }
+
+    if (scrollX <= 0 && e.deltaY < 0) {
+      cooldown = true;
+      setTimeout(() => {
+        document.body.style.overflow = "";
+        scroll.start();
+        inHorizontal = false;
+        lockTriggered = false;
+        cooldown = false;
+        scroll.scrollTo(horizontalSection.previousElementSibling, {
+          offset: 0,
+          duration: 500,
+          easing: [0.25, 0.1, 0.25, 1],
+        });
+      }, 200);
     }
   },
   { passive: false }

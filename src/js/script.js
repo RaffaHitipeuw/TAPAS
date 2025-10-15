@@ -284,3 +284,147 @@ window.addEventListener(
   },
   { passive: false }
 );
+
+// QUESTION HOVER EFFECT
+const questionLinks = document.querySelectorAll("#question-section h2");
+
+// Buat bubble
+const questionHover = document.createElement("div");
+questionHover.id = "questionHover";
+questionHover.className =
+  "fixed top-0 left-0 w-[350px] h-[350px] rounded-full flex flex-col items-center justify-center pointer-events-none p-8 text-left overflow-hidden";
+questionHover.style.zIndex = "9999";
+questionHover.style.background = "white";
+questionHover.style.boxShadow = "0 10px 40px rgba(0,0,0,0.15)";
+questionHover.style.transition = "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
+questionHover.style.transform = "scale(0)";
+document.body.appendChild(questionHover);
+
+
+const questionAnswers = {
+  1: `
+    <div class="text-left w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1th Question</p>
+      <h3 class="font-figtree font-bold text-[#6D94C5] text-[24px] leading-tight mb-3">
+        What is the e-bike rental 
+      </h3>
+      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
+        Our e-bike rental service allows you to easily rent an electric bike through our app. 
+        Simply choose a location, book an e-bike, and use it for your daily commute. 
+        Once you're done, return the e-bike to a designated parking spot.
+      </p>
+    </div>
+  `,
+  2: `
+    <div class="text-center w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">2nd Question</p>
+      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
+        How do e-bikes help reduce air pollution?
+      </h3>
+      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
+        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
+        More e-bikes on the road means cleaner air and quieter cities.
+      </p>
+    </div>
+  `,
+  3: `
+    <div class="text-center w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">3rd Question</p>
+      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
+        Are e-bikes effective in reducing traffic congestion?
+      </h3>
+      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
+        Absolutely. E-bikes take up less space, reduce dependency on cars, 
+        and let you skip through traffic with minimal delay.
+      </p>
+    </div>
+  `
+};
+
+// Variabel posisi
+let qCursorTargetX = 0;
+let qCursorTargetY = 0;
+let qCursorX = 0;
+let qCursorY = 0;
+
+// Fungsi auto-scale teks agar muat di circle
+function scaleTextToFit(container) {
+  const el = container.querySelector("div");
+  if (!el) return;
+  el.style.transform = "scale(1)";
+  const scale = Math.min(1, 300 / el.scrollHeight);
+  el.style.transform = `scale(${scale})`;
+}
+
+// Hover event
+questionLinks.forEach((q, i) => {
+  q.addEventListener("mouseenter", () => {
+    const qNum = i + 1;
+    document.body.classList.add("cursor-none");
+    document.documentElement.classList.add("cursor-none");
+    questionHover.innerHTML = questionAnswers[qNum] || `<p class="text-[#6A8ACB]">No content found.</p>`;
+    questionHover.style.transform = "scale(1)";
+    scaleTextToFit(questionHover);
+  });
+
+  q.addEventListener("mouseleave", () => {
+    document.body.classList.remove("cursor-none");
+    document.documentElement.classList.remove("cursor-none");
+    questionHover.style.transform = "scale(0)";
+  });
+});
+
+// Mouse follow anim
+window.addEventListener("mousemove", (e) => {
+  qCursorTargetX = e.clientX - 175;
+  qCursorTargetY = e.clientY - 175;
+});
+
+function animateQuestionHover() {
+  qCursorX += (qCursorTargetX - qCursorX) * 0.15;
+  qCursorY += (qCursorTargetY - qCursorY) * 0.15;
+  questionHover.style.left = `${qCursorX}px`;
+  questionHover.style.top = `${qCursorY}px`;
+  requestAnimationFrame(animateQuestionHover);
+}
+animateQuestionHover();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Horizontal scroll pakai drag mouse
+  const rideScroll = document.getElementById('ride-scroll');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  rideScroll.addEventListener('mousedown', (e) => {
+    isDown = true;
+    rideScroll.classList.add('active');
+    startX = e.pageX - rideScroll.offsetLeft;
+    scrollLeft = rideScroll.scrollLeft;
+  });
+  rideScroll.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+  rideScroll.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  rideScroll.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - rideScroll.offsetLeft;
+    const walk = (x - startX) * 1.5; // speed
+    rideScroll.scrollLeft = scrollLeft - walk;
+  });

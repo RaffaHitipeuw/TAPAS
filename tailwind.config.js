@@ -10,6 +10,7 @@ export default {
       colors: {
         background: '#E9EED9',
         primary : '#B99470',
+        bgquestion : '#E0F0FF',
       },
 
         fontFamily: {

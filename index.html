@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tapas Menu</title>
+  <link rel="icon" type="image/x-icon" href="./public/assets/medias/fa">
   <link rel="stylesheet" href="./src/output.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
@@ -244,18 +245,300 @@
 </section>
 
 
-<!-- AFTER HORIZONTAL SECTION -->
+    <!-- AFTER HORIZONTAL SECTION -->
 <section 
   id="after-horizontal" 
   data-scroll-section 
-  class="after-horizontal-section bg-[var(--hero-bg)] text-white h-[100vh]  w-screen flex flex-col items-center justify-center rounded-t-[50px] z-[5000]">
-  <h1 class="text-[60px] font-fontspringmedium mb-6">TAPAAAAAAAAAAAAAAAAAAS</h1>
+  class="after-horizontal-section bg-white text-black h-[90vh] w-screen flex items-center 
+  justify-between px-20 rounded-t-[50px] overflow-hidden relative z-[5000]"
+>
+  <!-- Kiri: Text -->
+  <div class="flex flex-col -mt-[190px] w-[40%]">
+    <h1 class="text-[44px] text-[#7A9CC6] font-fontspringmedium uppercase mb-3">How to ride?</h1>
+    <h2 class="text-[20px] text-[#7A9CC6] font-figtree">How to get your hands on our E-Bikes</h2>
+    <img src="/public/assets/medias/logo-tapas-blue.png" alt="bike logo" class="w-[57.66px] mt-8 opacity-80">
+  </div>
+
+  <!-- Kanan: Cards scroll -->
+  <div id="ride-scroll" class="w-[60%] h-[350px] flex gap-6 overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing select-none">
+    
+    <!-- Card 1 -->
+<div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+  <div>
+    <div class="flex items-center gap-3">
+      <img src="/public/assets/medias/downloadlogo.png" alt="icon" class="w-6 h-6 opacity-70 -mt-[13px]">
+      <p class="text-[18px] text-[#7A9CC6] font-figtree font-medium">
+        Download the <span class="font-fontspringheavy font-bold">TAPAS</span> App on <br>your App Store.
+      </p>
+    </div>
+  </div>
+  <div class="flex gap-3 mt-4">
+    <img src="/public/assets/medias/APPSTORE.png" alt="App Store" class="w-[120px] ml-[38px]">
+    <img src="/public/assets/medias/GOOGLEPLAY.png" alt="Google Play" class="w-[120px]">
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+  <div>
+    <div class="flex items-center gap-3">
+      <img src="/public/assets/medias/logo-tapas-blue.png" alt="icon" class="w-10 h-8 opacity-70 -mt-[13px]">
+      <p class="text-[18px] text-[#7A9CC6] font-figtree font-medium">
+        Locate a <span class="font-fontspringheavy">TAPAS</span> Station <br> Nearby your location
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Card 3 -->
+    <div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+      <div>
+        <div class="flex gap-3">
+          <img src="/public/assets/medias/unlock.png" alt="icon" class="w-6 h-6 opacity-70 mt-[5px]">
+          <p class="text-[18px] text-[#7A9CC6] font-figtree font-medium">
+            Unlock your bike by <br> scanning the QR and <br> following the on-screen <br> instructions
+          </p>
+        </div>
+      </div>
+    </div>
+    
+        <!-- Card 4 -->
+    <div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+      <div>
+        <div class="flex gap-3">
+          <img src="/public/assets/medias/park.png" alt="icon" class="w-6 h-6 opacity-70 mt-[5px]">
+          <p class="text-[18px] text-[#7A9CC6] font-figtree font-medium">
+            End your trip by parking <br> your bike in designated <br> areas and end the ride via <br> the application.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+<!-- QUESTION SECTION -->
+<section 
+  id="question-section" 
+  data-scroll-section 
+  class="bg-[#D8E9FF] w-full min-h-[600px] flex flex-col items-center justify-center rounded-[50px] px-[10vw] py-[100px] z-[5001] -mt-[100px]">
+  <div class="w-full flex flex-row justify-between items-start gap-[18rem] -mt-[120px]">
 
 
+    <!-- LEFT COLUMN -->
+    <div class="grid grid-cols-2 gap-x-56 gap-y-24">
+
+      <!-- 1 -->
+      <div class="flex items-start space-x-3">
+        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
+        <div>
+          <p class="absolute text-[14px] text-[#6D94C5] font-figtree -ml-[25px] mt-[15px]">1th Question</p>
+          <h2 class="absolute text-[20px] font-figtree font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+            What is <span class="font-fontspringheavy">TAPAS</span> and <br> how does it work?
+          </h2>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="flex items-start space-x-3">
+        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
+        <div>
+          <p class="absolute text-[14px] text-[#6A8ACB] font-figtree -ml-[25px] mt-[15px]">2nd Question</p>
+          <h2 class="absolute text-[20px] font-figtree font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+            How do e-bikes help <br> reduce air pollution?
+          </h2>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="flex items-start space-x-3">
+        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
+        <div>
+          <p class="absolute text-[14px] text-[#6A8ACB] font-figtree -ml-[25px] mt-[15px]">3rd Question</p>
+          <h2 class="absolute text-[20px] font-figtree font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+            Are e-bikes effective in <br> reducing traffic <br> congestion?
+          </h2>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="flex items-start space-x-3">
+        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
+        <div>
+          <p class="absolute text-[14px] text-[#6A8ACB] font-figtree -ml-[25px] mt-[15px]">4th Question</p>
+          <h2 class="absolute text-[20px] font-figtree font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+            Are e-bikes safe to use <br> on city roads?
+          </h2>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="flex items-start space-x-3">
+        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
+        <div>
+          <p class="absolute text-[14px] text-[#6A8ACB] font-figtree -ml-[25px] mt-[15px]">5rd Question</p>
+          <h2 class="absolute text-[20px] font-figtree font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+            Is this service available <br> across Indonesia?
+          </h2>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="flex items-start space-x-3">
+        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
+        <div>
+          <p class="absolute text-[14px] text-[#6A8ACB] font-figtree -ml-[25px] mt-[15px]">6th Question</p>
+          <h2 class="absolute text-[20px] font-figtree font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+            Why should I choose an <br> e-bike over other types <br> of transportation?
+          </h2>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="flex flex-col items-end justify-start -mt-[30px]">
+      <h1 class="text-[60px] font-fontspringmedium text-[#6D94C5] mb-2">QUESTIONS?</h1>
+      <p class="text-[20px] text-[#6A8ACB] font-figtree">We got you covered.</p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- FOOTER SECTION -->
+<footer 
+  id="footer-section"
+  data-scroll-section
+  class="bg-white w-full min-h-[450px] z-[5000] flex flex-row justify-between items-center px-[10vw] py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
+>
 
 
+      <!-- LEFT SIDE: NAV LINKS -->
+      <div class="flex flex-row gap-[20px] w-1/2 -ml-[120px]">
+      
+        <!-- EXPLORE -->
+        <div class="w-full">
+          <p class="text-[14px] font-figtree text-[#9BB3E1]">Explore</p>
+          <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>HOME</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>ROUTES</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>ABOUT</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>CONTACT</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      
+        <!-- CONNECT -->
+        <div class="w-full">
+          <p class="text-[14px] font-figtree text-[#9BB3E1]">Connect</p>
+          <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>INSTAGRAM</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>LINKEDIN</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>TWITTER</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
+              <span>YOUTUBE</span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- RIGHT SIDE: BRAND INFO -->
+      <div class="flex flex-col items-end text-right space-y-4 -mr-[120px]">
+        <div class="flex flex-row items-center space-x-2">
+          <img src="/public/assets/medias/logo-tapas-blue.png" alt="TAPAS Logo" class="w-[50px] h-[40px]">
+          <p class="font-fontspringmedium text-[#6D94C5] text-[18px] leading-tight">
+            ZERO EMISSION,<br>FULL AMBITION.
+          </p>
+        </div>
+      
+        <div class="text-[15px] font-figtree text-[#6D94C5] leading-relaxed">
+          <p>+62 0813 1456 8945</p>
+          <p>Jakarta Selatan, Indonesia</p>
+          <p>Copyright © <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span> 2025</p>
+        </div>
+      
+        <div class="flex flex-row items-center space-x-3 mt-2">
+          <img src="/public/assets/medias/APPSTORE.png" alt="App Store" class="w-[120px] h-auto">
+          <img src="/public/assets/medias/GOOGLEPLAY.png" alt="Google Play" class="w-[120px] h-auto">
+        </div>
+      </div>
+
+      
+    </footer>
+
+<div
+data-scroll-section 
+class="w-full h-[500px] flex justify-center items-center z-[5000] bg-white -mt-[100px]">
+  <h1
+    class="text-[410px] font-fontspringheavy"
+    style="
+      background: linear-gradient(to bottom, #AAC9E4 46%, #6A8299 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    "
+  >
+    TAPAS
+  </h1>
+</div>
+
+
+    
   </div>
 
   <!-- OVERLAY -->

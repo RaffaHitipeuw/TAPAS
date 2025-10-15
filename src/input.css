@@ -29,6 +29,7 @@
   --hero-bg: #000000;
   --section-bg-light: #F5EFE6;
   --section-bg-dark: #E8DFCA;
+  --bg-question: #E0F0FF;
 
   --btn-easily-bg: #E0F0FF;
   --btn-eco-bg: #D5E7FA;
@@ -128,3 +129,14 @@
 }
 
 
+
+  .ride-card {
+    scroll-snap-align: center;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }

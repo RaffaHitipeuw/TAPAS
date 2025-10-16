@@ -44,33 +44,13 @@
 }
 
 /* *BUTTON* */
-.btn {
-  display: flex;
-  align-items: center;
-  border-radius: 35px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  font-family: 'Figtree', sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 1rem 3.5rem;
-  color: var(--primary-color);
-}
+
 
 .btn-easily { background-color: var(--btn-easily-bg); }
 .btn-eco { background-color: var(--btn-eco-bg); }
 .btn-mobility { background-color: var(--btn-mobility-bg); }
 .btn-made { background-color: var(--btn-made-bg); }
 
-/* *CARD* */
-.card {
-  border-radius: 40px;
-  padding: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 650px;
-}
 
 .card-gradient {
   background: linear-gradient(

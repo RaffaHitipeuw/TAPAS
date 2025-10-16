@@ -2,55 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
 /* *FONT* */
 @font-face {
-  font-family: 'Figtree';
-  src: url('../public/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+  font-family: "Figtree";
+  src: url("../public/assets/fonts/Figtree-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 400 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fontspringheavy';
-  src: url('../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf') format('truetype');
+  font-family: "fontspringheavy";
+  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf")
+    format("truetype");
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fontspringmedium';
-  src: url('../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf') format('truetype');
+  font-family: "fontspringmedium";
+  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf")
+    format("truetype");
   font-style: normal;
 }
 
 /* *COLOR* */
 :root {
-  --primary-color: #6D94C5;
+  --primary-color: #6d94c5;
   --white: #ffffff;
   --hero-bg: #000000;
-  --section-bg-light: #F5EFE6;
-  --section-bg-dark: #E8DFCA;
-  --bg-question: #E0F0FF;
+  --section-bg-light: #f5efe6;
+  --section-bg-dark: #e8dfca;
+  --bg-question: #e0f0ff;
 
-  --btn-easily-bg: #E0F0FF;
-  --btn-eco-bg: #D5E7FA;
-  --btn-mobility-bg: #C9DEF3;
-  --btn-made-bg: #BED4EE;
+  --btn-easily-bg: #e0f0ff;
+  --btn-eco-bg: #d5e7fa;
+  --btn-mobility-bg: #c9def3;
+  --btn-made-bg: #bed4ee;
 
-  --card-gradient-start: hsla(208,52%,78%,1);
-  --card-gradient-end: hsla(209,19%,51%,1);
+  --card-gradient-start: hsla(208, 52%, 78%, 1);
+  --card-gradient-end: hsla(209, 19%, 51%, 1);
 
-  --marquee-bg: #CBDCEB;
-  --marquee-text: #6D94C5;
+  --marquee-bg: #cbdceb;
+  --marquee-text: #6d94c5;
 }
 
 /* *BUTTON* */
 
-
-.btn-easily { background-color: var(--btn-easily-bg); }
-.btn-eco { background-color: var(--btn-eco-bg); }
-.btn-mobility { background-color: var(--btn-mobility-bg); }
-.btn-made { background-color: var(--btn-made-bg); }
-
+.btn-easily {
+  background-color: var(--btn-easily-bg);
+}
+.btn-eco {
+  background-color: var(--btn-eco-bg);
+}
+.btn-mobility {
+  background-color: var(--btn-mobility-bg);
+}
+.btn-made {
+  background-color: var(--btn-made-bg);
+}
 
 .card-gradient {
   background: linear-gradient(
@@ -60,14 +74,20 @@
   );
   color: var(--white);
   padding: 10px;
-  font-family: 'Figtree', sans-serif;
+  font-family: "Figtree", sans-serif;
   overflow: hidden;
 }
 
 /* *SECTION* */
-.section-light { background-color: var(--section-bg-light); }
-.section-dark { background-color: var(--section-bg-dark); }
-.section-white { background-color: var(--white); }
+.section-light {
+  background-color: var(--section-bg-light);
+}
+.section-dark {
+  background-color: var(--section-bg-dark);
+}
+.section-white {
+  background-color: var(--white);
+}
 
 /* *MARQUEE* */
 .tag {
@@ -90,17 +110,20 @@
 
 /* *UTILITYS* */
 @layer utilities {
-  .clip-circle { clip-path: circle(0% at 95% 10%); }
-  .clip-circle-open { clip-path: circle(150% at 95% 10%); }
+  .clip-circle {
+    clip-path: circle(0% at 95% 10%);
+  }
+  .clip-circle-open {
+    clip-path: circle(150% at 95% 10%);
+  }
 }
-
 
 /* ! Section horizontal full-screen */
 .horizontal-section {
   width: 100%;
-  overflow-x: auto;            /* Aktifkan scroll horizontal */
-  overflow-y: hidden;          /* Sembunyikan scroll vertikal */
-  white-space: nowrap;         /* Pertahankan elemen berjejer */
+  overflow-x: auto; /* Aktifkan scroll horizontal */
+  overflow-y: hidden; /* Sembunyikan scroll vertikal */
+  white-space: nowrap; /* Pertahankan elemen berjejer */
 }
 /* Container track sebagai flex row */
 .horizontal-track {
@@ -108,15 +131,13 @@
   width: max-content; /* Lebar sesuai total elemen */
 }
 
-
-
-  .ride-card {
-    scroll-snap-align: center;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+.ride-card {
+  scroll-snap-align: center;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

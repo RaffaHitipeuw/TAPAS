@@ -50,7 +50,7 @@
 
       <!-- HERO IMAGE -->
       <div class="absolute -bottom-14 left-0 w-full flex justify-center">
-        <img src="public/assets/medias/sepedah.png" alt="Bicycle" class="h-[90vh] object-contain" />
+        <img src="public/assets/medias/sepedah.png" alt="Bicycle" class="h-[90vh] object-contain" draggable="false" />
       </div>
     </header>
 
@@ -137,7 +137,7 @@
     </section>
 
     <!-- MOVE SECTION -->
-    <section data-scroll-section class="section-dark z-[4001] w-full h-min rounded-t-[50px] flex flex-col items-center justify-center overflow-hidden px-24 pt-10">
+    <section data-scroll-section class="section-dark z-[4001] w-full h-min rounded-t-[50px] flex flex-col items-center justify-center overflow-hidden px-24 pt-10 pb-56 -mb-8">
 
       <!-- IMAGE 1 -->
       <div class="relative w-full flex justify-start overflow-hidden">
@@ -180,45 +180,42 @@
           </div>
         </div>
       </div>
-
+    </section>
+    
+    <!-- FADE SECTION -->
+    <section data-scroll-section class="section-dark z-[4001] h-[500px] w-full flex flex-col justify-between items-center">
       <h2 class="text-[50px] font-semibold text-[var(--primary-color)] tracking-tighter z-[400]">
         <span class="font-fontspringheavy font-bold">TAPAS</span> offers a lot more than just solution.
       </h2>
-    </section>
-
-    <!-- FADE SECTION -->
-    <section data-scroll-section class="section-dark z-[4001] h-[400px] w-full">
-      <div class="flex flex-row justify-center mt-[100px]">
-        <img src="public/assets/medias/leaves.png" alt="">
-      </div>
+        <img class="mt-[120px] w-[70vw]" src="public/assets/medias/leaves.png" alt="" draggable="false">
     </section>
 
     <!-- SEKITAR KITA BUTTONS -->
     <section id="tapas-section" data-scroll-section class="bg-white z-[4001] h-[450px] w-full rounded-t-[50px] flex flex-col items-center justify-center py-32 -mt-[100px]">
-      <div class="flex flex-col items-center justify-center -mt-[450px]">
+      <div class="flex flex-col items-center justify-center -mt-[450px] -space-y-3">
         <div class="fade-up">
-          <button class="w-96 rounded-full flex flex-row p-6 items-center justify-center btn-easily rotate-[-4deg]">
+          <button class="w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start btn-easily rotate-[-4deg]">
             <img src="/public/assets/medias/easily.png" alt="Icon" class="w-10 h-10 mr-5"/>
             <span class="text-3xl font-bold text-[var(--primary-color)]">Easily accessible</span>
           </button>
         </div>
 
         <div class="fade-up">
-          <button class="btn-eco rotate-[2deg] w-96 rounded-full flex flex-row p-6 items-center justify-center">
+          <button class="btn-eco rotate-[2deg] w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start">
             <img src="/public/assets/medias/eco.png" alt="Icon" class="w-10 h-10 mr-5"/>
             <span class="text-3xl font-bold text-[var(--primary-color)]">Eco-Friendly</span>
           </button>
         </div>
 
         <div class="fade-up">
-          <button class="btn-mobility rotate-[-3deg] w-96 rounded-full flex flex-row p-6 items-center justify-center">
+          <button class="btn-mobility rotate-[-3deg] w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start">
             <img src="/public/assets/medias/mobility.png" alt="Icon" class="w-10 h-10 mr-5"/>
             <span class="text-3xl font-bold text-[var(--primary-color)]">Mobility & Safety</span>
           </button>
         </div>
 
         <div class="fade-up">
-          <button class="btn-made rotate-[3deg] w-96 rounded-full flex flex-row p-6 items-center justify-center">
+          <button class="btn-made rotate-[3deg] w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start">
             <img src="/public/assets/medias/made.png" alt="Icon" class="w-10 h-10 mr-5"/>
             <span class="text-3xl font-bold text-[var(--primary-color)]">Made in Indonesia</span>
           </button>
@@ -231,16 +228,16 @@
         </h2>
       </div>
     </section>
-
+    
 
     <!-- HORIZONTAL SCROLL SECTION -->
-<section 
-  id="horizontal-section" 
-  data-scroll-section 
-  class="horizontal-section relative z-[5000] bg-white h-[780px] overflow-visible pt-[50px]"
->
-  <!-- SATU track isi semua gambar -->
-  <div class="horizontal-track flex items-center overflow-hidden">
+    <section 
+    id="horizontal-section" 
+    data-scroll-section 
+    class="horizontal-section relative z-[5000] bg-white h-[780px] overflow-visible pt-[50px] scrollbar-hide -mt-[120px]"
+    >
+    <!-- SATU track isi semua gambar -->
+  <div class="horizontal-track flex items-center overflow-hidden scrollbar-hide">
     
     <div class="relative flex items-center justify-center">
       <img src="./public/assets/medias/JAKARTA.png" alt="Jakarta" class="slide w-[180vh] h-[42vw] ml-[100px]">
@@ -276,7 +273,7 @@
   id="after-horizontal" 
   data-scroll-section 
   class="after-horizontal-section bg-white text-black h-[90vh] w-screen flex items-center 
-  justify-between px-20 rounded-t-[50px] overflow-hidden relative z-[5000]"
+  justify-between px-24 rounded-t-[50px] overflow-hidden relative z-[5000]"
 >
   <!-- Kiri: Text -->
   <div class="flex flex-col -mt-[190px] w-[40%]">
@@ -286,31 +283,31 @@
   </div>
 
   <!-- Kanan: Cards scroll -->
-  <div id="ride-scroll" class="w-[60%] h-[350px] flex gap-6 overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing select-none">
+  <div id="ride-scroll" class="w-[60%] h-[350px] flex gap-0 overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing select-none">
     
     <!-- Card 1 -->
-<div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+<div class="ride-card flex-shrink-0 bg-[#F5EFE6] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
   <div>
     <div class="flex items-center gap-3">
-      <img src="/public/assets/medias/downloadlogo.png" alt="icon" class="w-6 h-6 opacity-70 -mt-[13px]">
+      <img src="/public/assets/medias/downloadlogo.png" alt="icon" class="w-6 h-6 object-contain opacity-70 -mt-[13px]">
       <p class="text-[18px] text-[#7A9CC6] font-medium">
-        Download the <span class="font-fontspringheavy font-bold">TAPAS</span> App on <br>your App Store.
+        Download the <span class="font-fontspringheavy font-bold">TAPAS</span> App on your App Store.
       </p>
     </div>
   </div>
-  <div class="flex gap-3 mt-4">
+  <div class="flex gap-3">
     <img src="/public/assets/medias/APPSTORE.png" alt="App Store" class="w-[120px] ml-[38px]">
     <img src="/public/assets/medias/GOOGLEPLAY.png" alt="Google Play" class="w-[120px]">
   </div>
 </div>
 
 <!-- Card 2 -->
-<div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+<div class="ride-card flex-shrink-0 bg-[#EFE7DA] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
   <div>
     <div class="flex items-center gap-3">
-      <img src="/public/assets/medias/logo-tapas-blue.png" alt="icon" class="w-10 h-8 opacity-70 -mt-[13px]">
+      <img src="/public/assets/medias/logo-tapas-blue.png" alt="icon" class="w-10 h-10 object-contain opacity-70 -mt-[13px]">
       <p class="text-[18px] text-[#7A9CC6] font-medium">
-        Locate a <span class="font-fontspringheavy">TAPAS</span> Station <br> Nearby your location
+        Locate a <span class="font-fontspringheavy">TAPAS</span> Station near you
       </p>
     </div>
   </div>
@@ -318,24 +315,35 @@
 
 
     <!-- Card 3 -->
-    <div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+    <div class="ride-card flex-shrink-0 bg-[#ECE1D5] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
       <div>
         <div class="flex gap-3">
-          <img src="/public/assets/medias/unlock.png" alt="icon" class="w-6 h-6 opacity-70 mt-[5px]">
+          <img src="/public/assets/medias/unlock.png" alt="icon" class="w-6 h-6 object-contain opacity-70 mt-[5px]">
           <p class="text-[18px] text-[#7A9CC6] font-medium">
-            Unlock your bike by <br> scanning the QR and <br> following the on-screen <br> instructions
+            Unlock your bike by scanning the QR and following the on-screen instructions
           </p>
         </div>
       </div>
     </div>
     
         <!-- Card 4 -->
-    <div class="ride-card flex-shrink-0 bg-[#F6F1E7] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out shadow-md cursor-pointer">
+    <div class="ride-card flex-shrink-0 bg-[#E6D8C8] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
       <div>
         <div class="flex gap-3">
-          <img src="/public/assets/medias/park.png" alt="icon" class="w-6 h-6 opacity-70 mt-[5px]">
+          <img src="/public/assets/medias/safely.png" alt="icon" class="w-6 h-6 object-contain opacity-70 mt-[5px]">
           <p class="text-[18px] text-[#7A9CC6] font-medium">
-            End your trip by parking <br> your bike in designated <br> areas and end the ride via <br> the application.
+            Ride safely and enjoy your trip with <span class="font-fontspringheavy">TAPAS</span>
+          </p>
+        </div>
+      </div>
+    </div>
+        <!-- Card 5 -->
+    <div class="ride-card flex-shrink-0 bg-[#E3D4C3] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
+      <div>
+        <div class="flex gap-3">
+          <img src="/public/assets/medias/park.png" alt="icon" class="w-6 h-6 object-contain opacity-70 mt-[5px]">
+          <p class="text-[18px] text-[#7A9CC6] font-medium">
+            End your trip by parking your bike in designated areas and end the ride via the application.
           </p>
         </div>
       </div>

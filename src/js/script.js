@@ -32,7 +32,7 @@ items.forEach((item) => {
   a.href = item.href;
   a.textContent = item.label;
   a.className =
-    "font-fontspringheavy text-white text-[80px] mr-[800px] leading-none font-bold tracking-tight text-left group-hover:opacity-70 transition-opacity duration-300";
+    "font-fontspringheavy text-white text-[80px] mr-[800px] leading-none font-bold tracking-tight text-left group-hover:opacity-70 transition-opacity duration-300 cursor-none";
   const arrow = document.createElement("span");
   arrow.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2" class="w-10 h-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
@@ -60,6 +60,7 @@ hoverCircle.innerHTML = `
 document.body.appendChild(hoverCircle);
 
 const menuLinks = document.querySelectorAll(".menu-list a");
+const footerLinks = document.querySelectorAll("#footer-section .footer-links");
 let cursorTargetX = 0;
 let cursorTargetY = 0;
 let cursorX = 0;
@@ -67,16 +68,27 @@ let cursorY = 0;
 
 menuLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
-    document.body.classList.add("cursor-none");
-    document.documentElement.classList.add("cursor-none");
-    hoverCircle.style.transition = "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+    hoverCircle.style.transition =
+      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
     hoverCircle.style.transform = "scale(1)";
   });
 
   link.addEventListener("mouseleave", () => {
-    document.body.classList.remove("cursor-none");
-    document.documentElement.classList.remove("cursor-none");
-    hoverCircle.style.transition = "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+    hoverCircle.style.transition =
+      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+    hoverCircle.style.transform = "scale(0)";
+  });
+});
+footerLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    hoverCircle.style.transition =
+      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+    hoverCircle.style.transform = "scale(1)";
+  });
+
+  link.addEventListener("mouseleave", () => {
+    hoverCircle.style.transition =
+      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
     hoverCircle.style.transform = "scale(0)";
   });
 });
@@ -129,7 +141,7 @@ const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   lerp: 0.08,
-  gestureDirection: 'both',
+  gestureDirection: "both",
 });
 
 window.addEventListener("resize", () => scroll.update());
@@ -179,16 +191,19 @@ slidesLeft.forEach((el) => observer.observe(el));
 
 // FADE UP
 const fadeUpElements = document.querySelectorAll(".fade-up");
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("fade-up-active");
-    } else {
-      entry.target.classList.remove("fade-up-active");
-    }
-  });
-}, { threshold: 0.5 });
-fadeUpElements.forEach(el => fadeObserver.observe(el));
+const fadeObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-up-active");
+      } else {
+        entry.target.classList.remove("fade-up-active");
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+fadeUpElements.forEach((el) => fadeObserver.observe(el));
 
 // ! HORIZONTAL SCROLL LOCK
 const horizontalSection = document.querySelector("#horizontal-section");
@@ -198,15 +213,12 @@ let scrollX = 0;
 let cooldown = false;
 let lockTriggered = false;
 
-
 document.body.style.overscrollBehavior = "none";
 document.documentElement.style.overscrollBehavior = "none";
-
 
 scroll.on("scroll", () => {
   const rect = horizontalSection.getBoundingClientRect();
   const vh = window.innerHeight;
-
 
   const fullyInView = rect.top <= 0 && rect.bottom >= vh;
 
@@ -218,7 +230,6 @@ scroll.on("scroll", () => {
       duration: 300,
       easing: [0.25, 0.1, 0.25, 1],
     });
-
 
     setTimeout(() => {
       scroll.stop();
@@ -246,7 +257,7 @@ window.addEventListener(
     const maxScroll =
       horizontalTrack.scrollWidth - horizontalSection.clientWidth;
 
-    scrollX += e.deltaY * 0.8; 
+    scrollX += e.deltaY * 0.8;
     scrollX = Math.max(0, Math.min(maxScroll, scrollX));
     horizontalSection.scrollLeft = scrollX;
 
@@ -292,26 +303,25 @@ const questionLinks = document.querySelectorAll("#question-section h2");
 const questionHover = document.createElement("div");
 questionHover.id = "questionHover";
 questionHover.className =
-  "fixed top-0 left-0 w-[350px] h-[350px] rounded-full flex flex-col items-center justify-center pointer-events-none p-8 text-left overflow-hidden";
+  "fixed top-0 left-0 w-[400px] h-[400px] rounded-full flex flex-col items-center justify-center pointer-events-none p-12 text-center overflow-hidden";
 questionHover.style.zIndex = "9999";
 questionHover.style.background = "white";
-questionHover.style.boxShadow = "0 10px 40px rgba(0,0,0,0.15)";
-questionHover.style.transition = "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
+// questionHover.style.boxShadow = "0 10px 40px rgba(0,0,0,0.15)";
+questionHover.style.transition =
+  "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
 questionHover.style.transform = "scale(0)";
 document.body.appendChild(questionHover);
 
-
 const questionAnswers = {
   1: `
-    <div class="text-left w-full transition-all duration-300 origin-center">
-      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1th Question</p>
-      <h3 class="font-figtree font-bold text-[#6D94C5] text-[24px] leading-tight mb-3">
-        What is the e-bike rental 
+    <div class="text-center w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1st Question</p>
+      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
+        What is an electric bike rental service and how does it work?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
-        Our e-bike rental service allows you to easily rent an electric bike through our app. 
-        Simply choose a location, book an e-bike, and use it for your daily commute. 
-        Once you're done, return the e-bike to a designated parking spot.
+        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
+        More e-bikes on the road means cleaner air and quieter cities.
       </p>
     </div>
   `,
@@ -319,7 +329,7 @@ const questionAnswers = {
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">2nd Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        How do e-bikes help reduce air pollution?
+        How do electric bikes help reduce air pollution?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
         E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
@@ -338,7 +348,40 @@ const questionAnswers = {
         and let you skip through traffic with minimal delay.
       </p>
     </div>
-  `
+  `,
+  4: `
+    <div class="text-center w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">4th Question</p>
+      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
+        Are e-bikes safe to use on city roads?
+      </h3>
+      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
+        Our e-bikes are equipped with high safety standards, including advanced braking systems, front and rear lights, and GPS tracking. We also encourage riders to wear helmets and follow traffic rules for everyone's safety.
+      </p>
+    </div>
+  `,
+  5: `
+    <div class="text-center w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">5th Question</p>
+      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
+        Is this service available across Indonesia?
+      </h3>
+      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
+         Currently, our service is available in several major cities in Indonesia and continues to expand. You can check service availability in your city through our app or website.
+      </p>
+    </div>
+  `,
+  6: `
+    <div class="text-center w-full transition-all duration-300 origin-center">
+      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">6th Question</p>
+      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
+        Why should I choose an e-bike over other types of transportation?
+      </h3>
+      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
+         E-bikes are an eco-friendly, cost-effective, and practical transportation option for urban travel. By renting an e-bike, you're supporting a sustainable lifestyle and helping to reduce the negative environmental and traffic impacts of conventional transport.
+      </p>
+    </div>
+  `,
 };
 
 // Variabel posisi
@@ -360,16 +403,18 @@ function scaleTextToFit(container) {
 questionLinks.forEach((q, i) => {
   q.addEventListener("mouseenter", () => {
     const qNum = i + 1;
-    document.body.classList.add("cursor-none");
-    document.documentElement.classList.add("cursor-none");
-    questionHover.innerHTML = questionAnswers[qNum] || `<p class="text-[#6A8ACB]">No content found.</p>`;
+    // document.body.classList.add("cursor-none");
+    // document.documentElement.classList.add("cursor-none");
+    questionHover.innerHTML =
+      questionAnswers[qNum] ||
+      `<p class="text-[#6A8ACB]">No content found.</p>`;
     questionHover.style.transform = "scale(1)";
     scaleTextToFit(questionHover);
   });
 
   q.addEventListener("mouseleave", () => {
-    document.body.classList.remove("cursor-none");
-    document.documentElement.classList.remove("cursor-none");
+    // document.body.classList.remove("cursor-none");
+    // document.documentElement.classList.remove("cursor-none");
     questionHover.style.transform = "scale(0)";
   });
 });
@@ -389,42 +434,28 @@ function animateQuestionHover() {
 }
 animateQuestionHover();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Horizontal scroll pakai drag mouse
-  const rideScroll = document.getElementById('ride-scroll');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+const rideScroll = document.getElementById("ride-scroll");
+let isDown = false;
+let startX;
+let scrollLeft;
 
-  rideScroll.addEventListener('mousedown', (e) => {
-    isDown = true;
-    rideScroll.classList.add('active');
-    startX = e.pageX - rideScroll.offsetLeft;
-    scrollLeft = rideScroll.scrollLeft;
-  });
-  rideScroll.addEventListener('mouseleave', () => {
-    isDown = false;
-  });
-  rideScroll.addEventListener('mouseup', () => {
-    isDown = false;
-  });
-  rideScroll.addEventListener('mousemove', (e) => {
-    if(!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - rideScroll.offsetLeft;
-    const walk = (x - startX) * 1.5; // speed
-    rideScroll.scrollLeft = scrollLeft - walk;
-  });
+rideScroll.addEventListener("mousedown", (e) => {
+  isDown = true;
+  rideScroll.classList.add("active");
+  startX = e.pageX - rideScroll.offsetLeft;
+  scrollLeft = rideScroll.scrollLeft;
+});
+rideScroll.addEventListener("mouseleave", () => {
+  isDown = false;
+});
+rideScroll.addEventListener("mouseup", () => {
+  isDown = false;
+});
+rideScroll.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - rideScroll.offsetLeft;
+  const walk = (x - startX) * 1.5; // speed
+  rideScroll.scrollLeft = scrollLeft - walk;
+});

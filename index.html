@@ -272,8 +272,8 @@
 <section 
   id="after-horizontal" 
   data-scroll-section 
-  class="after-horizontal-section bg-white text-black h-[90vh] w-screen flex items-center 
-  justify-between px-24 rounded-t-[50px] overflow-hidden relative z-[5000]"
+  class="after-horizontal-section bg-white text-black h-min w-screen flex items-center 
+  justify-between px-24 pt-12 rounded-t-[50px] overflow-hidden relative z-[5000] -mt-6"
 >
   <!-- Kiri: Text -->
   <div class="flex flex-col -mt-[190px] w-[40%]">
@@ -356,84 +356,78 @@
 <section 
   id="question-section" 
   data-scroll-section 
-  class="bg-[#D8E9FF] w-full min-h-[600px] flex flex-col items-center justify-center rounded-[50px] px-[10vw] py-[100px] z-[5001] -mt-[100px]">
-  <div class="w-full flex flex-row justify-between items-start gap-[18rem] -mt-[120px]">
-
-
+  class="bg-[#D8E9FF] w-full h-[90vh] flex flex-col items-center justify-center rounded-[50px] px-24 z-[4001] -mt-[100px] pt-12">
+  <div class="w-full flex flex-row justify-between items-start">
     <!-- LEFT COLUMN -->
-    <div class="grid grid-cols-2 gap-x-56 gap-y-24">
+    <div class="grid grid-cols-2 gap-x-16 gap-y-20 w-1/2 h-min">
 
       <!-- 1 -->
-      <div class="flex items-start space-x-3">
-        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
-        <div>
-          <p class="absolute text-[14px] text-[#6D94C5] -ml-[25px] mt-[15px]">1th Question</p>
-          <h2 class="absolute text-[20px] font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
+      <div class="flex items-start w-full">
+        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
+        <div class="z-[4002]">
+          <p class="text-[14px] text-[#6D94C5] ">1th Question</p>
+          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
             What is <span class="font-fontspringheavy">TAPAS</span> and <br> how does it work?
           </h2>
         </div>
       </div>
-
       <!-- 2 -->
-      <div class="flex items-start space-x-3">
-        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
-        <div>
-          <p class="absolute text-[14px] text-[#6A8ACB] -ml-[25px] mt-[15px]">2nd Question</p>
-          <h2 class="absolute text-[20px] font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
-            How do e-bikes help <br> reduce air pollution?
+      <div class="flex items-start w-full">
+        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
+        <div class="z-[4002]">
+          <p class="text-[14px] text-[#6D94C5] ">2nd Question</p>
+          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
+            How do e-bikes help reduce air pollution?
           </h2>
         </div>
       </div>
-
       <!-- 3 -->
-      <div class="flex items-start space-x-3">
-        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
-        <div>
-          <p class="absolute text-[14px] text-[#6A8ACB] -ml-[25px] mt-[15px]">3rd Question</p>
-          <h2 class="absolute text-[20px] font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
-            Are e-bikes effective in <br> reducing traffic <br> congestion?
+      <div class="flex items-start w-full">
+        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
+        <div class="z-[4002]">
+          <p class="text-[14px] text-[#6D94C5] ">3rd Question</p>
+          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
+            Are e-bikes effective in reducing traffic congestion?
           </h2>
         </div>
       </div>
-
       <!-- 4 -->
-      <div class="flex items-start space-x-3">
-        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
-        <div>
-          <p class="absolute text-[14px] text-[#6A8ACB] -ml-[25px] mt-[15px]">4th Question</p>
-          <h2 class="absolute text-[20px] font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
-            Are e-bikes safe to use <br> on city roads?
+      <div class="flex items-start w-full">
+        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
+        <div class="z-[4002]">
+          <p class="text-[14px] text-[#6D94C5] ">4th Question</p>
+          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
+            Are e-bikes safe to use on city roads?
           </h2>
         </div>
       </div>
-
       <!-- 5 -->
-      <div class="flex items-start space-x-3">
-        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
-        <div>
-          <p class="absolute text-[14px] text-[#6A8ACB] -ml-[25px] mt-[15px]">5rd Question</p>
-          <h2 class="absolute text-[20px] font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
-            Is this service available <br> across Indonesia?
+      <div class="flex items-start w-full">
+        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
+        <div class="z-[4002]">
+          <p class="text-[14px] text-[#6D94C5] ">1th Question</p>
+          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
+            Is this service available across Indonesia?
           </h2>
         </div>
       </div>
-
       <!-- 6 -->
-      <div class="flex items-start space-x-3">
-        <div class="w-[35px] h-[35px] rounded-full bg-white"></div>
-        <div>
-          <p class="absolute text-[14px] text-[#6A8ACB] -ml-[25px] mt-[15px]">6th Question</p>
-          <h2 class="absolute text-[20px] font-bold -ml-[25px] mt-[30px] text-[#6D94C5] leading-tight hover:underline cursor-pointer ">
-            Why should I choose an <br> e-bike over other types <br> of transportation?
+      <div class="flex items-start w-full">
+        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
+        <div class="z-[4002]">
+          <p class="text-[14px] text-[#6D94C5] ">1th Question</p>
+          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
+            Why should I choose an e-bike over other types of transportation?
           </h2>
         </div>
       </div>
 
+      
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div class="flex flex-col items-end justify-start -mt-[30px]">
-      <h1 class="text-[60px] font-fontspringmedium text-[#6D94C5] mb-2">QUESTIONS?</h1>
+    <div class="flex flex-col items-end justify-start w-1/3">
+      <h1 class="text-[44px] font-fontspringmedium text-[#6D94C5] mb-2">QUESTIONS?</h1>
       <p class="text-[20px] text-[#6A8ACB]">We got you covered.</p>
     </div>
 
@@ -444,19 +438,18 @@
 <footer 
   id="footer-section"
   data-scroll-section
-  class="bg-white w-full min-h-[450px] z-[5000] flex flex-row justify-between items-center px-[10vw] py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
+  class="bg-white w-full h-min z-[5000] flex flex-row justify-between items-center px-8 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
 >
 
-
       <!-- LEFT SIDE: NAV LINKS -->
-      <div class="flex flex-row gap-[20px] w-1/2 -ml-[120px]">
+      <div class="flex flex-row gap-[20px] w-1/2">
       
         <!-- EXPLORE -->
         <div class="w-full">
           <p class="text-[14px] text-[#9BB3E1]">Explore</p>
           <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>HOME</span>
+              <h2 class="footer-links cursor-none">HOME</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -464,7 +457,7 @@
               </span>
             </a>
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>ROUTES</span>
+              <h2 class="footer-links cursor-none">ROUTES</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -472,7 +465,7 @@
               </span>
             </a>
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>ABOUT</span>
+              <h2 class="footer-links cursor-none">ABOUT</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -480,7 +473,7 @@
               </span>
             </a>
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>CONTACT</span>
+              <h2 class="footer-links cursor-none">CONTACT</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -495,7 +488,7 @@
           <p class="text-[14px] text-[#9BB3E1]">Connect</p>
           <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>INSTAGRAM</span>
+              <h2 class="footer-links cursor-none">INSTAGRAM</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -503,7 +496,7 @@
               </span>
             </a>
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>LINKEDIN</span>
+              <h2 class="footer-links cursor-none">LINKEDIN</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -511,7 +504,7 @@
               </span>
             </a>
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>TWITTER</span>
+              <h2 class="footer-links cursor-none">TWITTER</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -519,7 +512,7 @@
               </span>
             </a>
             <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <span>YOUTUBE</span>
+              <h2 class="footer-links cursor-none">YOUTUBE</h2>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
@@ -531,7 +524,7 @@
       </div>
     
       <!-- RIGHT SIDE: BRAND INFO -->
-      <div class="flex flex-col items-end text-right space-y-4 -mr-[120px]">
+      <div class="flex flex-col items-end text-right space-y-4">
         <div class="flex flex-row items-center space-x-2">
           <img src="/public/assets/medias/logo-tapas-blue.png" alt="TAPAS Logo" class="w-[50px] h-[40px]">
           <p class="font-fontspringmedium text-[#6D94C5] text-[18px] leading-tight">
@@ -556,9 +549,9 @@
 
 <div
 data-scroll-section 
-class="w-full h-[500px] flex justify-center items-center z-[5000] bg-white -mt-[100px]">
+class="w-full h-min flex justify-center items-center z-[4001] bg-white -mt-[200px] -mb-10">
   <h1
-    class="text-[410px] font-fontspringheavy"
+    class="text-[410px] font-fontspringheavy select-none"
     style="
       background: linear-gradient(to bottom, #AAC9E4 46%, #6A8299 100%);
       background-clip: text;

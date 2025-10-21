@@ -403,8 +403,6 @@ function scaleTextToFit(container) {
 questionLinks.forEach((q, i) => {
   q.addEventListener("mouseenter", () => {
     const qNum = i + 1;
-    // document.body.classList.add("cursor-none");
-    // document.documentElement.classList.add("cursor-none");
     questionHover.innerHTML =
       questionAnswers[qNum] ||
       `<p class="text-[#6A8ACB]">No content found.</p>`;
@@ -413,8 +411,6 @@ questionLinks.forEach((q, i) => {
   });
 
   q.addEventListener("mouseleave", () => {
-    // document.body.classList.remove("cursor-none");
-    // document.documentElement.classList.remove("cursor-none");
     questionHover.style.transform = "scale(0)";
   });
 });

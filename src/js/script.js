@@ -32,7 +32,7 @@ items.forEach((item) => {
   a.href = item.href;
   a.textContent = item.label;
   a.className =
-    "font-fontspringheavy text-white text-[80px] leading-none font-bold tracking-tight text-left group-hover:opacity-70 transition-opacity duration-300 cursor-none";
+    "font-fontspringheavy text-white lg:text-[80px] text-[40px] leading-none font-bold tracking-tight text-left group-hover:opacity-70 transition-opacity duration-300 cursor-none";
   const arrow = document.createElement("span");
   arrow.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2" class="w-10 h-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
@@ -141,12 +141,12 @@ const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   smartphone: {
-       smooth: true
-   },
-   tablet: {
-       smooth: true
-   },
-  
+    smooth: true,
+  },
+  tablet: {
+    smooth: true,
+  },
+
   lerp: 0.08,
   gestureDirection: "both",
 });

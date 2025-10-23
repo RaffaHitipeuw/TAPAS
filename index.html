@@ -30,12 +30,12 @@
   </head>
 
   <body
-    class="bg-white items-center justify-center overflow-hidden pt-8 font-figtree"
+    class="bg-white items-center justify-center overflow-hidden pt-6 font-figtree"
   >
     <!-- MENU BUTTON -->
     <button
       id="menuBtn"
-      class="fixed top-[68px] lg:right-[120px] md:right-[60px] flex flex-col items-center justify-center w-12 h-12 md:w-14 md:h-14 cursor-pointer z-[4001]"
+      class="fixed top-[58px] lg:right-[120px] md:right-[60px] right-[50px] flex flex-col items-center justify-center w-10 h-10 md:w-14 md:h-14 cursor-pointer z-[4001]"
     >
       <span
         class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"
@@ -57,13 +57,13 @@
       >
         <!-- NAVIGATION -->
         <nav
-          class="fixed top-[50px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]"
+          class="fixed top-[40px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]"
         >
           <div id="logo">
             <img
               src="/public/assets/medias/logo-tapas.png"
               alt=""
-              class="w-[40px] mt-[5px]"
+              class="md:w-[40px] w-[30px] mt-[5px]"
             />
           </div>
           <div class="absolute left-1/2 -translate-x-1/2 mt-[10x]">
@@ -76,23 +76,23 @@
 
         <!-- HERO TEXT -->
         <div
-          class="text-center z-10 -mt-[100px] h-full flex flex-col justify-center"
+          class="text-center z-10 -mt-[100px] h-full flex flex-col md:justify-center justify-start md:pt-0 pt-36"
         >
           <div
-            class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] lg:leading-[85px] md:leading-[60px] flex flex-col"
+            class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] text-[35px] lg:leading-[85px] md:leading-[54px] leading-[30px] flex flex-col"
           >
             <h1 class="">SOLUTION TO</h1>
             <h1 class="">YOUR POLLUTION</h1>
             <h1 class="">AND TRAFFIC</h1>
           </div>
-          <p class="text-white text-[20px] mt-[30px]">
+          <p class="text-white md:text-[20px] text-[16px] md:mt-[30px] mt-4">
             Zero emission, Full ambition.
           </p>
         </div>
 
         <!-- HERO IMAGE -->
         <div
-          class="absolute -bottom-14 left-auto right-auto lg:w-full md:w-[110vw] flex justify-center"
+          class="absolute -bottom-14 md:left-auto md:right-auto right-0 lg:w-full md:w-[110vw] w-[170vw] flex justify-center"
         >
           <img
             src="public/assets/medias/sepedah.png"
@@ -109,7 +109,7 @@
         class="relative w-full h-[45px] section-light flex items-center justify-center rounded-t-[50px] z-[4002] -mb-3 pt-40"
       >
         <h2
-          class="lg:text-[50px] md:text-[40px] font-semibold text-[var(--primary-color)] tracking-tight"
+          class="lg:text-[50px] md:text-[40px] text-[30px] text-center font-semibold text-[var(--primary-color)] tracking-tight leading-none w-3/5"
         >
           <span class="font-fontspringheavy font-bold tracking-tighter"
             >TAPAS</span
@@ -676,7 +676,7 @@
       <section
         id="question-section"
         data-scroll-section
-        class="bg-[#D8E9FF] w-full h-[90vh] flex flex-col items-center justify-center rounded-[50px] lg:px-24 px-6 lg:z-[4001] md:gap-x-1 -mt-[100px] pt-12 md:hidden"
+        class="bg-[#D8E9FF] w-full h-[90vh] flex-col items-center justify-center rounded-[50px] lg:px-24 px-6 lg:z-[4001] md:gap-x-1 -mt-[100px] pt-12 hidden lg:flex"
       >
         <div class="w-full flex flex-row justify-between items-start">
           <!-- LEFT COLUMN -->
@@ -783,16 +783,15 @@
       <!-- QUESTION MOBILE SECTION -->
       <section
         data-scroll-section
-        class="bg-[#D8E9FF] w-full h-[70vh] flex flex-col items-center justify-center rounded-[50px] px-6 z-[5001] -mt-14"
+        class="lg:hidden bg-[#D8E9FF] w-full h-[70vh] flex flex-col items-center justify-center rounded-[50px] px-6 z-[5001] -mt-14"
       >
         <h1 class="text-[40px] font-fontspringmedium text-[#6D94C5] mb-2">
           QUESTIONS?
         </h1>
         <p class="text-[15px] text-[#6A8ACB] mb-10">We got you covered.</p>
         <div class="w-full grid grid-cols-2 gap-5">
-        
           <div
-            class="questionButton bg-white rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
           >
             <div class="w-[90%]">
               <p class="text-[12px] text-[#6D94C5]">1th Question</p>
@@ -813,7 +812,7 @@
             </svg>
           </div>
           <div
-            class="questionButton bg-white rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
           >
             <div class="w-[90%]">
               <p class="text-[12px] text-[#6D94C5]">2nd Question</p>
@@ -833,7 +832,7 @@
             </svg>
           </div>
           <div
-            class="questionButton bg-white rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
           >
             <div class="w-[90%]">
               <p class="text-[12px] text-[#6D94C5]">3rd Question</p>
@@ -853,7 +852,7 @@
             </svg>
           </div>
           <div
-            class="questionButton bg-white rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
           >
             <div class="w-[90%]">
               <p class="text-[12px] text-[#6D94C5]">4th Question</p>
@@ -873,7 +872,7 @@
             </svg>
           </div>
           <div
-            class="questionButton bg-white rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
           >
             <div class="w-[90%]">
               <p class="text-[12px] text-[#6D94C5]">5th Question</p>
@@ -893,7 +892,7 @@
             </svg>
           </div>
           <div
-            class="questionButton bg-white rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
           >
             <div class="w-[90%]">
               <p class="text-[12px] text-[#6D94C5]">6th Question</p>
@@ -920,17 +919,17 @@
       <footer
         id="footer-section"
         data-scroll-section
-        class="bg-white w-full h-min z-[5000] flex lg:flex-row md:flex-col justify-between items-center px-8 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
+        class="bg-white w-full h-min z-[5000] flex lg:flex-row flex-col justify-between items-center px-8 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
       >
         <!-- LEFT SIDE: NAV LINKS -->
-        <div class="flex flex-row gap-[20px] lg:w-1/2 md:w-full">
+        <div class="flex flex-row gap-[20px] lg:w-1/2 w-full mb-2">
           <!-- EXPLORE -->
           <div class="w-full">
             <p class="text-[14px] text-[#9BB3E1]">Explore</p>
             <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">HOME</h2>
                 <span>
@@ -952,7 +951,7 @@
               </a>
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">ROUTES</h2>
                 <span>
@@ -974,7 +973,7 @@
               </a>
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">ABOUT</h2>
                 <span>
@@ -996,7 +995,7 @@
               </a>
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">CONTACT</h2>
                 <span>
@@ -1025,7 +1024,7 @@
             <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">INSTAGRAM</h2>
                 <span>
@@ -1047,7 +1046,7 @@
               </a>
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">LINKEDIN</h2>
                 <span>
@@ -1069,7 +1068,7 @@
               </a>
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">TWITTER</h2>
                 <span>
@@ -1091,7 +1090,7 @@
               </a>
               <a
                 href="#"
-                class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+                class="group flex justify-between items-center py-3 lg:text-[30px] text-[20px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">YOUTUBE</h2>
                 <span>
@@ -1115,8 +1114,8 @@
           </div>
         </div>
 
-        <!-- RIGHT SIDE: BRAND INFO -->
-        <div class="flex flex-col items-end text-right space-y-4">
+        <!-- RIGHT SIDE: BRAND INFO DESKTOP-->
+        <div class="hidden lg:flex flex-col items-end text-right space-y-4">
           <div class="flex flex-row items-center space-x-2">
             <img
               src="/public/assets/medias/logo-tapas-blue.png"
@@ -1153,24 +1152,56 @@
             />
           </div>
         </div>
+        <!-- RIGHT SIDE: BRAND INFO MOBILE-->
+        <div
+          class="lg:hidden flex flex-row items-end justify-between text-right space-y-4 w-full h-28"
+        >
+          <div class="flex flex-col justify-between items-start h-full">
+            <img
+              src="/public/assets/medias/APPSTORE.png"
+              alt="App Store"
+              class="w-[120px] h-auto"
+            />
+            <p
+              class="font-fontspringmedium text-[#6D94C5] text-[20px] leading-tight"
+            >
+              ZERO EMISSION,<br />FULL AMBITION.
+            </p>
+          </div>
+          <img
+            src="/public/assets/medias/logo-tapas-blue.png"
+            alt="TAPAS Logo"
+            class="w-[50px] h-[40px]"
+          />
+          <div class="flex flex-col justify-between items-end h-full">
+            <img
+              src="/public/assets/medias/GOOGLEPLAY.png"
+              alt="Google Play"
+              class="w-[120px] h-auto"
+            />
+            <div class="text-[15px] text-[#6D94C5] leading-tight">
+              <p>+62 0813 1456 8945</p>
+              <p>Jakarta Selatan, Indonesia</p>
+              <p>
+                Copyright ©
+                <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span>
+                2025
+              </p>
+            </div>
+          </div>
+        </div>
       </footer>
 
       <div
         data-scroll-section
-        class="w-full h-min flex justify-center items-center z-[4001] bg-white -mt-[200px] -mb-10"
+        class="w-full lg:h-[45vh] h-[30vh] z-[5001] bg-white -mt-4 px-10"
       >
-        <h1
-          class="text-[410px] font-fontspringheavy select-none"
-          style="
-            background: linear-gradient(to bottom, #aac9e4 46%, #6a8299 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-          "
-        >
-          TAPAS
-        </h1>
+        <img
+          src="/public/assets/medias/TAPAS.svg"
+          class="w-[100vw] h-auto object-fill"
+          alt=""
+          draggable="false"
+        />
       </div>
     </div>
 

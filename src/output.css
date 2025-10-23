@@ -953,10 +953,6 @@ video {
   height: min-content;
 }
 
-.h-16 {
-  height: 4rem;
-}
-
 .w-1\/2 {
   width: 50%;
 }
@@ -1262,10 +1258,6 @@ video {
 
 .gap-\[20px\] {
   gap: 20px;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .-space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2062,14 +2054,6 @@ video {
   scrollbar-width: none;
 }
 
-.hover\:absolute:hover {
-  position: absolute;
-}
-
-.hover\:h-48:hover {
-  height: 12rem;
-}
-
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
@@ -2082,14 +2066,6 @@ video {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.focus\:absolute:focus {
-  position: absolute;
-}
-
-.focus\:h-48:focus {
-  height: 12rem;
 }
 
 .active\:cursor-grabbing:active {

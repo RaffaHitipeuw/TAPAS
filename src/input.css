@@ -91,7 +91,7 @@
 
 /* *MARQUEE* */
 .tag {
-  @apply w-[260px] h-[80px] flex items-center justify-center rounded-[32.28px] text-[25px] font-figtree font-semibold flex-shrink-0;
+  @apply md:w-[260px] md:h-[80px] w-[170px] h-[50px] flex items-center justify-center rounded-[32.28px] md:text-[25px] text-[18px] font-figtree font-semibold flex-shrink-0;
   background-color: var(--marquee-bg);
   color: var(--marquee-text);
 }

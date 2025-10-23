@@ -1,580 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tapas Menu</title>
-  <link rel="icon" type="image/x-icon" href="./public/assets/medias/favicon.ico">
-  <link rel="stylesheet" href="./src/output.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="./src/js/script.js" defer></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Tapas Menu</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./public/assets/medias/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/output.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script
+      src="./src/js/script.js"
+      defer
+    ></script>
+  </head>
 
-<body class="bg-white items-center justify-center overflow-hidden pt-8 font-figtree">
-
-  <!-- MENU BUTTON -->
-  <button id="menuBtn" class="fixed top-[68px] right-[120px] flex flex-col items-center justify-center w-12 h-12 md:w-14 md:h-14 cursor-pointer z-[4001]">
-    <span class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"></span>
-    <span class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300"></span>
-  </button>
-
-  <!-- SCROLL CONTAINER -->
-  <div data-scroll-container class="relative w-full flex flex-col items-center">
-
-    <!-- HERO -->
-    <header class="relative w-[95vw] h-[90vh] bg-[var(--hero-bg)] rounded-[54px] shadow-2xl flex flex-col items-center justify-center mb-[-80px] z-10 bg-cover bg-center pt-[5vw]"
-            style="background-image: url('public/assets/medias/bghero.png')">
-
-      <!-- NAVIGATION -->
-      <nav class="fixed top-[50px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]">
-        <div id="logo">
-          <img src="/public/assets/medias/logo-tapas.png" alt="" class="w-[40px] mt-[5px]">
-        </div>
-        <div class="absolute left-1/2 -translate-x-1/2 mt-[10x]">
-          <span class="text-xl font-fontspringheavy font-bold tracking-tighter text-white">Tapas</span>
-        </div>
-      </nav>
-
-      <!-- HERO TEXT -->
-      <div class="text-center z-10 -mt-[100px] h-full flex flex-col justify-center">
-        <div class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] leading-[85px] flex flex-col">
-          <h1 class="">SOLUTION TO</h1>
-          <h1 class="">YOUR POLLUTION</h1>
-          <h1 class="">AND TRAFFIC</h1>
-        </div>
-        <p class="text-white text-[20px] mt-[30px]">Zero emission, Full ambition.</p>
-      </div>
-
-      <!-- HERO IMAGE -->
-      <div class="absolute -bottom-14 left-0 w-full flex justify-center">
-        <img src="public/assets/medias/sepedah.png" alt="Bicycle" class="h-[90vh] object-contain" draggable="false" />
-      </div>
-    </header>
-
-    <!-- PARALLAX SECTION -->
-    <section data-scroll-section class="relative w-full h-[45px] section-light flex items-center justify-center rounded-t-[50px] z-[4002] -mb-3 pt-40">
-      <h2 class="text-[50px] font-semibold text-[var(--primary-color)] tracking-tight ">
-        <span class="font-fontspringheavy font-bold tracking-tighter">TAPAS</span> aims to reduce Indonesia’s
-      </h2>
-
-      <!-- MARQUEE -->
-      <div class="fixed left-0 top-64 w-screen -translate-y-1/2 overflow-hidden z-50">
-        <div id="marquee" class="overflow-hidden">
-          <div class="marquee-track inline-flex">
-            <h1 class="tag">Noise Pollution</h1>
-            <h1 class="tag">Polluted Cities</h1>
-            <h1 class="tag">Fuel Usage</h1>
-            <h1 class="tag">Traffic Jam</h1>
-            <h1 class="tag">Emissions</h1>
-            <h1 class="tag">Urban Heat</h1>
-            <h1 class="tag">Maintenance Costs</h1>
-            <h1 class="tag">Noise Pollution</h1>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MASALAH CARDS -->
-    <section data-scroll-section class="w-full min-h-[800px] section-light flex flex-row items-end justify-center px-24 gap-x-10 z-[4001] pb-28 -mb-16">
-
-      <!-- CARD 1 -->
-
-      <div class="w-full h-[500px] rounded-[70px] text-white flex flex-col justify-between p-12 overflow-hidden"
-           style="background: linear-gradient(225deg, hsla(208,52%,78%,1) 46%, hsla(209,19%,51%,1) 100%);">
-        <div>
-          <h2 class="text-[20px]">The Problem</h2>
-        <h1 class="text-[38px] font-fontspringmedium">WHAT WE'RE</h1>
-        <h1 class="text-[38px] font-fontspringmedium -mt-3">TRYING TO FIX</h1>
-        </div>
-        <p class="text-[22px] text-white leading-tight">
-          Indonesia was ranked as the most polluted country in Southeast Asia
-          and 15th worst globally, scores that should not be taken lightly.
-          <br>
-            <button class="mt-3 flex flex-row gap-0">
-              <div class="py-4 px-4 border-white border-[1px] text-[18px] rounded-full font-extralight">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-              </svg>
-            </div>
-              <div class="py-4 px-8 border-white border-[1px] text-[18px] rounded-full font-extralight">
-              Learn More
-            </div>
-          </button>
-        </p>
-      </div>
-
-    
-    <!-- CARD 2 -->
-
-      <div class="w-full h-[500px] rounded-[70px] text-white bg-cover bg-center bg-no-repeat flex flex-col justify-between p-12 overflow-hidden"
-           style="background-image: url('./public/assets/medias/blurred.png');">
-        <div>
-          <h2 class="text-[20px]">The Solution</h2>
-        <h1 class="text-[38px] font-fontspringmedium leading-tight">WHAT WE</h1>
-        <h1 class="text-[38px] font-fontspringmedium -mt-3">WANNA DO</h1>
-        </div>
-        <p class="text-[22px] text-white leading-tight">
-          We wanna provide easy access to Electric vehicles to reduce greenhouse gas
-          emissions from transportation, lower fuel and maintenance costs, improve public
-          health by cutting air pollution.
-          <br>
-            <button class="mt-3 flex flex-row gap-0">
-              <div class="py-4 px-4 border-white border-[1px] text-[18px] rounded-full font-extralight">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-              </svg>
-            </div>
-              <div class="py-4 px-8 border-white border-[1px] text-[18px] rounded-full font-extralight">
-              Learn More
-            </div>
-          </button>
-        </p>
-        
-      </div>
-    </section>
-
-    <!-- MOVE SECTION -->
-    <section data-scroll-section class="section-dark z-[4001] w-full h-min rounded-t-[50px] flex flex-col items-center justify-center overflow-hidden px-24 pt-10 pb-56 -mb-8">
-
-      <!-- IMAGE 1 -->
-      <div class="relative w-full flex justify-start overflow-hidden">
-        <h2 class="p-16 absolute text-[40px] font-semibold text-[var(--primary-color)] z-0 leading-tight">
-          <span class="font-fontspringheavy font-bold block">TAPAS</span>
-          <span class="block text-[30px] ">offers rentable electric vehicles</span>
-          <span class="block text-[30px]">across the cities in Indonesia</span>
-        </h2>
-        <div class="overflow-hidden w-full relative rounded-r-[75px]">
-          <div class="image-slide-right transition-transform duration-[2000ms] ease-in-out translate-x-0">
-            <img src="public/assets/medias/sepeda1.png" alt="" class="w-full h-[300px] object-contain">
-          </div>
-        </div>
-      </div>
-
-      <!-- IMAGE 2 -->
-      <div class="relative w-full flex justify-end overflow-hidden">
-        <h2 class="p-16 absolute text-end text-[40px] font-semibold text-[var(--primary-color)] z-0 leading-tight">
-          <span class="block text-[30px] font-semibold">Ride across the city</span>
-          <span class="block text-[30px] font-semibold">with ease and mobility</span>
-          <span class="block text-[30px] font-semibold">and with zero emission.</span>
-        </h2>
-        <div class="overflow-hidden w-full relative rounded-l-[75px]">
-          <div class="image-slide-left transition-transform duration-[2000ms] ease-in-out translate-x-0">
-            <img src="public/assets/medias/sepeda2.png" alt="" class="w-full h-[300px] object-contain">
-          </div>
-        </div>
-      </div>
-
-      <!-- IMAGE 3 -->
-      <div class="relative w-full flex justify-start overflow-hidden">
-        <h2 class="p-16 absolute text-[40px] font-semibold text-[var(--primary-color)] z-0 leading-tight">
-           <span class="block text-[30px] font-semibold">Now available across</span>
-          <span class="block text-[30px] font-semibold">5 different cities in</span>
-          <span class="block text-[30px] font-semibold">Indonesia.</span>
-        </h2>
-        <div class="overflow-hidden w-full relative rounded-r-[75px]">
-          <div class="image-slide-right transition-transform duration-[2000ms] ease-in-out translate-x-0">
-            <img src="public/assets/medias/sepeda3.png" alt="" class="w-full h-[300px] object-contain">
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- FADE SECTION -->
-    <section data-scroll-section class="section-dark z-[4001] h-[500px] w-full flex flex-col justify-between items-center">
-      <h2 class="text-[50px] font-semibold text-[var(--primary-color)] tracking-tighter z-[400]">
-        <span class="font-fontspringheavy font-bold">TAPAS</span> offers a lot more than just solution.
-      </h2>
-        <img class="mt-[120px] w-[70vw]" src="public/assets/medias/leaves.png" alt="" draggable="false">
-    </section>
-
-    <!-- SEKITAR KITA BUTTONS -->
-    <section id="tapas-section" data-scroll-section class="bg-white z-[4001] h-[450px] w-full rounded-t-[50px] flex flex-col items-center justify-center py-32 -mt-[100px]">
-      <div class="flex flex-col items-center justify-center -mt-[450px] -space-y-3">
-        <div class="fade-up">
-          <button class="w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start btn-easily rotate-[-4deg]">
-            <img src="/public/assets/medias/easily.png" alt="Icon" class="w-10 h-10 mr-5"/>
-            <span class="text-3xl font-bold text-[var(--primary-color)]">Easily accessible</span>
-          </button>
-        </div>
-
-        <div class="fade-up">
-          <button class="btn-eco rotate-[2deg] w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start">
-            <img src="/public/assets/medias/eco.png" alt="Icon" class="w-10 h-10 mr-5"/>
-            <span class="text-3xl font-bold text-[var(--primary-color)]">Eco-Friendly</span>
-          </button>
-        </div>
-
-        <div class="fade-up">
-          <button class="btn-mobility rotate-[-3deg] w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start">
-            <img src="/public/assets/medias/mobility.png" alt="Icon" class="w-10 h-10 mr-5"/>
-            <span class="text-3xl font-bold text-[var(--primary-color)]">Mobility & Safety</span>
-          </button>
-        </div>
-
-        <div class="fade-up">
-          <button class="btn-made rotate-[3deg] w-96 rounded-full flex flex-row py-6 px-8 items-center justify-start">
-            <img src="/public/assets/medias/made.png" alt="Icon" class="w-10 h-10 mr-5"/>
-            <span class="text-3xl font-bold text-[var(--primary-color)]">Made in Indonesia</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <h2 class="text-[40px] font-semibold text-[var(--primary-color)] tracking-tighter mt-[150px]">
-          Find <span class="font-fontspringheavy font-bold">TAPAS</span> near you!
-        </h2>
-      </div>
-    </section>
-    
-
-    <!-- HORIZONTAL SCROLL SECTION -->
-    <section 
-    id="horizontal-section" 
-    data-scroll-section 
-    class="horizontal-section relative z-[5000] bg-white h-[780px] overflow-visible pt-[50px] scrollbar-hide -mt-[120px]"
-    >
-    <!-- SATU track isi semua gambar -->
-  <div class="horizontal-track flex items-center overflow-hidden scrollbar-hide">
-    
-    <div class="relative flex items-center justify-center">
-      <img src="./public/assets/medias/JAKARTA.png" alt="Jakarta" class="slide w-[180vh] h-[42vw] ml-[100px]">
-      <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] text-white text-[80px] font-fontspringmedium">JAKARTA</h1>
-    </div>
-
-    <div class="relative flex items-center justify-center">
-      <img src="./public/assets/medias/BANDUNG.png" alt="Bandung" class="slide w-[180vh] h-[42vw]">
-      <h1 class="absolute text-white text-[80px] font-fontspringmedium">BANDUNG</h1>
-    </div>
-
-    <div class="relative flex items-center justify-center">
-      <img src="./public/assets/medias/TANGSEL.png" alt="Tangsel" class="slide w-[180vh] h-[42vw]">
-      <h1 class="absolute text-white text-[80px] font-fontspringmedium">TANGERANG SELATAN</h1>
-    </div>
-
-    <div class="relative flex items-center justify-center">
-      <img src="./public/assets/medias/PALEMBANG.png" alt="Palembang" class="slide w-[180vh] h-[42vw]">
-      <h1 class="absolute text-white text-[80px] font-fontspringmedium">PALEMBANG</h1>
-    </div>
-
-    <div class="relative flex items-center justify-center">
-      <img src="./public/assets/medias/BALI.png" alt="Bali" class="slide w-[180vh] h-[42vw] mr-[100px]">
-      <h1 class="absolute text-white text-[80px] font-fontspringmedium">BALI</h1>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- AFTER HORIZONTAL SECTION -->
-<section 
-  id="after-horizontal" 
-  data-scroll-section 
-  class="after-horizontal-section bg-white text-black h-min w-screen flex items-center 
-  justify-between px-24 pt-12 rounded-t-[50px] overflow-hidden relative z-[5000] -mt-6"
->
-  <!-- Kiri: Text -->
-  <div class="flex flex-col -mt-[190px] w-[40%]">
-    <h1 class="text-[44px] text-[#7A9CC6] font-fontspringmedium uppercase mb-3">How to ride?</h1>
-    <h2 class="text-[20px] text-[#7A9CC6]">How to get your hands on our E-Bikes</h2>
-    <img src="/public/assets/medias/logo-tapas-blue.png" alt="bike logo" class="w-[57.66px] mt-8 opacity-80">
-  </div>
-
-  <!-- Kanan: Cards scroll -->
-  <div id="ride-scroll" class="w-[60%] h-[350px] flex gap-0 overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing select-none">
-    
-    <!-- Card 1 -->
-<div class="ride-card flex-shrink-0 bg-[#F5EFE6] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
-  <div>
-    <div class="flex items-center gap-3">
-      <img src="/public/assets/medias/downloadlogo.png" alt="icon" class="w-6 h-6 object-contain opacity-70 -mt-[13px]">
-      <p class="text-[18px] text-[#7A9CC6] font-medium">
-        Download the <span class="font-fontspringheavy font-bold">TAPAS</span> App on your App Store.
-      </p>
-    </div>
-  </div>
-  <div class="flex gap-3">
-    <img src="/public/assets/medias/APPSTORE.png" alt="App Store" class="w-[120px] ml-[38px]">
-    <img src="/public/assets/medias/GOOGLEPLAY.png" alt="Google Play" class="w-[120px]">
-  </div>
-</div>
-
-<!-- Card 2 -->
-<div class="ride-card flex-shrink-0 bg-[#EFE7DA] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
-  <div>
-    <div class="flex items-center gap-3">
-      <img src="/public/assets/medias/logo-tapas-blue.png" alt="icon" class="w-10 h-10 object-contain opacity-70 -mt-[13px]">
-      <p class="text-[18px] text-[#7A9CC6] font-medium">
-        Locate a <span class="font-fontspringheavy">TAPAS</span> Station near you
-      </p>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Card 3 -->
-    <div class="ride-card flex-shrink-0 bg-[#ECE1D5] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
-      <div>
-        <div class="flex gap-3">
-          <img src="/public/assets/medias/unlock.png" alt="icon" class="w-6 h-6 object-contain opacity-70 mt-[5px]">
-          <p class="text-[18px] text-[#7A9CC6] font-medium">
-            Unlock your bike by scanning the QR and following the on-screen instructions
-          </p>
-        </div>
-      </div>
-    </div>
-    
-        <!-- Card 4 -->
-    <div class="ride-card flex-shrink-0 bg-[#E6D8C8] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
-      <div>
-        <div class="flex gap-3">
-          <img src="/public/assets/medias/safely.png" alt="icon" class="w-6 h-6 object-contain opacity-70 mt-[5px]">
-          <p class="text-[18px] text-[#7A9CC6] font-medium">
-            Ride safely and enjoy your trip with <span class="font-fontspringheavy">TAPAS</span>
-          </p>
-        </div>
-      </div>
-    </div>
-        <!-- Card 5 -->
-    <div class="ride-card flex-shrink-0 bg-[#E3D4C3] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out">
-      <div>
-        <div class="flex gap-3">
-          <img src="/public/assets/medias/park.png" alt="icon" class="w-6 h-6 object-contain opacity-70 mt-[5px]">
-          <p class="text-[18px] text-[#7A9CC6] font-medium">
-            End your trip by parking your bike in designated areas and end the ride via the application.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- QUESTION SECTION -->
-<section 
-  id="question-section" 
-  data-scroll-section 
-  class="bg-[#D8E9FF] w-full h-[90vh] flex flex-col items-center justify-center rounded-[50px] px-24 z-[4001] -mt-[100px] pt-12">
-  <div class="w-full flex flex-row justify-between items-start">
-    <!-- LEFT COLUMN -->
-    <div class="grid grid-cols-2 gap-x-16 gap-y-20 w-1/2 h-min">
-
-      <!-- 1 -->
-      <div class="flex items-start w-full">
-        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
-        <div class="z-[4002]">
-          <p class="text-[14px] text-[#6D94C5] ">1th Question</p>
-          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
-            What is <span class="font-fontspringheavy">TAPAS</span> and <br> how does it work?
-          </h2>
-        </div>
-      </div>
-      <!-- 2 -->
-      <div class="flex items-start w-full">
-        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
-        <div class="z-[4002]">
-          <p class="text-[14px] text-[#6D94C5] ">2nd Question</p>
-          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
-            How do e-bikes help reduce air pollution?
-          </h2>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="flex items-start w-full">
-        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
-        <div class="z-[4002]">
-          <p class="text-[14px] text-[#6D94C5] ">3rd Question</p>
-          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
-            Are e-bikes effective in reducing traffic congestion?
-          </h2>
-        </div>
-      </div>
-      <!-- 4 -->
-      <div class="flex items-start w-full">
-        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
-        <div class="z-[4002]">
-          <p class="text-[14px] text-[#6D94C5] ">4th Question</p>
-          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
-            Are e-bikes safe to use on city roads?
-          </h2>
-        </div>
-      </div>
-      <!-- 5 -->
-      <div class="flex items-start w-full">
-        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
-        <div class="z-[4002]">
-          <p class="text-[14px] text-[#6D94C5] ">1th Question</p>
-          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
-            Is this service available across Indonesia?
-          </h2>
-        </div>
-      </div>
-      <!-- 6 -->
-      <div class="flex items-start w-full">
-        <div class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"></div>
-        <div class="z-[4002]">
-          <p class="text-[14px] text-[#6D94C5] ">1th Question</p>
-          <h2 class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none ">
-            Why should I choose an e-bike over other types of transportation?
-          </h2>
-        </div>
-      </div>
-
-      
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="flex flex-col items-end justify-start w-1/3">
-      <h1 class="text-[44px] font-fontspringmedium text-[#6D94C5] mb-2">QUESTIONS?</h1>
-      <p class="text-[20px] text-[#6A8ACB]">We got you covered.</p>
-    </div>
-
-  </div>
-</section>
-
-    <!-- FOOTER SECTION -->
-<footer 
-  id="footer-section"
-  data-scroll-section
-  class="bg-white w-full h-min z-[5000] flex flex-row justify-between items-center px-8 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
->
-
-      <!-- LEFT SIDE: NAV LINKS -->
-      <div class="flex flex-row gap-[20px] w-1/2">
-      
-        <!-- EXPLORE -->
-        <div class="w-full">
-          <p class="text-[14px] text-[#9BB3E1]">Explore</p>
-          <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">HOME</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">ROUTES</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">ABOUT</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">CONTACT</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-      
-        <!-- CONNECT -->
-        <div class="w-full">
-          <p class="text-[14px] text-[#9BB3E1]">Connect</p>
-          <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">INSTAGRAM</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">LINKEDIN</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">TWITTER</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-            <a href="#" class="group flex justify-between items-center py-3 text-[30px] font-fontspringmedium hover:text-[#2E3A59] transition-all">
-              <h2 class="footer-links cursor-none">YOUTUBE</h2>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6A8ACB" stroke-width="2" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    
-      <!-- RIGHT SIDE: BRAND INFO -->
-      <div class="flex flex-col items-end text-right space-y-4">
-        <div class="flex flex-row items-center space-x-2">
-          <img src="/public/assets/medias/logo-tapas-blue.png" alt="TAPAS Logo" class="w-[50px] h-[40px]">
-          <p class="font-fontspringmedium text-[#6D94C5] text-[18px] leading-tight">
-            ZERO EMISSION,<br>FULL AMBITION.
-          </p>
-        </div>
-      
-        <div class="text-[15px] text-[#6D94C5] leading-relaxed">
-          <p>+62 0813 1456 8945</p>
-          <p>Jakarta Selatan, Indonesia</p>
-          <p>Copyright © <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span> 2025</p>
-        </div>
-      
-        <div class="flex flex-row items-center space-x-3 mt-2">
-          <img src="/public/assets/medias/APPSTORE.png" alt="App Store" class="w-[120px] h-auto">
-          <img src="/public/assets/medias/GOOGLEPLAY.png" alt="Google Play" class="w-[120px] h-auto">
-        </div>
-      </div>
-
-      
-    </footer>
-
-<div
-data-scroll-section 
-class="w-full h-min flex justify-center items-center z-[4001] bg-white -mt-[200px] -mb-10">
-  <h1
-    class="text-[410px] font-fontspringheavy select-none"
-    style="
-      background: linear-gradient(to bottom, #AAC9E4 46%, #6A8299 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    "
+  <body
+    class="bg-white items-center justify-center overflow-hidden pt-6 font-figtree"
   >
-    TAPAS
-  </h1>
-</div>
+    <!-- MENU BUTTON -->
+    <button
+      id="menuBtn"
+      class="fixed top-[58px] lg:right-[120px] md:right-[60px] right-[50px] flex flex-col items-center justify-center w-10 h-10 md:w-14 md:h-14 cursor-pointer z-[4001]"
+    >
+      <span
+        class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"
+      ></span>
+      <span
+        class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300"
+      ></span>
+    </button>
 
+    <!-- SCROLL CONTAINER -->
+    <div
+      data-scroll-container
+      class="relative w-full flex flex-col items-center"
+    >
+      <!-- HERO -->
+      <header
+        class="relative lg:w-[95vw] w-[92vw] h-[90vh] bg-[var(--hero-bg)] rounded-[54px] overflow-hidden shadow-2xl flex flex-col items-center justify-center mb-[-80px] z-0 bg-cover bg-center pt-[5vw]"
+        style="background-image: url('public/assets/medias/bghero.png')"
+      >
+        <!-- NAVIGATION -->
+        <nav
+          class="fixed top-[40px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]"
+        >
+          <div id="logo">
+            <img
+              src="/public/assets/medias/logo-tapas.png"
+              alt=""
+              class="md:w-[40px] w-[30px] mt-[5px]"
+            />
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 mt-[10x]">
+            <span
+              class="text-xl font-fontspringheavy font-bold tracking-tighter text-white"
+              >Tapas</span
+            >
+          </div>
+        </nav>
 
-    
-  </div>
+        <!-- HERO TEXT -->
+        <div
+          class="text-center z-10 -mt-[100px] h-full flex flex-col md:justify-center justify-start md:pt-0 pt-36"
+        >
+          <div
+            class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] text-[35px] lg:leading-[85px] md:leading-[54px] leading-[30px] flex flex-col"
+          >
+            <h1 class="">SOLUTION TO</h1>
+            <h1 class="">YOUR POLLUTION</h1>
+            <h1 class="">AND TRAFFIC</h1>
+          </div>
+          <p class="text-white md:text-[20px] text-[16px] md:mt-[30px] mt-4">
+            Zero emission, Full ambition.
+          </p>
+        </div>
 
-  <!-- OVERLAY -->
-  <div id="overlay" class="fixed inset-0 backdrop-blur-xl z-[4007] flex items-end justify-center transition-[clip-path] duration-1000 ease-out opacity-0 pointer-events-none clip-circle">
-    <ul class="menu-list flex flex-col justify-center h-full pl-[3vw] pr-[6vw] space-y-8"></ul>
-  </div>
+        <!-- HERO IMAGE -->
+        <div
+          class="absolute -bottom-14 md:left-auto md:right-auto right-0 lg:w-full md:w-[110vw] w-[170vw] flex justify-center"
+        >
+          <img
+            src="public/assets/medias/sepedah.png"
+            alt="Bicycle"
+            class="lg:h-[90vh] md:w-full object-contain"
+            draggable="false"
+          />
+        </div>
+      </header>
 
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-</body>
+      <!-- PARALLAX SECTION -->
+      <section
+        data-scroll-section
+        class="relative w-full h-[45px] section-light flex items-center justify-center rounded-t-[50px] z-[4002] -mb-3 pt-40"
+      >
+        <h2
+          class="lg:text-[50px] md:text-[40px] text-[30px] text-center font-semibold text-[var(--primary-color)] tracking-tight leading-none w-3/5"
+        >
+          <span class="font-fontspringheavy font-bold tracking-tighter"
+            >TAPAS</span
+          >
+          aims to reduce Indonesia’s
+        </h2>
+
+        <!-- MARQUEE -->
+        <div
+          class="fixed left-0 top-64 w-screen -translate-y-1/2 overflow-hidden z-50"
+        >
+          <div
+            id="marquee"
+            class="overflow-hidden"
+          >
+            <div class="marquee-track inline-flex">
+              <h1 class="tag">Noise Pollution</h1>
+              <h1 class="tag">Polluted Cities</h1>
+              <h1 class="tag">Fuel Usage</h1>
+              <h1 class="tag">Traffic Jam</h1>
+              <h1 class="tag">Emissions</h1>
+              <h1 class="tag">Urban Heat</h1>
+              <h1 class="tag">Maintenance Costs</h1>
+              <h1 class="tag">Noise Pollution</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MASALAH CARDS -->
+      <section
+        data-scroll-section
+        class="w-full h-min section-light flex md:flex-row flex-col items-end justify-center lg:px-24 md:px-6 px-0 lg:gap-x-10 md:gap-x-1 z-[4001] pb-28 -mb-16 pt-40"
+      >
+        <!-- CARD 1 -->
+
+        <div
+          class="w-full lg:h-[500px] md:h-[400px] h-[300px] lg:rounded-[70px] md:rounded-[50px] rounded-3xl text-white flex flex-col justify-between lg:p-12 md:p-8 p-6 overflow-hidden"
+          style="
+            background: linear-gradient(
+              225deg,
+              hsla(208, 52%, 78%, 1) 46%,
+              hsla(209, 19%, 51%, 1) 100%
+            );
+          "
+        >
+          <div>
+            <h2 class="lg:text-[20px] text-[12px]">The Problem</h2>
+            <h1
+              class="lg:text-[38px] md:=text-[28px] text-[24px] font-fontspringmedium"
+            >
+              WHAT WE'RE
+            </h1>
+            <h1
+              class="lg:text-[38px] md:text-[28px] text-[24px] font-fontspringmedium -mt-3"
+            >
+              TRYING TO FIX
+            </h1>
+          </div>
+          <p
+            class="lg:text-[22px] md:text-[18px] text-[15px] text-white leading-tight"
+          >
+            Indonesia was ranked as the most polluted country in Southeast Asia
+            and 15th worst globally, scores that should not be taken lightly.
+            <br />
+            <button class="mt-3 flex flex-row gap-0 group">
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  stroke-width="1"
+                  class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+              <div
+                class="lg:py-4 py-2 lg:px-8 px-4 border-white border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
+              >
+                Learn More
+              </div>
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  stroke-width="1"
+                  class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+            </button>
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div
+          class="w-full lg:h-[500px] md:h-[400px] h-[300px] lg:rounded-[70px] md:rounded-[50px] rounded-3xl text-white bg-cover bg-center bg-no-repeat flex flex-col justify-between lg:p-12 md:p-8 p-6 overflow-hidden"
+          style="background-image: url('./public/assets/medias/blurred.png')"
+        >
+          <div>
+            <h2 class="lg:text-[20px] text-[12px]">The Solution</h2>
+            <h1
+              class="lg:text-[38px] md:text-[28px] text-[24px] font-fontspringmedium leading-tight"
+            >
+              WHAT WE
+            </h1>
+            <h1
+              class="lg:text-[38px] md:text-[28px] text-[24px] font-fontspringmedium -mt-3"
+            >
+              WANNA DO
+            </h1>
+          </div>
+          <p
+            class="lg:text-[22px] md:text-[18px] text-[15px] text-white leading-tight"
+          >
+            We wanna provide easy access to Electric vehicles to reduce
+            greenhouse gas emissions from transportation, lower fuel and
+            maintenance costs, improve public health by cutting air pollution.
+            <br />
+            <button class="mt-3 flex flex-row gap-0 group">
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  stroke-width="1"
+                  class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+              <div
+                class="lg:py-4 py-2 lg:px-8 px-4 border-white border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
+              >
+                Learn More
+              </div>
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  stroke-width="1"
+                  class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+            </button>
+          </p>
+        </div>
+      </section>
+
+      <!-- MOVE SECTION -->
+      <section
+        data-scroll-section
+        class="section-dark z-[4001] w-full h-min rounded-t-[50px] flex flex-col items-center justify-center overflow-hidden lg:px-24 md:px-6 px-4 lg:pt-10 pt-14 pb-24 md:gap-x-1 md:space-y-5 space-y-2 -mb-8"
+      >
+        <!-- IMAGE 1 -->
+        <div
+          class="relative w-full flex justify-start items-center overflow-hidden"
+        >
+          <h2
+            class="absolute w-[40%] lg:text-[30px] md:text-[20px] font-semibold text-[var(--primary-color)] z-0 leading-tight"
+          >
+            <span class="font-fontspringheavy font-bold block">TAPAS</span>
+            <span class="block">offers rentable electric vehicles</span>
+            <span class="block">across the cities in Indonesia</span>
+          </h2>
+          <div class="overflow-hidden w-full relative rounded-[75px]">
+            <div
+              class="image-slide-right transition-transform duration-[2000ms] ease-in-out translate-x-0"
+            >
+              <img
+                src="public/assets/medias/sepeda1.png"
+                alt=""
+                class="w-full lg:h-[250px] md:h-[200px] object-cover rounded-[75px]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGE 2 -->
+        <div
+          class="relative w-full flex justify-end items-center overflow-hidden"
+        >
+          <h2
+            class="absolute w-[40%] text-end lg:text-[30px] md:text-[20px] font-semibold text-[var(--primary-color)] z-0 leading-tight"
+          >
+            <span class="block">Ride across the city</span>
+            <span class="block">with ease and mobility</span>
+            <span class="block">and with zero emission.</span>
+          </h2>
+          <div class="overflow-hidden w-full relative rounded-[75px]">
+            <div
+              class="image-slide-left transition-transform duration-[2000ms] ease-in-out translate-x-0"
+            >
+              <img
+                src="public/assets/medias/sepeda2.png"
+                alt=""
+                class="w-full lg:h-[250px] md:h-[200px] object-cover rounded-[75px]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGE 3 -->
+        <div
+          class="relative w-full flex justify-start items-center overflow-hidden"
+        >
+          <h2
+            class="absolute w-[40%] lg:text-[30px] md:text-[20px] font-semibold text-[var(--primary-color)] z-0 leading-tight"
+          >
+            <span class="block">Now available across</span>
+            <span class="block">5 different cities in</span>
+            <span class="block">Indonesia.</span>
+          </h2>
+          <div class="overflow-hidden w-full relative rounded-[75px]">
+            <div
+              class="image-slide-right transition-transform duration-[2000ms] ease-in-out translate-x-0"
+            >
+              <img
+                src="public/assets/medias/sepeda3.png"
+                alt=""
+                class="w-full lg:h-[250px] md:h-[200px] object-cover rounded-[75px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FADE SECTION -->
+      <section
+        data-scroll-section
+        class="section-dark z-[4001] md:h-[500px] h-[380px] w-full flex flex-col justify-between items-center overflow-hidden pb-9 md:pb-0"
+      >
+        <h2
+          class="lg:text-[50px] md:text-[40px] text-[30px] text-center font-semibold text-[var(--primary-color)] tracking-tight leading-none w-4/5"
+        >
+          <span class="font-fontspringheavy font-bold tracking-tighter"
+            >TAPAS</span
+          >
+          offers a lot more than just solution.
+        </h2>
+        <img
+          class="lg:mt-[120px] md:mt-[80px] lg:w-[70vw] md:w-[80vw] w-[100vw]"
+          src="public/assets/medias/leaves.png"
+          alt=""
+          draggable="false"
+        />
+      </section>
+
+      <!-- SEKITAR KITA BUTTONS -->
+      <section
+        id="tapas-section"
+        data-scroll-section
+        class="bg-white z-[4001] h-[400px] w-full rounded-t-[50px] flex flex-col items-center justify-center py-32 -mt-[100px]"
+      >
+        <div
+          class="flex flex-col items-center justify-center md:-mt-[450px] -mt-[300px] md:-space-y-3 -space-y-2"
+        >
+          <div class="fade-up">
+            <button
+              class="md:w-96 w-80 rounded-full flex flex-row md:py-6 py-4 px-8 items-center justify-start btn-easily rotate-[-4deg]"
+            >
+              <img
+                src="/public/assets/medias/easily.png"
+                alt="Icon"
+                class="w-10 h-10 mr-5"
+              />
+              <span
+                class="md:text-3xl text-[23px] font-bold text-[var(--primary-color)]"
+                >Easily accessible</span
+              >
+            </button>
+          </div>
+
+          <div class="fade-up">
+            <button
+              class="btn-eco rotate-[2deg] md:w-96 w-80 rounded-full flex flex-row md:py-6 py-4 px-8 items-center justify-start"
+            >
+              <img
+                src="/public/assets/medias/eco.png"
+                alt="Icon"
+                class="w-10 h-10 mr-5"
+              />
+              <span
+                class="md:text-3xl text-[23px] font-bold text-[var(--primary-color)]"
+                >Eco-Friendly</span
+              >
+            </button>
+          </div>
+
+          <div class="fade-up">
+            <button
+              class="btn-mobility rotate-[-3deg] md:w-96 w-80 rounded-full flex flex-row md:py-6 py-4 px-8 items-center justify-start"
+            >
+              <img
+                src="/public/assets/medias/mobility.png"
+                alt="Icon"
+                class="w-10 h-10 mr-5"
+              />
+              <span
+                class="md:text-3xl text-[23px] font-bold text-[var(--primary-color)]"
+                >Mobility & Safety</span
+              >
+            </button>
+          </div>
+
+          <div class="fade-up">
+            <button
+              class="btn-made rotate-[3deg] md:w-96 w-80 rounded-full flex flex-row md:py-6 py-4 px-8 items-center justify-start"
+            >
+              <img
+                src="/public/assets/medias/made.png"
+                alt="Icon"
+                class="w-10 h-10 mr-5"
+              />
+              <span
+                class="md:text-3xl text-[23px] font-bold text-[var(--primary-color)]"
+                >Made in Indonesia</span
+              >
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h2
+            class="lg:text-[50px] md:text-[40px] text-[30px] font-semibold text-[var(--primary-color)] tracking-tighter mt-[150px]"
+          >
+            Find <span class="font-fontspringheavy font-bold">TAPAS</span> near
+            you!
+          </h2>
+        </div>
+      </section>
+
+      <!-- HORIZONTAL SCROLL SECTION -->
+      <section
+        id="horizontal-section"
+        data-scroll-section
+        class="horizontal-section relative z-[5000] bg-white h-[780px] overflow-visible pt-[50px] scrollbar-hide -mt-[120px]"
+      >
+        <!-- SATU track isi semua gambar -->
+        <div
+          class="horizontal-track flex items-center overflow-hidden scrollbar-hide"
+        >
+          <div class="relative flex items-center justify-center">
+            <img
+              src="./public/assets/medias/JAKARTA.png"
+              alt="Jakarta"
+              class="slide w-[180vh] h-[42vw] ml-[100px]"
+            />
+            <h1
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] text-white text-[80px] font-fontspringmedium"
+            >
+              JAKARTA
+            </h1>
+          </div>
+
+          <div class="relative flex items-center justify-center">
+            <img
+              src="./public/assets/medias/BANDUNG.png"
+              alt="Bandung"
+              class="slide w-[180vh] h-[42vw]"
+            />
+            <h1 class="absolute text-white text-[80px] font-fontspringmedium">
+              BANDUNG
+            </h1>
+          </div>
+
+          <div class="relative flex items-center justify-center">
+            <img
+              src="./public/assets/medias/TANGSEL.png"
+              alt="Tangsel"
+              class="slide w-[180vh] h-[42vw]"
+            />
+            <h1 class="absolute text-white text-[80px] font-fontspringmedium">
+              TANGERANG SELATAN
+            </h1>
+          </div>
+
+          <div class="relative flex items-center justify-center">
+            <img
+              src="./public/assets/medias/PALEMBANG.png"
+              alt="Palembang"
+              class="slide w-[180vh] h-[42vw]"
+            />
+            <h1 class="absolute text-white text-[80px] font-fontspringmedium">
+              PALEMBANG
+            </h1>
+          </div>
+
+          <div class="relative flex items-center justify-center">
+            <img
+              src="./public/assets/medias/BALI.png"
+              alt="Bali"
+              class="slide w-[180vh] h-[42vw] mr-[100px]"
+            />
+            <h1 class="absolute text-white text-[80px] font-fontspringmedium">
+              BALI
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- AFTER HORIZONTAL SECTION -->
+      <section
+        id="after-horizontal"
+        data-scroll-section
+        class="after-horizontal-section bg-white text-black md:h-[300px] h-[60vh] w-screen flex flex-col md:flex-row items-start md:justify-between justify-start lg:px-24 px-6 lg:pt-12 ro md:gap-x-1unded-t-[50px] overflow-hidden relative z-[5000] -mt-6"
+      >
+        <!-- Kiri: Text -->
+        <div class="flex flex-col md:w-[40%] w-full md:text-start text-center">
+          <h1
+            class="lg:text-[44px] md:text-[40px] text-[30px] text-[#7A9CC6] font-fontspringmedium uppercase md:mb-3 leading-tight"
+          >
+            How to ride?
+          </h1>
+          <h2 class="lg:text-[20px] text-[15px] text-[#7A9CC6] md:mb-0 mb-4">
+            How access our E-Bikes
+          </h2>
+          <img
+            src="/public/assets/medias/logo-tapas-blue.png"
+            alt="bike logo"
+            class="lg:w-[57.66px] md:w-[40px] mt-8 opacity-80 md:block hidden"
+          />
+        </div>
+
+        <!-- Kanan: Cards scroll -->
+        <div
+          id="ride-scroll"
+          class="md:w-[60%] w-full h-min flex gap-0 overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing select-none"
+        >
+          <!-- Card 1 -->
+          <div
+            class="ride-card flex-shrink-0 bg-[#F5EFE6] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out"
+          >
+            <div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="/public/assets/medias/downloadlogo.png"
+                  alt="icon"
+                  class="w-6 h-6 object-contain opacity-70 -mt-[13px]"
+                />
+                <p class="text-[18px] text-[#7A9CC6] font-medium">
+                  Download the
+                  <span class="font-fontspringheavy font-bold">TAPAS</span> App
+                  on your App Store.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <img
+                src="/public/assets/medias/APPSTORE.png"
+                alt="App Store"
+                class="w-[120px] ml-[38px]"
+              />
+              <img
+                src="/public/assets/medias/GOOGLEPLAY.png"
+                alt="Google Play"
+                class="w-[120px]"
+              />
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="ride-card flex-shrink-0 bg-[#EFE7DA] rounded-[40px] p-8 w-[350px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out"
+          >
+            <div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="/public/assets/medias/logo-tapas-blue.png"
+                  alt="icon"
+                  class="w-10 h-10 object-contain opacity-70 -mt-[13px]"
+                />
+                <p class="text-[18px] text-[#7A9CC6] font-medium">
+                  Locate a
+                  <span class="font-fontspringheavy">TAPAS</span> Station near
+                  you
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="ride-card flex-shrink-0 bg-[#ECE1D5] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out"
+          >
+            <div>
+              <div class="flex gap-3">
+                <img
+                  src="/public/assets/medias/unlock.png"
+                  alt="icon"
+                  class="w-6 h-6 object-contain opacity-70 mt-[5px]"
+                />
+                <p class="text-[18px] text-[#7A9CC6] font-medium">
+                  Unlock your bike by scanning the QR and following the
+                  on-screen instructions
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="ride-card flex-shrink-0 bg-[#E6D8C8] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out"
+          >
+            <div>
+              <div class="flex gap-3">
+                <img
+                  src="/public/assets/medias/safely.png"
+                  alt="icon"
+                  class="w-6 h-6 object-contain opacity-70 mt-[5px]"
+                />
+                <p class="text-[18px] text-[#7A9CC6] font-medium">
+                  Ride safely and enjoy your trip with
+                  <span class="font-fontspringheavy">TAPAS</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="ride-card flex-shrink-0 bg-[#E3D4C3] rounded-[40px] p-8 w-[320px] h-[200px] flex flex-col justify-between transition-transform duration-300 ease-out"
+          >
+            <div>
+              <div class="flex gap-3">
+                <img
+                  src="/public/assets/medias/park.png"
+                  alt="icon"
+                  class="w-6 h-6 object-contain opacity-70 mt-[5px]"
+                />
+                <p class="text-[18px] text-[#7A9CC6] font-medium">
+                  End your trip by parking your bike in designated areas and end
+                  the ride via the application.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTION DESKTOP SECTION -->
+      <section
+        id="question-section"
+        data-scroll-section
+        class="bg-[#D8E9FF] w-full h-[90vh] flex-col items-center justify-center rounded-[50px] lg:px-24 px-6 lg:z-[4001] md:gap-x-1 -mt-[100px] pt-12 hidden lg:flex"
+      >
+        <div
+          class="w-full flex flex-row justify-between items-start h-[60%] gap-5"
+        >
+          <!-- LEFT COLUMN -->
+          <div
+            class="grid grid-cols-2 w-1/2 h-full justify-items-stretch content-between"
+          >
+            <!-- 1 -->
+            <div class="flex items-start w-full">
+              <div
+                class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
+              ></div>
+              <div class="z-[4002]">
+                <p class="text-[14px] text-[#6D94C5]">1th Question</p>
+                <h2
+                  class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
+                >
+                  What is <span class="font-fontspringheavy">TAPAS</span> and
+                  <br />
+                  how does it work?
+                </h2>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="flex items-start w-full">
+              <div
+                class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
+              ></div>
+              <div class="z-[4002]">
+                <p class="text-[14px] text-[#6D94C5]">2nd Question</p>
+                <h2
+                  class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
+                >
+                  How do e-bikes help reduce air pollution?
+                </h2>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="flex items-start w-full">
+              <div
+                class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
+              ></div>
+              <div class="z-[4002]">
+                <p class="text-[14px] text-[#6D94C5]">3rd Question</p>
+                <h2
+                  class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
+                >
+                  Are e-bikes effective in reducing traffic congestion?
+                </h2>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div class="flex items-start w-full">
+              <div
+                class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
+              ></div>
+              <div class="z-[4002]">
+                <p class="text-[14px] text-[#6D94C5]">4th Question</p>
+                <h2
+                  class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
+                >
+                  Are e-bikes safe to use on city roads?
+                </h2>
+              </div>
+            </div>
+            <!-- 5 -->
+            <div class="flex items-start w-full">
+              <div
+                class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
+              ></div>
+              <div class="z-[4002]">
+                <p class="text-[14px] text-[#6D94C5]">1th Question</p>
+                <h2
+                  class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
+                >
+                  Is this service available across Indonesia?
+                </h2>
+              </div>
+            </div>
+            <!-- 6 -->
+            <div class="flex items-start w-full">
+              <div
+                class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
+              ></div>
+              <div class="z-[4002]">
+                <p class="text-[14px] text-[#6D94C5]">1th Question</p>
+                <h2
+                  class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
+                >
+                  Why should I choose an e-bike over other types of
+                  transportation?
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="flex flex-col items-end justify-start w-1/3">
+            <h1 class="text-[44px] font-fontspringmedium text-[#6D94C5] mb-2">
+              QUESTIONS?
+            </h1>
+            <p class="text-[20px] text-[#6A8ACB]">We got you covered.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTION MOBILE SECTION -->
+      <section
+        data-scroll-section
+        class="lg:hidden bg-[#D8E9FF] w-full md:h-[60vh] h-min flex flex-col items-center justify-center rounded-[50px] px-6 py-9 z-[5001] -mt-14"
+      >
+        <h1 class="text-[40px] font-fontspringmedium text-[#6D94C5] mb-2">
+          QUESTIONS?
+        </h1>
+        <p class="text-[15px] text-[#6A8ACB] mb-10">We got you covered.</p>
+        <div class="w-full grid md:grid-cols-2 grid-cols-1 gap-5">
+          <div class="relative">
+            <div
+              class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+            >
+              <div class="w-[90%]">
+                <p class="text-[12px] text-[#6D94C5]">1th Question</p>
+                <h2
+                  class="text-[15px] font-bold text-[#6D94C5] leading-none hover:underline cursor-none"
+                >
+                  What is <span class="font-fontspringheavy">TAPAS</span> and
+                  how does it work?
+                </h2>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-[#CBDCEB]"
+              >
+                <path
+                  d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+          >
+            <div class="w-[90%]">
+              <p class="text-[12px] text-[#6D94C5]">2nd Question</p>
+              <h2
+                class="text-[15px] font-bold text-[#6D94C5] leading-none hover:underline cursor-none"
+              >
+                How do e-bikes help reduce air pollution?
+              </h2>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 fill-[#CBDCEB]"
+            >
+              <path
+                d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+          >
+            <div class="w-[90%]">
+              <p class="text-[12px] text-[#6D94C5]">3rd Question</p>
+              <h2
+                class="text-[15px] font-bold text-[#6D94C5] leading-none hover:underline cursor-none"
+              >
+                Are e-bikes effective in reducing traffic congestion?
+              </h2>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 fill-[#CBDCEB]"
+            >
+              <path
+                d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+          >
+            <div class="w-[90%]">
+              <p class="text-[12px] text-[#6D94C5]">4th Question</p>
+              <h2
+                class="text-[15px] font-bold text-[#6D94C5] leading-none hover:underline cursor-none"
+              >
+                Are e-bikes safe to use on city roads?
+              </h2>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 fill-[#CBDCEB]"
+            >
+              <path
+                d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+          >
+            <div class="w-[90%]">
+              <p class="text-[12px] text-[#6D94C5]">5th Question</p>
+              <h2
+                class="text-[15px] font-bold text-[#6D94C5] leading-none hover:underline cursor-none"
+              >
+                Is this service available across Indonesia?
+              </h2>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 fill-[#CBDCEB]"
+            >
+              <path
+                d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="questionButton bg-white hover:bg-slate-200 rounded-2xl py-2 pl-3 pr-5 flex flex-row items-center justify-between"
+          >
+            <div class="w-[90%]">
+              <p class="text-[12px] text-[#6D94C5]">6th Question</p>
+              <h2
+                class="text-[15px] font-bold text-[#6D94C5] leading-none hover:underline cursor-none"
+              >
+                Why should I choose an e-bike over other types of
+                transportation?
+              </h2>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 fill-[#CBDCEB]"
+            >
+              <path
+                d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER SECTION -->
+      <footer
+        id="footer-section"
+        data-scroll-section
+        class="bg-white w-full h-min z-[5000] flex lg:flex-row flex-col justify-between items-center md:px-8 px-4 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
+      >
+        <!-- LEFT SIDE: NAV LINKS -->
+        <div class="flex flex-row gap-[20px] lg:w-1/2 w-full mb-2">
+          <!-- EXPLORE -->
+          <div class="w-full">
+            <p class="text-[14px] text-[#9BB3E1]">Explore</p>
+            <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">HOME</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">ROUTES</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">ABOUT</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">CONTACT</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- CONNECT -->
+          <div class="w-full">
+            <p class="text-[14px] text-[#9BB3E1]">Connect</p>
+            <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">INSTAGRAM</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">LINKEDIN</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">TWITTER</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">YOUTUBE</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: BRAND INFO DESKTOP-->
+        <div class="hidden lg:flex flex-col items-end text-right space-y-4">
+          <div class="flex flex-row items-center space-x-2">
+            <img
+              src="/public/assets/medias/logo-tapas-blue.png"
+              alt="TAPAS Logo"
+              class="w-[50px] h-[40px]"
+            />
+            <p
+              class="font-fontspringmedium text-[#6D94C5] text-[18px] leading-tight"
+            >
+              ZERO EMISSION,<br />FULL AMBITION.
+            </p>
+          </div>
+
+          <div class="text-[15px] text-[#6D94C5] leading-relaxed">
+            <p>+62 0813 1456 8945</p>
+            <p>Jakarta Selatan, Indonesia</p>
+            <p>
+              Copyright ©
+              <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span>
+              2025
+            </p>
+          </div>
+
+          <div class="flex flex-row items-center space-x-3 mt-2">
+            <img
+              src="/public/assets/medias/APPSTORE.png"
+              alt="App Store"
+              class="w-[120px] h-auto"
+            />
+            <img
+              src="/public/assets/medias/GOOGLEPLAY.png"
+              alt="Google Play"
+              class="w-[120px] h-auto"
+            />
+          </div>
+        </div>
+        <!-- RIGHT SIDE: BRAND INFO MOBILE-->
+        <div
+          class="lg:hidden flex flex-row items-end justify-between text-right space-y-4 w-full md:h-28 h-24"
+        >
+          <div class="flex flex-col justify-between items-start h-full">
+            <img
+              src="/public/assets/medias/APPSTORE.png"
+              alt="App Store"
+              class="w-[120px] h-auto"
+            />
+            <p
+              class="font-fontspringmedium text-[#6D94C5] md:text-[20px] text-[15px] leading-tight text-start"
+            >
+              ZERO EMISSION,<br />FULL AMBITION.
+            </p>
+          </div>
+          <img
+            src="/public/assets/medias/logo-tapas-blue.png"
+            alt="TAPAS Logo"
+            class="md:w-[50px] w-[30px]"
+          />
+          <div class="flex flex-col justify-between items-end h-full">
+            <img
+              src="/public/assets/medias/GOOGLEPLAY.png"
+              alt="Google Play"
+              class="w-[120px] h-auto"
+            />
+            <div
+              class="md:text-[15px] text-[12px] text-[#6D94C5] leading-tight"
+            >
+              <p>+62 0813 1456 8945</p>
+              <p>Jakarta Selatan, Indonesia</p>
+              <p>
+                Copyright ©
+                <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span>
+                2025
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div
+        data-scroll-section
+        class="w-full lg:h-[45vh] md:h-[30vh] h-[20vh] z-[5001] bg-white -mt-4 md:px-10 px-2"
+      >
+        <img
+          src="/public/assets/medias/TAPAS.svg"
+          class="w-[100vw] h-auto object-fill"
+          alt=""
+          draggable="false"
+        />
+      </div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 backdrop-blur-xl z-[4007] flex items-end justify-center transition-[clip-path] duration-1000 ease-out opacity-0 pointer-events-none clip-circle"
+    >
+      <ul
+        class="menu-list flex flex-col justify-center h-full pl-[3vw] pr-[6vw] space-y-8"
+      ></ul>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  </body>
 </html>

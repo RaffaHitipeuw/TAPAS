@@ -1,8 +1,9 @@
+// =========================================================
+// 🧭 OVERLAY MENU & BUTTON LOGIC
+// =========================================================
 const overlay = document.getElementById("overlay");
 const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
-const marquee = document.getElementById("marquee");
-const marqueeTrack = document.createElement("div");
 
 const items = [
   { label: "HOME", href: "#" },
@@ -15,105 +16,43 @@ let isOpen = false;
 const centerX = 90;
 const centerY = 13;
 
-marqueeTrack.className = "marquee-track inline-flex";
-marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
-marquee.innerHTML = "";
-marquee.appendChild(marqueeTrack);
-
-let lastScrollY = 0;
-let currentX = 0;
-let targetX = 0;
-
+// Generate menu list secara dinamis
 items.forEach((item) => {
   const li = document.createElement("li");
   li.className =
     "flex items-center justify-between border-b border-white pb-6 group w-[90vw] mt-[80px]";
+
   const a = document.createElement("a");
   a.href = item.href;
   a.textContent = item.label;
   a.className =
     "font-fontspringheavy text-white lg:text-[80px] text-[40px] leading-none font-bold tracking-tight text-left group-hover:opacity-70 transition-opacity duration-300 cursor-none";
+
   const arrow = document.createElement("span");
   arrow.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2" class="w-10 h-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+      class="w-10 h-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
       <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
     </svg>
   `;
+
   li.append(a, arrow);
   list.appendChild(li);
 });
 
-const hoverCircle = document.createElement("div");
-hoverCircle.id = "hoverCircle";
-hoverCircle.className =
-  "fixed top-0 left-0 w-40 h-40 rounded-full flex flex-col items-center justify-center pointer-events-none";
-hoverCircle.style.zIndex = "9999";
-hoverCircle.style.background = "#E0F0FF";
-hoverCircle.style.transition = "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-hoverCircle.style.transform = "scale(0)";
-hoverCircle.innerHTML = `
-  <span class="font-fontspringheavy text-[#6D94C5] text-lg select-none">GO</span>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6D94C5" stroke-width="2" class="w-6 h-6 mt-1">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
-  </svg>
-`;
-document.body.appendChild(hoverCircle);
-
-const menuLinks = document.querySelectorAll(".menu-list a");
-const footerLinks = document.querySelectorAll("#footer-section .footer-links");
-let cursorTargetX = 0;
-let cursorTargetY = 0;
-let cursorX = 0;
-let cursorY = 0;
-
-menuLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
-  });
-
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
-  });
-});
-footerLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
-  });
-
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
-  });
-});
-
-window.addEventListener("mousemove", (e) => {
-  cursorTargetX = e.clientX - 80;
-  cursorTargetY = e.clientY - 80;
-});
-
-function animateCircle() {
-  cursorX += (cursorTargetX - cursorX) * 0.2;
-  cursorY += (cursorTargetY - cursorY) * 0.2;
-  hoverCircle.style.left = `${cursorX}px`;
-  hoverCircle.style.top = `${cursorY}px`;
-  requestAnimationFrame(animateCircle);
-}
-animateCircle();
-
+// =========================================================
+// 🎯 MENU BUTTON OPEN/CLOSE ANIMATION
+// =========================================================
 btn.addEventListener("click", () => {
   isOpen = !isOpen;
+
+  // Animasi hamburger jadi X
   btn.querySelector(".line1").classList.toggle("rotate-45", isOpen);
   btn.querySelector(".line1").classList.toggle("translate-y-[4px]", isOpen);
   btn.querySelector(".line2").classList.toggle("-rotate-45", isOpen);
   btn.querySelector(".line2").classList.toggle("-translate-y-[4px]", isOpen);
 
+  // Efek overlay open / close
   if (isOpen) {
     btn.style.zIndex = "5001";
     overlay.style.opacity = "1";
@@ -137,41 +76,121 @@ btn.addEventListener("click", () => {
   }
 });
 
+// =========================================================
+// 💫 MARQUEE SCROLL ANIMATION (TEXT BERJALAN)
+// =========================================================
+const marquee = document.getElementById("marquee");
+const marqueeTrack = document.createElement("div");
+
+// Gandakan isi marquee untuk looping tanpa putus
+marqueeTrack.className = "marquee-track inline-flex";
+marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
+marquee.innerHTML = "";
+marquee.appendChild(marqueeTrack);
+
+// Variabel kontrol marquee
+let lastScrollY = 0;
+let currentX = 0;
+let targetX = 0;
+
+// =========================================================
+// 🌀 LOCOMOTIVE SCROLL INITIALIZATION
+// =========================================================
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  smartphone: {
-    smooth: true,
-  },
-  tablet: {
-    smooth: true,
-  },
-
+  smartphone: { smooth: true },
+  tablet: { smooth: true },
   lerp: 0.08,
   gestureDirection: "both",
 });
 
 window.addEventListener("resize", () => scroll.update());
 
+// Update targetX berdasarkan arah scroll
 scroll.on("scroll", (obj) => {
   const delta = obj.scroll.y - lastScrollY;
   lastScrollY = obj.scroll.y;
-  targetX += delta * 0.6;
+  targetX += delta * 0.6; // kecepatan marquee relatif scroll
 });
 
+// Animasi pergerakan marquee
 function animateMarquee() {
   currentX += (targetX - currentX) * 0.1;
+
   const halfWidth = marqueeTrack.scrollWidth / 2;
+
+  // Normalisasi posisi biar gak ilang pas scroll jauh
   if (currentX > halfWidth) {
     currentX -= halfWidth;
     targetX -= halfWidth;
   }
+  if (currentX < 0) {
+    currentX += halfWidth;
+    targetX += halfWidth;
+  }
+
   marqueeTrack.style.transform = `translateX(${-currentX}px)`;
   requestAnimationFrame(animateMarquee);
 }
 animateMarquee();
 
-// IMAGE SLIDE
+// =========================================================
+// 🖱️ CUSTOM CURSOR "GO" CIRCLE (MENU HOVER EFFECT)
+// =========================================================
+const hoverCircle = document.createElement("div");
+hoverCircle.id = "hoverCircle";
+hoverCircle.className =
+  "fixed top-0 left-0 w-40 h-40 rounded-full flex flex-col items-center justify-center pointer-events-none";
+hoverCircle.style.zIndex = "9999";
+hoverCircle.style.background = "#E0F0FF";
+hoverCircle.style.transition = "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+hoverCircle.style.transform = "scale(0)";
+hoverCircle.innerHTML = `
+  <span class="font-fontspringheavy text-[#6D94C5] text-lg select-none">GO</span>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6D94C5" stroke-width="2"
+    class="w-6 h-6 mt-1">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
+  </svg>
+`;
+document.body.appendChild(hoverCircle);
+
+const menuLinks = document.querySelectorAll(".menu-list a");
+const footerLinks = document.querySelectorAll("#footer-section .footer-links");
+
+let cursorTargetX = 0;
+let cursorTargetY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+// Hover in/out animasi lingkaran
+[...menuLinks, ...footerLinks].forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    hoverCircle.style.transform = "scale(1)";
+  });
+  link.addEventListener("mouseleave", () => {
+    hoverCircle.style.transform = "scale(0)";
+  });
+});
+
+// Cursor follow animation
+window.addEventListener("mousemove", (e) => {
+  cursorTargetX = e.clientX - 80;
+  cursorTargetY = e.clientY - 80;
+});
+
+function animateCircle() {
+  cursorX += (cursorTargetX - cursorX) * 0.2;
+  cursorY += (cursorTargetY - cursorY) * 0.2;
+  hoverCircle.style.left = `${cursorX}px`;
+  hoverCircle.style.top = `${cursorY}px`;
+  requestAnimationFrame(animateCircle);
+}
+animateCircle();
+
+// =========================================================
+// 🖼️ IMAGE SLIDE IN VIEWPORT
+// =========================================================
 const slidesRight = document.querySelectorAll(".image-slide-right");
 const slidesLeft = document.querySelectorAll(".image-slide-left");
 
@@ -179,42 +198,44 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        if (entry.target.classList.contains("image-slide-right")) {
-          entry.target.classList.add("translate-x-[40%]");
-        } else if (entry.target.classList.contains("image-slide-left")) {
-          entry.target.classList.add("translate-x-[-40%]");
-        }
+        entry.target.classList.toggle(
+          "translate-x-[40%]",
+          entry.target.classList.contains("image-slide-right")
+        );
+        entry.target.classList.toggle(
+          "translate-x-[-40%]",
+          entry.target.classList.contains("image-slide-left")
+        );
       } else {
-        entry.target.classList.remove("translate-x-[40%]");
-        entry.target.classList.remove("translate-x-[-40%]");
+        entry.target.classList.remove("translate-x-[40%]", "translate-x-[-40%]");
       }
     });
   },
   { threshold: 0.5 }
 );
-
 slidesRight.forEach((el) => observer.observe(el));
 slidesLeft.forEach((el) => observer.observe(el));
 
-// FADE UP
+// =========================================================
+// ☁️ FADE-UP EFFECT
+// =========================================================
 const fadeUpElements = document.querySelectorAll(".fade-up");
 const fadeObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-up-active");
-      } else {
-        entry.target.classList.remove("fade-up-active");
-      }
+      entry.target.classList.toggle("fade-up-active", entry.isIntersecting);
     });
   },
   { threshold: 0.5 }
 );
 fadeUpElements.forEach((el) => fadeObserver.observe(el));
 
-// ! HORIZONTAL SCROLL LOCK
+// =========================================================
+// ↔️ HORIZONTAL SCROLL LOCK SECTION
+// =========================================================
 const horizontalSection = document.querySelector("#horizontal-section");
 const horizontalTrack = horizontalSection.querySelector(".horizontal-track");
+
 let inHorizontal = false;
 let scrollX = 0;
 let cooldown = false;
@@ -231,7 +252,6 @@ scroll.on("scroll", () => {
 
   if (!inHorizontal && fullyInView && !lockTriggered) {
     lockTriggered = true;
-
     scroll.scrollTo(horizontalSection, {
       offset: 0,
       duration: 300,
@@ -241,7 +261,6 @@ scroll.on("scroll", () => {
     setTimeout(() => {
       scroll.stop();
       document.body.style.overflow = "hidden";
-      document.body.style.scrollBehavior = "auto";
       inHorizontal = true;
     }, 310);
   }
@@ -255,6 +274,7 @@ scroll.on("scroll", () => {
   }
 });
 
+// Mouse wheel horizontal control
 window.addEventListener(
   "wheel",
   (e) => {
@@ -268,6 +288,7 @@ window.addEventListener(
     scrollX = Math.max(0, Math.min(maxScroll, scrollX));
     horizontalSection.scrollLeft = scrollX;
 
+    // Keluar ke bawah section
     if (scrollX >= maxScroll && e.deltaY > 0) {
       cooldown = true;
       setTimeout(() => {
@@ -284,6 +305,7 @@ window.addEventListener(
       }, 200);
     }
 
+    // Keluar ke atas section
     if (scrollX <= 0 && e.deltaY < 0) {
       cooldown = true;
       setTimeout(() => {
@@ -303,35 +325,33 @@ window.addEventListener(
   { passive: false }
 );
 
-// QUESTION HOVER EFFECT
+// =========================================================
+// ❓ QUESTION HOVER BUBBLE (Q&A INTERACTION)
+// =========================================================
 const questionLinks = document.querySelectorAll("#question-section h2");
 
-// Buat bubble
+// Bubble info muncul saat hover question
 const questionHover = document.createElement("div");
 questionHover.id = "questionHover";
 questionHover.className =
   "fixed top-0 left-0 w-[400px] h-[400px] rounded-full flex flex-col items-center justify-center pointer-events-none p-12 text-center overflow-hidden";
 questionHover.style.zIndex = "9999";
 questionHover.style.background = "white";
-// questionHover.style.boxShadow = "0 10px 40px rgba(0,0,0,0.15)";
-questionHover.style.transition =
-  "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
+questionHover.style.transition = "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
 questionHover.style.transform = "scale(0)";
 document.body.appendChild(questionHover);
 
+// Isi bubble untuk setiap pertanyaan
 const questionAnswers = {
-  1: `
-    <div class="text-center w-full transition-all duration-300 origin-center">
-      <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1st Question</p>
-      <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        What is an electric bike rental service and how does it work?
-      </h3>
-      <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
-        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
-        More e-bikes on the road means cleaner air and quieter cities.
-      </p>
-    </div>
-  `,
+  1: `<div class="text-center w-full transition-all duration-300 origin-center">
+        <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1st Question</p>
+        <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] mb-3">
+          What is an electric bike rental service and how does it work?
+        </h3>
+        <p class="text-[#6A8ACB] text-[13px] font-figtree">
+          E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles.
+        </p>
+      </div>`,
   2: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">2nd Question</p>
@@ -391,13 +411,12 @@ const questionAnswers = {
   `,
 };
 
-// Variabel posisi
-let qCursorTargetX = 0;
-let qCursorTargetY = 0;
-let qCursorX = 0;
-let qCursorY = 0;
+// Hover logic untuk question section
+let qCursorTargetX = 0,
+  qCursorTargetY = 0,
+  qCursorX = 0,
+  qCursorY = 0;
 
-// Fungsi auto-scale teks agar muat di circle
 function scaleTextToFit(container) {
   const el = container.querySelector("div");
   if (!el) return;
@@ -406,7 +425,6 @@ function scaleTextToFit(container) {
   el.style.transform = `scale(${scale})`;
 }
 
-// Hover event
 questionLinks.forEach((q, i) => {
   q.addEventListener("mouseenter", () => {
     const qNum = i + 1;
@@ -422,7 +440,7 @@ questionLinks.forEach((q, i) => {
   });
 });
 
-// Mouse follow anim
+// Gerak bubble mengikuti cursor
 window.addEventListener("mousemove", (e) => {
   qCursorTargetX = e.clientX - 175;
   qCursorTargetY = e.clientY - 175;
@@ -437,28 +455,45 @@ function animateQuestionHover() {
 }
 animateQuestionHover();
 
-// Horizontal scroll pakai drag mouse
+// =========================================================
+// 🖐️ DRAG SCROLL UNTUK SECTION RIDE
+// =========================================================
 const rideScroll = document.getElementById("ride-scroll");
 let isDown = false;
 let startX;
 let scrollLeft;
 
+// duplikat isi supaya panjang
+rideScroll.innerHTML += rideScroll.innerHTML;
+
+// fungsi untuk ngecek dan reset posisi scroll
+function checkScrollLoop() {
+  const scrollWidth = rideScroll.scrollWidth / 2;
+  if (rideScroll.scrollLeft >= scrollWidth) {
+    rideScroll.scrollLeft = 0;
+  } else if (rideScroll.scrollLeft <= 0) {
+    rideScroll.scrollLeft = scrollWidth;
+  }
+}
+
+// event drag manual
 rideScroll.addEventListener("mousedown", (e) => {
   isDown = true;
-  rideScroll.classList.add("active");
   startX = e.pageX - rideScroll.offsetLeft;
   scrollLeft = rideScroll.scrollLeft;
 });
-rideScroll.addEventListener("mouseleave", () => {
-  isDown = false;
-});
-rideScroll.addEventListener("mouseup", () => {
-  isDown = false;
-});
+
+rideScroll.addEventListener("mouseleave", () => (isDown = false));
+rideScroll.addEventListener("mouseup", () => (isDown = false));
+
 rideScroll.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - rideScroll.offsetLeft;
-  const walk = (x - startX) * 1.5; // speed
+  const walk = (x - startX) * 1.5;
   rideScroll.scrollLeft = scrollLeft - walk;
+  checkScrollLoop();
 });
+
+// event saat scroll biasa (pakai touchpad / mobile)
+rideScroll.addEventListener("scroll", checkScrollLoop);

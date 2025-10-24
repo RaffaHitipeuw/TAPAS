@@ -24,7 +24,7 @@
     <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script
-      src="./src/js/script.js"
+      src="./src/js/about.js"
       defer
     ></script>
   </head>
@@ -52,8 +52,8 @@
     >
       <!-- HERO -->
       <header
-        class="relative lg:w-[95vw] w-[92vw] h-[90vh] bg-[var(--hero-bg)] rounded-[54px] overflow-hidden shadow-2xl flex flex-col items-center justify-center mb-[-80px] z-0 bg-cover bg-center pt-[5vw]"
-        style="background-image: url('public/assets/medias/bghero.png')"
+        class="relative lg:w-[95vw] w-[92vw] h-[90vh] bg-[var(--hero-bg)] rounded-[54px] overflow-hidden flex flex-col items-center justify-center mb-[-80px] z-0 bg-cover bg-center pt-[5vw]"
+        style="background-image: url('public/assets/medias/about/bghero.png')"
       >
         <!-- NAVIGATION -->
         <nav
@@ -81,41 +81,116 @@
           <div
             class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] text-[35px] lg:leading-[85px] md:leading-[54px] leading-[30px] flex flex-col"
           >
-            <h1 class="">SOLUTION TO</h1>
-            <h1 class="">YOUR POLLUTION</h1>
-            <h1 class="">AND TRAFFIC</h1>
+            <h1 class="">ABOUT</h1>
           </div>
           <p class="text-white md:text-[20px] text-[16px] md:mt-[30px] mt-4">
-            Zero emission, Full ambition.
+            What is
+            <span class="font-fontspringheavy font-bold tracking-tighter"
+              >TAPAS</span
+            >?
           </p>
         </div>
-
-        <!-- HERO IMAGE -->
-        <div
-          class="absolute -bottom-14 md:left-auto md:right-auto right-0 lg:w-full md:w-[110vw] w-[170vw] flex justify-center"
-        >
-          <img
-            src="public/assets/medias/sepedah.png"
-            alt="Bicycle"
-            class="lg:h-[90vh] md:w-full object-contain"
-            draggable="false"
-          />
-        </div>
+        <div class="absolute w-full h-full bg-black bg-opacity-15 top-0"></div>
       </header>
 
-      <!-- PARALLAX SECTION -->
+      <!-- FIRST SECTION -->
       <section
         data-scroll-section
-        class="relative w-full h-[45px] section-light flex items-center justify-center rounded-t-[50px] z-[4002] -mb-3 pt-40"
+        class="relative w-full h-[900px] lg:h-[1000px] px-4 md:px-6 lg:px-24 section-light rounded-t-[50px] z-[4002] -mb-3 pt-5 lg:pt-14"
       >
-        <h2
-          class="lg:text-[50px] md:text-[40px] text-[30px] text-center font-semibold text-[var(--primary-color)] tracking-tight leading-none w-3/5"
+        <div
+          class="w-full h-min flex flex-col md:flex-row-reverse md:gap-5 items-start justify-start md:justify-between"
         >
-          <span class="font-fontspringheavy font-bold tracking-tighter"
-            >TAPAS</span
+          <!-- ABOUT US -->
+          <img
+            src="public/assets/medias/about/about.png"
+            alt=""
+            class="w-full rounded-[40px] mb-3 md:w-[60%] object-cover md:h-[280px] lg:h-[350px]"
+          />
+          <div class="md:flex md:flex-col md:w-[40%]">
+            <div>
+              <h1
+                class="lg:text-[44px] md:text-[40px] text-[30px] text-[#7A9CC6] font-fontspringmedium uppercase leading-none md:mb-2"
+              >
+                About Us?
+              </h1>
+              <h2
+                class="lg:text-[20px] text-[15px] text-[#7A9CC6] md:mb-0 mb-4"
+              >
+                Who are we?
+              </h2>
+            </div>
+            <div
+              class="lg:text-[22px] md:text-[18px] text-[15px] text-[#7A9CC6] lg:pr-16"
+            >
+              <span class="font-fontspringheavy font-bold tracking-tighter"
+                >TAPAS</span
+              >
+              (Tanpa Asap) is an app-based e-bike rental service that allows you
+              to easily rent an electric bike through our app as part of our
+              effort to reduce pollution and traffic congestion in major cities
+              across Indonesia.
+            </div>
+          </div>
+        </div>
+
+        <!-- MISSION & VISION -->
+        <div
+          class="flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]"
+        >
+          <div
+            id="missionBtn"
+            class="lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
           >
-          aims to reduce Indonesia’s
-        </h2>
+            Our Mission
+            <button
+              class="relative flex flex-col items-center justify-center w-14 h-14 cursor-pointer z-[4001] bg-white rounded-full"
+            >
+              <span
+                class="line1 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-90"
+              ></span>
+              <span
+                class="line2 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-0"
+              ></span>
+            </button>
+          </div>
+          <div
+            id="visionBtn"
+            class="relative lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
+          >
+            Our Vision
+            <button
+              class="relative flex flex-col items-center justify-center w-14 h-14 cursor-pointer z-[4001] bg-white rounded-full"
+            >
+              <span
+                class="line1 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-90"
+              ></span>
+              <span
+                class="line2 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-0"
+              ></span>
+            </button>
+            <div
+              class="absolute md:top-28 top-20 left-auto w-[80vw] md:w-[40vw] md:p-10 p-7 h-min z-[9999] text-white lg:text-[22px] md:text-[18px] text-[15px] font-normal tracking-normal leading-normal rounded-3xl"
+              style="
+                background: linear-gradient(
+                  225deg,
+                  hsla(208, 52%, 78%, 1) 46%,
+                  hsla(209, 19%, 51%, 1) 100%
+                );
+              "
+            >
+              Aims to provide easy and reliable access to electric bikes through
+              smart, app-based technology. In order to reduce pollution and
+              traffic congestion in big cities with electric transportations. We
+              strive to support sustainable city development, encourage
+              healthier lifestyles, and raise environmental awareness among
+              communities. By expanding our network of e-bike stations across
+              major cities in Indonesia, TAPAS is committed to making green
+              transportation more convenient, impactful, and accessible to
+              everyone.
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- FOOTER SECTION -->

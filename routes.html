@@ -1,185 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Parallax Scroll | Tapas Routes</title>
-    <link
-      rel="stylesheet"
-      href="./src/output.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Routes</title>
+  <link rel="stylesheet" href="./src/output.css" />
 
-    <!-- Locomotive Scroll CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
-    />
-
-    <style>
-      :root {
-        --hero-bg: #1e3a8a;
-        --primary-color: #6d94c5;
-      }
-      body {
-        overflow: hidden;
-      }
-      .section-light {
-        background-color: #f8fafc;
-      }
-    </style>
-  </head>
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
+</head>
   <body class="bg-white">
+    
     <!-- MENU BUTTON -->
-    <button
-      id="menuBtn"
-      class="fixed top-[57px] right-[50px] flex flex-col items-center justify-center w-12 h-12 md:w-14 md:h-14 cursor-pointer z-[4001]"
-    >
-      <span
-        class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"
-      ></span>
-      <span
-        class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300"
-      ></span>
+    <button id="menuBtn" class="fixed top-[57px] right-[50px] md:right-[90px] flex flex-col items-center justify-center w-12 h-12 cursor-pointer z-[4001]">
+      <span class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"></span>
+      <span class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300"></span>
     </button>
 
     <!-- SCROLL CONTAINER -->
-    <div
-      data-scroll-container
-      class="relative w-full flex flex-col items-center"
-    >
+    <div data-scroll-container class="relative w-full flex flex-col items-center bg-white">
+
       <!-- HERO SECTION -->
-      <header
+      <header 
         data-scroll-section
-        class="relative w-[90vw] h-[60vh] rounded-[54px] top-7 flex flex-col items-center justify-center mb-[-80px] z-10 bg-cover bg-center pt-[5vw]"
-        style="background-image: url('public/assets/medias/bgroutes.jpg')"
+        class="relative w-[90vw] h-[90vh] md:h-[30vh] object-fill rounded-[54px] top-7 shadow-2xl flex flex-col items-center justify-center z-10 bg-cover bg-center pt-[5vw]" 
+        style="background-image: url('public/assets/medias/routes/bgroutes.png');"
         data-scroll
         data-scroll-speed="-1"
       >
         <!-- NAVIGATION -->
-        <nav
-          class="fixed top-[40px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]"
-        >
+        <nav class="fixed top-[40px] left-1/2 -translate-x-1/2 md:left-20 md:translate-x-0 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]">
           <div id="logo">
-            <img
-              src="/public/assets/medias/logo-tapas.png"
-              alt=""
-              class="w-[35px] mt-[5px]"
-            />
+            <img src="/public/assets/medias/routes/logo-tapas.png" alt="" class="w-[35px] mt-[3px]">
           </div>
-          <div class="absolute left-1/2 -translate-x-1/2 mt-[10x]">
-            <span
-              class="text-xl font-fontspringheavy font-bold tracking-tighter text-white"
-              >Tapas</span
-            >
+          <div class="absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[300px] mt-[40x]">
+            <span class="text-xl font-fontspringheavy font-bold tracking-tighter text-white">Tapas</span>
           </div>
         </nav>
 
         <!-- HERO TEXT -->
-        <div
-          class="text-center z-10 -mt-[100px]"
-          data-scroll
-          data-scroll-speed="1.5"
-        >
-          <div
-            class="text-white font-fontspringmedium text-[30px] leading-[40px] flex flex-col"
-          >
+        <div class="text-center z-10 -mt-[100px] md:mt-0" data-scroll data-scroll-speed="1.5">
+          <div class="text-white font-fontspringmedium text-[50px] md:text-[65px] leading-[40px] flex flex-col">
             <h1 class="-mb-3">routes</h1>
           </div>
-          <p class="text-white text-[20px] mt-[30px]">Tap, Ride, Repeat.</p>
+          <p class="text-white  font-figtree text-[20px] mt-[30px]">Tap, Ride, Repeat.</p>
         </div>
       </header>
 
       <!-- PARALLAX SECTION -->
-      <section
-        data-scroll-section
-        class="relative w-full h-[500px] section-light flex items-center justify-center rounded-t-[50px] z-[4002]"
-      >
-        <h2
-          class="text-[25px] font-semibold text-[var(--primary-color)] text-center leading-[25px]"
+      <section data-scroll-section class="relative w-full h-[300px] bg-[#F5EFE6] flex rounded-t-[50px] z-[4002] items-center justify-center px-4 text-center">
+        <h2 
+          class="w-[310px] md:w-[500px] text-[23px] font-semibold text-[#6D94C5] leading-[25px]"
           data-scroll
           data-scroll-speed="2"
         >
-          <span class="font-fontspringheavy font-bold tracking-tighter"
-            >TAPAS</span
-          >
-          is available in 5 <br />
-          major cities in Indonesia, and <br />
-          continues to expand further.
-        </h2>
-      </section>
-      <section
-        data-scroll-section
-        class="relative w-full h-[500px] section-light flex items-center justify-center rounded-t-[50px] z-[4002]"
-      >
-        <h2
-          class="text-[25px] font-semibold text-[var(--primary-color)] text-center leading-[25px]"
-          data-scroll
-          data-scroll-speed="2"
-        >
-          <span class="font-fontspringheavy font-bold tracking-tighter"
-            >TAPAS</span
-          >
-          is available in 5 <br />
-          major cities in Indonesia, and <br />
-          continues to expand further.
-        </h2>
-      </section>
-      <section
-        data-scroll-section
-        class="relative w-full h-[500px] section-light flex items-center justify-center rounded-t-[50px] z-[4002]"
-      >
-        <h2
-          class="text-[25px] font-semibold text-[var(--primary-color)] text-center leading-[25px]"
-          data-scroll
-          data-scroll-speed="2"
-        >
-          <span class="font-fontspringheavy font-bold tracking-tighter"
-            >TAPAS</span
-          >
-          is available in 5 <br />
-          major cities in Indonesia, and <br />
-          continues to expand further.
-        </h2>
-      </section>
-      <section
-        data-scroll-section
-        class="relative w-full h-[500px] section-light flex items-center justify-center rounded-t-[50px] z-[4002]"
-      >
-        <h2
-          class="text-[25px] font-semibold text-[var(--primary-color)] text-center leading-[25px]"
-          data-scroll
-          data-scroll-speed="2"
-        >
-          <span class="font-fontspringheavy font-bold tracking-tighter"
-            >TAPAS</span
-          >
-          is available in 5 <br />
-          major cities in Indonesia, and <br />
-          continues to expand further.
-        </h2>
+          <span class="font-fontspringheavy font-bold tracking-tighter">TAPAS</span> is available in 5 major cities in Indonesia, and continues to expand further.
+        </h2>      
       </section>
 
-      <!-- EXTRA SECTION FOR SCROLL -->
-      <section
-        data-scroll-section
-        class="w-full h-[80vh] bg-[#E0F0FF] flex items-center justify-center"
-      >
-        <p
-          class="text-[28px] font-semibold text-[#2E3A59]"
-          data-scroll
-          data-scroll-speed="1.2"
-        >
-          This is another parallax section 🌿
-        </p>
-      </section>
+      <!-- STICKY CARD SECTION -->
+      <section data-scroll-section class="relative w-full flex flex-col items-center bg-[#F5EFE6] z-[1000] rounded-b-2xl">
+        <ul class="grid grid-cols-1 gap-[4vw]">
+
+          <!-- JAKARTA MOBILE VERSION -->
+          <li class="sticky top-0 block md:hidden">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] h-[25vh] flex flex-col items-center justify-between p-2 mx-2 my-4">
+            
+              <div class="flex items-center space-x-32 w-full justify-center">
+                <h1 class="text-2xl font-fontspringheavy text-[#5A78B1]">JAKARTA</h1>
+                <div class="w-11 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-xl">01</div>
+              </div>
+            
+              <div class="w-full px-2"> 
+                <div class="rounded-[15px] overflow-hidden">
+                  <img src="./public/assets/medias/routes/jakarta2.png" alt="Jakarta City" class="w-full h-[100px] object-cover object-center" />
+                </div>
+              </div>
+            
+              <div class="w-full flex text-[#6A8299] text-[10px] text-center justify-between px-3">
+                <div class="flex flex-col text-start"><span>Kota Tua</span><span>Grand Indonesia</span></div>
+                <div class="flex flex-col"><span>Jl. Sudirman</span><span>Pondok Indah Mall</span></div>
+                <div class="flex flex-col text-end"><span>Kelapa Gading</span><span>Senayan</span></div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- JAKARTA (TABLET VERSION) -->
+<li class="sticky top-0 hidden md:block">
+  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299] px-6">
+
+    <!-- ROW 1: Judul + Nomor -->
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight">JAKARTA</h1>
+      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+        01
+      </div>
     </div>
 
-    <!-- Locomotive Scroll JS -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- ROW 2: Gambar + Lokasi -->
+    <div class="flex flex-row w-full justify-between">
+      <!-- Gambar -->
+      <div class="w-[70%] rounded-[20px] overflow-hidden">
+        <img
+          src="./public/assets/medias/routes/jakarta2.png"
+          alt="Jakarta City"
+          class="w-full h-[180px] object-cover object-center"
+        />
+      </div>
 
-    <script src="./src/js/routes.js"></script>
-  </body>
+      <!-- Lokasi -->
+      <div class="w-[30%] flex flex-col justify-center items-end">
+        <ul class="flex flex-col items-end space-y-[10px] text-[13px] font-medium leading-tight">
+          <li>Kota Tua</li>
+          <li>Jl. Sudirman</li>
+          <li>Kelapa Gading</li>
+          <li>Grand Indonesia</li>
+          <li>Pondok Indah Mall</li>
+          <li>Senayan</li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</li>
+
+
+
+          
+
+
+          <!-- BANDUNG -->
+          <li class="sticky top-0 block md:hidden pt-[calc(2*1.5em)]">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] h-[25vh] flex flex-col items-center justify-between p-2 mx-2 my-4">
+              <div class="flex items-center space-x-32 w-full justify-center">
+                <h1 class="text-2xl font-fontspringheavy text-[#5A78B1]">BANDUNG</h1>
+                <div class="w-11 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-xl">02</div>
+              </div>
+              <div class="w-full px-2"> 
+                <div class="rounded-[15px] overflow-hidden">
+                  <img src="./public/assets/medias/routes/bandung2.png" alt="Bandung City" class="w-full h-[100px] object-cover object-center" />
+                </div>
+              </div>
+              <div class="w-full flex text-[#6A8299] text-[10px] text-center justify-between px-3">
+                <div class="flex flex-col text-start"><span>Jalan Braga</span><span>Paris Van Java (PVJ)</span></div>
+                <div class="flex flex-col"><span>Cihampelas Walk</span></div>
+                <div class="flex flex-col text-end"><span>Alun-Alun Bandung</span><span>Summarecon Mall</span></div>
+              </div>
+            </div>
+          </li>
+<!-- BANDUNG (TABLET VERSION) -->
+<li class="sticky top-0 hidden md:block md:pt-[calc(2.5*1.5em)]">
+  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
+    
+    <!-- ROW 1: Nomor + Judul -->
+    <div class="flex justify-between items-center mb-4">
+      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+        02
+      </div>
+      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight text-right">BANDUNG</h1>
+    </div>
+
+    <!-- ROW 2: Lokasi + Gambar -->
+    <div class="flex flex-row w-full justify-between">
+      <!-- Lokasi -->
+      <div class="w-[30%] flex flex-col justify-center">
+        <ul class="flex flex-col items-start space-y-[10px] text-[13px] font-medium leading-tight">
+          <li>Jalan Braga</li>
+          <li>Cihampelas Walk</li>
+          <li>Alun-Alun Bandung</li>
+          <li>Paris Van Java (PVJ)</li>
+          <li>Summarecon Mall</li>
+        </ul>
+      </div>
+
+      <!-- Gambar -->
+      <div class="w-[70%] rounded-[20px] overflow-hidden">
+        <img
+          src="./public/assets/medias/routes/bandung2.png"
+          alt="Bandung City"
+          class="w-full h-[180px] object-cover object-center"
+        />
+      </div>
+    </div>
+
+  </div>
+</li>
+
+
+
+          <!-- PALEMBANG -->
+          <li class="sticky top-0 block md:hidden pt-[calc(4*1.5em)]">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] h-[25vh] flex flex-col items-center justify-between p-2 mx-2 my-4">
+              <div class="flex items-center space-x-24 w-full justify-center">
+                <h1 class="text-2xl font-fontspringheavy text-[#5A78B1]">PALEMBANG</h1>
+                <div class="w-11 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-xl">03</div>
+              </div>
+              <div class="w-full px-2"> 
+                <div class="rounded-[15px] overflow-hidden">
+                  <img src="./public/assets/medias/routes/palembang2.png" alt="Palembang City" class="w-full h-[100px] object-cover object-center" />
+                </div>
+              </div>
+              <div class="w-full flex text-[#6A8299] text-[10px] text-center justify-between px-3">
+                <div class="flex flex-col text-start"><span>Taman AMPERA</span><span>Transmart Palembang</span></div>
+                <div class="flex flex-col"><span>International Plaza</span></div>
+                <div class="flex flex-col text-end"><span>Alun - Alun Palembang</span><span>Palembang Icon Mall</span></div>
+              </div>
+            </div>
+          </li>
+<!-- PALEMBANG (TABLET VERSION) -->
+<li class="sticky top-0 hidden md:block md:pt-[calc(5*1.5em)]">
+  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
+    
+    <!-- ROW 1: Judul + Nomor -->
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight">PALEMBANG</h1>
+      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+        03
+      </div>
+    </div>
+
+    <!-- ROW 2: Gambar + Lokasi -->
+    <div class="flex flex-row w-full justify-between">
+      <!-- Gambar -->
+      <div class="w-[70%] rounded-[20px] overflow-hidden">
+        <img
+          src="./public/assets/medias/routes/palembang2.png"
+          alt="Palembang City"
+          class="w-full h-[180px] object-cover object-center"
+        />
+      </div>
+
+      <!-- Lokasi -->
+      <div class="w-[30%] flex flex-col justify-center items-end">
+        <ul class="flex flex-col items-end space-y-[10px] text-[13px] font-medium leading-tight">
+          <li>Taman AMPERA</li>
+          <li>International Plaza</li>
+          <li>Transmart Palembang</li>
+          <li>Alun-Alun Palembang</li>
+          <li>Palembang Icon Mall</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</li>
+          
+          <!-- TANGERANG SELATAN -->
+          <li class="sticky top-0 md:hidden pt-[calc(6*1.5em)]">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] h-[25vh] flex flex-col items-center justify-between p-2 mx-2 my-4">
+              <div class="flex items-center space-x-5 w-full justify-center flex-nowrap">
+                <h1 class="text-xl font-fontspringheavy text-[#5A78B1] whitespace-nowrap">TANGERANG SELATAN</h1>
+                <div class="w-11 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-xl">04</div>
+              </div>
+              <div class="w-full px-2"> 
+                <div class="rounded-[15px] overflow-hidden">
+                  <img src="./public/assets/medias/routes/tangsel2.png" alt="Tangsel City" class="w-full h-[100px] object-cover object-center" />
+                </div>
+              </div>
+              <div class="w-full flex text-[#6A8299] text-[10px] text-center justify-between px-3">
+                <div class="flex flex-col text-start"><span>Bintaro Xchange</span><span>Serpong</span></div>
+                <div class="flex flex-col"><span>BSD</span></div>
+                <div class="flex flex-col text-end"><span>Emerald Bintaro</span><span>Pondok Aren</span></div>
+              </div>
+            </div>
+          </li>
+
+<!-- TANGERANG SELATAN (TABLET VERSION) -->
+<li class="sticky top-0 hidden md:block md:pt-[calc(7.5*1.5em)]">
+  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
+
+    <!-- ROW 1: Nomor + Judul -->
+    <div class="flex justify-between items-center mb-4">
+      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+        04
+      </div>
+      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight text-right">TANGERANG SELATAN</h1>
+    </div>
+
+    <!-- ROW 2: Lokasi + Gambar -->
+    <div class="flex flex-row w-full justify-between">
+      <!-- Lokasi -->
+      <div class="w-[30%] flex flex-col justify-center">
+        <ul class="flex flex-col items-start space-y-[10px] text-[13px] font-medium leading-tight">
+          <li>BSD</li>
+          <li>Serpong</li>
+          <li>Bintaro Xchange</li>
+          <li>Emerald Bintaro</li>
+          <li>Pondok Aren</li>
+        </ul>
+      </div>
+
+      <!-- Gambar -->
+      <div class="w-[70%] rounded-[20px] overflow-hidden">
+        <img
+          src="./public/assets/medias/routes/tangsel2.png"
+          alt="Tangerang Selatan City"
+          class="w-full h-[180px] object-cover object-center"
+        />
+      </div>
+    </div>
+
+  </div>
+</li>
+          <!-- BALI -->
+          <li class="sticky top-0 md:hidden pt-[calc(5*1.5em)]">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] h-[25vh] flex flex-col items-center justify-between p-2 mx-2 my-4">
+              <div class="flex items-center space-x-48 w-full justify-center">
+                <h1 class="text-2xl font-fontspringheavy text-[#5A78B1]">BALI</h1>
+                <div class="w-11 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-xl">05</div>
+              </div>
+              <div class="w-full px-2"> 
+                <div class="rounded-[15px] overflow-hidden">
+                  <img src="./public/assets/medias/routes/bali2.png" alt="Bali City" class="w-full h-[100px] object-cover object-center" />
+                </div>
+              </div>
+              <div class="w-full flex text-[#6A8299] text-[10px] text-center justify-between px-3">
+                <div class="flex flex-col text-start"><span>Kuta</span><span>Denpasar</span></div>
+                <div class="flex flex-col"><span>Ubud Center</span></div>
+                <div class="flex flex-col text-end"><span>Alun-Alun Bangli</span><span>Seminyak</span></div>
+              </div>
+            </div>
+          </li>
+
+<!-- BALI (TABLET VERSION) -->
+<li class="sticky top-0 hidden md:block md:pt-[calc(5*1.5em)]">
+  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
+
+    <!-- ROW 1: Judul + Nomor -->
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight">BALI</h1>
+      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+        05
+      </div>
+    </div>
+
+    <!-- ROW 2: Gambar + Lokasi -->
+    <div class="flex flex-row w-full justify-between">
+      <!-- Gambar -->
+      <div class="w-[70%] rounded-[20px] overflow-hidden">
+        <img
+          src="./public/assets/medias/routes/bali2.png"
+          alt="Bali Island"
+          class="w-full h-[180px] object-cover object-center"
+        />
+      </div>
+
+      <!-- Lokasi -->
+      <div class="w-[30%] flex flex-col justify-center items-end">
+        <ul class="flex flex-col items-end space-y-[10px] text-[13px] font-medium leading-tight">
+          <li>Kuta</li>
+          <li>Denpasar</li>
+          <li>Alun-Alun Bangli</li>
+          <li>Ubud Center</li>
+          <li>Seminyak</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</li>
+        </ul>
+      </section>
+
+      <!-- SIMULATE YOUR RIDE SECTION -->
+      <section id="simulate" data-scroll-section class="relative w-full md:hidden flex flex-col items-center justify-center bg-white py-24 z-[1000]">
+        <div class="bg-white rounded-2xl border-4 border-[#CBDCEB] p-6 w-80 select-none">
+          <div class="bg-[url('/public/assets/medias/routes/bgsimulate.png')] bg-cover bg-center rounded-2xl h-40 flex items-center justify-center opacity-80 mb-4 relative"> 
+            <img src="public/assets/medias/routes/logosimulate.png" alt="Bike" class="relative w-32">
+          </div>
+
+          <p class="text-sm text-[#6D94C5] font-figtree">Predict the cost to your future ride.</p>
+          <h2 class="text-[#6D94C5] font-bold text-lg mb-4 font-fontspringmedium">SIMULATE YOUR RIDE</h2>
+
+          <!-- Track -->
+          <div id="track" class="relative w-full h-10 mb-8 cursor-pointer">
+            <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 rounded-full transform -translate-y-1/2"></div>
+            
+            <div id="circle" class="absolute top-1/2 w-5 h-5 border-4 border-[#b6905f] rounded-full transform -translate-y-1/2 z-10"></div>
+            
+            <div id="bike" class="absolute text-2xl transform -translate-y-[100%] text-[#b6905f] select-none">
+              <img src="./public/assets/medias/routes/logosimulate2.png" alt="Bike" class="relative w-5">
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-[#6D94C5] font-figtree font-extrabold text-[20px]">Hours =</span>
+              <span id="hours" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-3 py-1 rounded-xl">4</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-[#6D94C5] font-figtree font-extrabold text-[20px]">IDR =</span>
+              <span id="cost" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-3 py-1 rounded-xl">24.000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIMULATE YOUR RIDE (TABLET VERSION) -->
+      <section id="simulate" data-scroll-section class="relative w-full hidden md:flex justify-center items-center bg-white py-24 px-7 z-[1000]">
+        <div class="bg-white rounded-2xl border-4 border-[#CBDCEB] flex flex-row p-10 w-full max-w-[900px] gap-10">
+        
+          <!-- LEFT SIDE -->
+          <div class="flex flex-col justify-center w-1/2 space-y-6">
+            <div>
+              <p class="text-base text-[#6D94C5] font-figtree mb-1">Predict the cost to your future ride.</p>
+              <h2 class="text-[#6D94C5] font-fontspringmedium font-bold text-2xl">SIMULATE YOUR RIDE</h2>
+            </div>
+          
+            <!-- Track -->
+            <div id="track" class="relative w-full h-10 mb-2 cursor-pointer">
+              <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 rounded-full transform -translate-y-1/2"></div>
+              <div id="circle" class="absolute top-1/2 w-5 h-5 border-4 border-[#b6905f] rounded-full transform -translate-y-1/2 z-10 left-[25%]"></div>
+              <div id="bike" class="absolute text-2xl transform -translate-y-[100%] text-[#b6905f] left-[25%]">
+                <img src="./public/assets/medias/routes/logosimulate2.png" alt="Bike" class="w-5">
+              </div>
+            </div>
+          
+            <!-- Info -->
+            <div class="space-y-3 pt-1">
+              <div class="flex justify-between items-center">
+                <span class="text-[#6D94C5] font-figtree font-extrabold text-[24px]">Hours =</span>
+                <span id="hours" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-5 py-[3px] rounded-xl text-[18px]">4</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-[#6D94C5] font-figtree font-extrabold text-[24px]">IDR =</span>
+                <span id="cost" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-5 py-[3px] rounded-xl text-[18px]">24.000</span>
+              </div>
+            </div>
+          </div>
+        
+          <!-- RIGHT SIDE -->
+          <div class="w-1/2 flex justify-center">
+            <div class="bg-[url('/public/assets/medias/routes/bgsimulate.png')] bg-cover bg-center rounded-2xl h-[200px] w-[320px] flex items-center justify-center opacity-90 relative">
+              <img src="public/assets/medias/routes/logosimulate.png" alt="Bike" class="relative w-32">
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+      
+
+            <footer
+        id="footer-section"
+        data-scroll-section
+        class="bg-white w-full h-min z-[5000] flex lg:flex-row flex-col justify-between items-center md:px-8 px-4 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
+      >
+        <!-- LEFT SIDE: NAV LINKS -->
+        <div class="flex flex-row gap-[20px] lg:w-1/2 w-full mb-2">
+          <!-- EXPLORE -->
+          <div class="w-full">
+            <p class="text-[14px] text-[#9BB3E1]">Explore</p>
+            <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">HOME</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">ROUTES</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">ABOUT</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">CONTACT</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- CONNECT -->
+          <div class="w-full">
+            <p class="text-[14px] text-[#9BB3E1]">Connect</p>
+            <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">INSTAGRAM</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">LINKEDIN</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">TWITTER</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">YOUTUBE</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: BRAND INFO DESKTOP-->
+        <div class="hidden lg:flex flex-col items-end text-right space-y-4">
+          <div class="flex flex-row items-center space-x-2">
+            <img
+              src="/public/assets/medias/logo-tapas-blue.png"
+              alt="TAPAS Logo"
+              class="w-[50px] h-[40px]"
+            />
+            <p
+              class="font-fontspringmedium text-[#6D94C5] text-[18px] leading-tight"
+            >
+              ZERO EMISSION,<br />FULL AMBITION.
+            </p>
+          </div>
+
+          <div class="text-[15px] text-[#6D94C5] leading-relaxed">
+            <p>+62 0813 1456 8945</p>
+            <p>Jakarta Selatan, Indonesia</p>
+            <p>
+              Copyright ©
+              <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span>
+              2025
+            </p>
+          </div>
+
+          <div class="flex flex-row items-center space-x-3 mt-2">
+            <img
+              src="/public/assets/medias/APPSTORE.png"
+              alt="App Store"
+              class="w-[120px] h-auto"
+            />
+            <img
+              src="/public/assets/medias/GOOGLEPLAY.png"
+              alt="Google Play"
+              class="w-[120px] h-auto"
+            />
+          </div>
+        </div>
+        <!-- RIGHT SIDE: BRAND INFO MOBILE-->
+        <div
+          class="lg:hidden flex flex-row items-end justify-between text-right space-y-4 w-full md:h-28 h-24"
+        >
+          <div class="flex flex-col justify-between items-start h-full">
+            <img
+              src="/public/assets/medias/APPSTORE.png"
+              alt="App Store"
+              class="w-[120px] h-auto"
+            />
+            <p
+              class="font-fontspringmedium text-[#6D94C5] md:text-[20px] text-[15px] leading-tight text-start"
+            >
+              ZERO EMISSION,<br />FULL AMBITION.
+            </p>
+          </div>
+          <img
+            src="/public/assets/medias/logo-tapas-blue.png"
+            alt="TAPAS Logo"
+            class="md:w-[50px] w-[30px]"
+          />
+          <div class="flex flex-col justify-between items-end h-full">
+            <img
+              src="/public/assets/medias/GOOGLEPLAY.png"
+              alt="Google Play"
+              class="w-[120px] h-auto"
+            />
+            <div
+              class="md:text-[15px] text-[12px] text-[#6D94C5] leading-tight"
+            >
+              <p>+62 0813 1456 8945</p>
+              <p>Jakarta Selatan, Indonesia</p>
+              <p>
+                Copyright ©
+                <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span>
+                2025
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+            <div
+        data-scroll-section
+        class="w-full lg:h-[45vh] md:h-[30vh] h-[10vh] z-[5001] bg-white -mt-4 md:px-10 px-2"
+      >
+        <img
+          src="/public/assets/medias/TAPAS.svg"
+          class="w-[100vw] h-auto object-fill"
+          alt=""
+          draggable="false"
+        />
+      </div>
+
+    </div>
+
+
+  <!-- Locomotive Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <script src="./src/js/routes.js"></script>
+  <script src="./src/js/dsa.js"></script>
+</body>
 </html>

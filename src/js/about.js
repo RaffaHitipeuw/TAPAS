@@ -146,40 +146,55 @@ btn.addEventListener("click", () => {
 
 const missionBtn = document.getElementById("missionBtn");
 const visionBtn = document.getElementById("visionBtn");
+const answerMission = missionBtn.querySelector(".answer");
+const answerVision = visionBtn.querySelector(".answer");
 
 let isOpenVision = false;
+let isOpenMission = false;
 
 visionBtn.addEventListener("click", () => {
   isOpenVision = !isOpenVision;
-  // btn.getElementsByTagName(button)
   visionBtn
     .querySelector(".line2")
     .classList.toggle("rotate-180", isOpenVision);
-  visionBtn
-    .querySelector(".line2")
-    .classList.toggle("translate-y-0", isOpenVision);
-  visionBtn
-    .querySelector(".line1")
-    .classList.toggle("rotate-180", isOpenVision);
-  visionBtn
-    .querySelector(".line1")
-    .classList.toggle("translate-y-0", isOpenVision);
+  visionBtn.querySelector(".line1").classList.toggle("-rotate-0", isOpenVision);
+  isOpenVision
+    ? (answerVision.style.height = "200px")
+    : (answerVision.style.height = "0px");
+
+  answerVision.classList.toggle("opacity-100", isOpenVision);
+  if (isOpenVision) {
+    isOpenMission = false;
+    answerMission.style.height = "0px";
+    answerMission.classList.remove("opacity-100");
+
+    missionBtn.querySelector(".line2").classList.remove("rotate-180");
+    missionBtn.querySelector(".line1").classList.remove("-rotate-0");
+  }
 });
-let isOpenMission = false;
 
 missionBtn.addEventListener("click", () => {
   isOpenMission = !isOpenMission;
-  // btn.getElementsByTagName(button)
+
   missionBtn
     .querySelector(".line2")
     .classList.toggle("rotate-180", isOpenMission);
-  missionBtn
-    .querySelector(".line2")
-    .classList.toggle("translate-y-0", isOpenMission);
+
   missionBtn
     .querySelector(".line1")
-    .classList.toggle("rotate-180", isOpenMission);
-  missionBtn
-    .querySelector(".line1")
-    .classList.toggle("translate-y-0", isOpenMission);
+    .classList.toggle("-rotate-0", isOpenMission);
+  isOpenMission
+    ? (answerMission.style.height = "400px")
+    : (answerMission.style.height = "0px");
+
+  answerMission.classList.toggle("opacity-100", isOpenMission);
+
+  if (isOpenMission) {
+    isOpenVision = false;
+    answerVision.style.height = "0px";
+    answerVision.classList.remove("opacity-100");
+
+    visionBtn.querySelector(".line2").classList.remove("rotate-180");
+    visionBtn.querySelector(".line1").classList.remove("-rotate-0");
+  }
 });

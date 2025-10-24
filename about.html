@@ -16,6 +16,10 @@
       rel="stylesheet"
       href="./src/output.css"
     />
+    <script
+      src="./src/js/about.js"
+      defer
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
@@ -23,10 +27,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script
-      src="./src/js/about.js"
-      defer
-    ></script>
   </head>
 
   <body
@@ -96,7 +96,7 @@
       <!-- FIRST SECTION -->
       <section
         data-scroll-section
-        class="relative w-full h-[900px] lg:h-[1000px] px-4 md:px-6 lg:px-24 section-light rounded-t-[50px] z-[4002] -mb-3 pt-5 lg:pt-14"
+        class="relative w-full h-[800px] lg:h-[1000px] px-4 md:px-6 lg:px-24 section-light rounded-[50px] z-[4002] -mb-3 pt-5 lg:pt-14"
       >
         <div
           class="w-full h-min flex flex-col md:flex-row-reverse md:gap-5 items-start justify-start md:justify-between"
@@ -136,31 +136,15 @@
 
         <!-- MISSION & VISION -->
         <div
-          class="flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]"
+          class="relative flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]"
         >
           <div
             id="missionBtn"
-            class="lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
+            class="relative cursor-pointer lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
           >
             Our Mission
             <button
-              class="relative flex flex-col items-center justify-center w-14 h-14 cursor-pointer z-[4001] bg-white rounded-full"
-            >
-              <span
-                class="line1 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-90"
-              ></span>
-              <span
-                class="line2 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-0"
-              ></span>
-            </button>
-          </div>
-          <div
-            id="visionBtn"
-            class="relative lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
-          >
-            Our Vision
-            <button
-              class="relative flex flex-col items-center justify-center w-14 h-14 cursor-pointer z-[4001] bg-white rounded-full"
+              class="relative flex flex-col items-center justify-center w-14 h-14 cursor-pointer bg-white rounded-full"
             >
               <span
                 class="line1 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-90"
@@ -170,7 +154,7 @@
               ></span>
             </button>
             <div
-              class="absolute md:top-28 top-20 left-auto w-[80vw] md:w-[40vw] md:p-10 p-7 h-min z-[9999] text-white lg:text-[22px] md:text-[18px] text-[15px] font-normal tracking-normal leading-normal rounded-3xl"
+              class="h-0 answer absolute opacity-0 md:top-28 top-20 w-[80vw] md:w-[40vw] lg:p-10 p-6 overflow-y-scroll no-scrollbar z-[9999] text-white lg:text-[22px] md:text-[18px] text-[15px] font-normal tracking-normal leading-normal rounded-3xl transition-all duration-500"
               style="
                 background: linear-gradient(
                   225deg,
@@ -190,7 +174,47 @@
               everyone.
             </div>
           </div>
+          <div
+            id="visionBtn"
+            class="relative cursor-pointer lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
+          >
+            Our Vision
+            <button
+              class="relative flex flex-col items-center justify-center w-14 h-14 cursor-pointer bg-white rounded-full"
+            >
+              <span
+                class="line1 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-90"
+              ></span>
+              <span
+                class="line2 absolute w-[26px] h-1 rounded bg-[#6A8299] transition-transform duration-300 rotate-0"
+              ></span>
+            </button>
+            <div
+              class="h-0 answer absolute opacity-0 md:top-28 top-20 w-[80vw] md:w-[40vw] lg:p-10 p-6 overflow-y-scroll no-scrollbar z-[9999] text-white lg:text-[22px] md:text-[18px] text-[15px] font-normal tracking-normal leading-normal rounded-3xl transition-all duration-500"
+              style="
+                background: linear-gradient(
+                  225deg,
+                  hsla(208, 52%, 78%, 1) 46%,
+                  hsla(209, 19%, 51%, 1) 100%
+                );
+              "
+            >
+              To become Indonesia’s leading eco-friendly mobility platform,
+              empowering cities with clean, efficient, and accessible electric
+              transportation that transforms cities into healthier, smarter, and
+              more sustainable places to live.
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- SECTION 2 BENEFITS -->
+
+      <section
+        data-scroll-section
+        class="w-full h-[60vh] section-dark z-[5000] rounded-[50px] -mt-24"
+      >
+        aaaa
       </section>
 
       <!-- FOOTER SECTION -->

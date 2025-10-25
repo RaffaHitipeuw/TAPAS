@@ -12,7 +12,7 @@
   <body class="bg-white">
     
     <!-- MENU BUTTON -->
-    <button id="menuBtn" class="fixed top-[57px] right-[50px] md:right-[90px] flex flex-col items-center justify-center w-12 h-12 cursor-pointer z-[4001]">
+    <button id="menuBtn" class="fixed top-[57px] right-[50px] lg:right-[130px] md:right-[90px] flex flex-col items-center justify-center w-12 h-12 cursor-pointer z-[4001]">
       <span class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"></span>
       <span class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300"></span>
     </button>
@@ -23,34 +23,34 @@
       <!-- HERO SECTION -->
       <header 
         data-scroll-section
-        class="relative w-[90vw] h-[90vh] md:h-[30vh] object-fill rounded-[54px] top-7 shadow-2xl flex flex-col items-center justify-center z-10 bg-cover bg-center pt-[5vw]" 
+        class="relative w-[90vw] h-[90vh] lg:h-[90vh] lg:w-[95vw] md:h-[30vh] object-fill rounded-[54px] top-7 shadow-2xl flex flex-col items-center justify-center z-10 bg-cover bg-center pt-[5vw]" 
         style="background-image: url('public/assets/medias/routes/bgroutes.png');"
         data-scroll
         data-scroll-speed="-1"
       >
         <!-- NAVIGATION -->
-        <nav class="fixed top-[40px] left-1/2 -translate-x-1/2 md:left-20 md:translate-x-0 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]">
+        <nav class="fixed top-[40px] left-1/2 -translate-x-1/2 xl:left-32 md:left-20 md:translate-x-0 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]">
           <div id="logo">
             <img src="/public/assets/medias/routes/logo-tapas.png" alt="" class="w-[35px] mt-[3px]">
           </div>
-          <div class="absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[300px] mt-[40x]">
+          <div class="absolute left-1/2 -translate-x-1/2 md:translate-x-0 xl:left-[700px] md:left-[300px] mt-[40x]">
             <span class="text-xl font-fontspringheavy font-bold tracking-tighter text-white">Tapas</span>
           </div>
         </nav>
 
         <!-- HERO TEXT -->
-        <div class="text-center z-10 -mt-[100px] md:mt-0" data-scroll data-scroll-speed="1.5">
-          <div class="text-white font-fontspringmedium text-[50px] md:text-[65px] leading-[40px] flex flex-col">
+        <div class="text-center z-10 xl:-mt-[150px] -mt-[100px] md:mt-0" data-scroll data-scroll-speed="1.5">
+          <div class="text-white font-fontspringmedium text-[50px] xl:text-[100px] md:text-[65px] leading-[40px] flex flex-col">
             <h1 class="-mb-3">routes</h1>
           </div>
-          <p class="text-white  font-figtree text-[20px] mt-[30px]">Tap, Ride, Repeat.</p>
+          <p class="text-white font-figtree text-[20px] xl:mt-[70px] mt-[30px]">Tap, Ride, Repeat.</p>
         </div>
       </header>
 
       <!-- PARALLAX SECTION -->
-      <section data-scroll-section class="relative w-full h-[300px] bg-[#F5EFE6] flex rounded-t-[50px] z-[4002] items-center justify-center px-4 text-center">
+      <section data-scroll-section class="relative w-full h-[150px] bg-[#F5EFE6] flex rounded-t-[50px] z-[4002] items-center justify-center px-4 text-center">
         <h2 
-          class="w-[310px] md:w-[500px] text-[23px] font-semibold text-[#6D94C5] leading-[25px]"
+          class="w-[310px] lg:w-[790px] lg:text-[40px] lg:leading-[33px] md:w-[500px] text-[23px] font-semibold text-[#6D94C5] leading-[25px]"
           data-scroll
           data-scroll-speed="2"
         >
@@ -86,49 +86,86 @@
           </li>
           
           <!-- JAKARTA (TABLET VERSION) -->
-<li class="sticky top-0 hidden md:block">
-  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299] px-6">
+          <li class="sticky top-0 hidden md:block lg:hidden">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299] px-6">
+            
+              <!-- ROW 1: Judul + Nomor -->
+              <div class="flex justify-between items-center mb-4">
+                <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight">JAKARTA</h1>
+                <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+                  01
+                </div>
+              </div>
+            
+              <!-- ROW 2: Gambar + Lokasi -->
+              <div class="flex flex-row w-full justify-between">
+                <!-- Gambar -->
+                <div class="w-[70%] rounded-[20px] overflow-hidden">
+                  <img
+                    src="./public/assets/medias/routes/jakarta2.png"
+                    alt="Jakarta City"
+                    class="w-full h-[180px] object-cover object-center"
+                  />
+                </div>
+              
+                <!-- Lokasi -->
+                <div class="w-[30%] flex flex-col justify-center items-end">
+                  <ul class="flex flex-col items-end space-y-[10px] text-[13px] font-medium leading-tight">
+                    <li>Kota Tua</li>
+                    <li>Jl. Sudirman</li>
+                    <li>Kelapa Gading</li>
+                    <li>Grand Indonesia</li>
+                    <li>Pondok Indah Mall</li>
+                    <li>Senayan</li>
+                  </ul>
+                </div>
+              </div>
 
-    <!-- ROW 1: Judul + Nomor -->
-    <div class="flex justify-between items-center mb-4">
-      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight">JAKARTA</h1>
-      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
-        01
-      </div>
-    </div>
+            </div>
+          </li>
 
-    <!-- ROW 2: Gambar + Lokasi -->
-    <div class="flex flex-row w-full justify-between">
-      <!-- Gambar -->
-      <div class="w-[70%] rounded-[20px] overflow-hidden">
-        <img
-          src="./public/assets/medias/routes/jakarta2.png"
-          alt="Jakarta City"
-          class="w-full h-[180px] object-cover object-center"
-        />
-      </div>
+          <!-- JAKARTA (DESKTOP VERSION) -->
+          <li class="sticky top-0 hidden md:hidden lg:block">
+            <div class="bg-[#DDEBFF] rounded-[20px] h-[50vh] w-[95vw] flex flex-col p-4 mx-auto my-4 text-[#6A8299] px-6">
+            
+              <!-- ROW 1: Judul + Nomor -->
+              <div class="flex justify-between items-center mb-4">
+                <h1 class="text-6xl font-fontspringheavy text-[#5A78B1] tracking-tight">JAKARTA</h1>
+                <div class="w-16 h-10 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-base font-semibold">
+                  01
+                </div>
+              </div>
+            
+              <!-- ROW 2: Gambar + Lokasi -->
+              <div class="flex flex-row w-full justify-between">
+                <!-- Gambar -->
+                <div class="w-[80%] rounded-[20px] overflow-hidden">
+                  <img
+                    src="./public/assets/medias/routes/jakarta2.png"
+                    alt="Jakarta City"
+                    class="w-full h-[250px] object-cover object-center"
+                  />
+                </div>
+              
+                <!-- Lokasi -->
+                <div class="w-[30%] flex flex-col justify-center items-end">
+                  <ul class="flex flex-col items-end space-y-[15px] text-[18px] font-medium leading-tight">
+                    <li>Kota Tua</li>
+                    <li>Jl. Sudirman</li>
+                    <li>Kelapa Gading</li>
+                    <li>Grand Indonesia</li>
+                    <li>Pondok Indah Mall</li>
+                    <li>Senayan</li>
+                  </ul>
+                </div>
+              </div>
 
-      <!-- Lokasi -->
-      <div class="w-[30%] flex flex-col justify-center items-end">
-        <ul class="flex flex-col items-end space-y-[10px] text-[13px] font-medium leading-tight">
-          <li>Kota Tua</li>
-          <li>Jl. Sudirman</li>
-          <li>Kelapa Gading</li>
-          <li>Grand Indonesia</li>
-          <li>Pondok Indah Mall</li>
-          <li>Senayan</li>
-        </ul>
-      </div>
-    </div>
+            </div>
+          </li>
+
+
+
     
-  </div>
-</li>
-
-
-
-          
-
-
           <!-- BANDUNG -->
           <li class="sticky top-0 block md:hidden pt-[calc(2*1.5em)]">
             <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] h-[25vh] flex flex-col items-center justify-between p-2 mx-2 my-4">
@@ -148,43 +185,83 @@
               </div>
             </div>
           </li>
-<!-- BANDUNG (TABLET VERSION) -->
-<li class="sticky top-0 hidden md:block md:pt-[calc(2.5*1.5em)]">
-  <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
-    
-    <!-- ROW 1: Nomor + Judul -->
-    <div class="flex justify-between items-center mb-4">
-      <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
-        02
-      </div>
-      <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight text-right">BANDUNG</h1>
-    </div>
 
-    <!-- ROW 2: Lokasi + Gambar -->
-    <div class="flex flex-row w-full justify-between">
-      <!-- Lokasi -->
-      <div class="w-[30%] flex flex-col justify-center">
-        <ul class="flex flex-col items-start space-y-[10px] text-[13px] font-medium leading-tight">
-          <li>Jalan Braga</li>
-          <li>Cihampelas Walk</li>
-          <li>Alun-Alun Bandung</li>
-          <li>Paris Van Java (PVJ)</li>
-          <li>Summarecon Mall</li>
-        </ul>
-      </div>
+          <!-- BANDUNG (TABLET VERSION) -->
+          <li class="sticky top-0 hidden md:block lg:hidden md:pt-[calc(2.5*1.5em)]">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
 
-      <!-- Gambar -->
-      <div class="w-[70%] rounded-[20px] overflow-hidden">
-        <img
-          src="./public/assets/medias/routes/bandung2.png"
-          alt="Bandung City"
-          class="w-full h-[180px] object-cover object-center"
-        />
-      </div>
-    </div>
+              <!-- ROW 1: Nomor + Judul -->
+              <div class="flex justify-between items-center mb-4">
+                <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+                  02
+                </div>
+                <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight text-right">BANDUNG</h1>
+              </div>
+            
+              <!-- ROW 2: Lokasi + Gambar -->
+              <div class="flex flex-row w-full justify-between">
+                <!-- Lokasi -->
+                <div class="w-[30%] flex flex-col justify-center">
+                  <ul class="flex flex-col items-start space-y-[10px] text-[13px] font-medium leading-tight">
+                    <li>Jalan Braga</li>
+                    <li>Cihampelas Walk</li>
+                    <li>Alun-Alun Bandung</li>
+                    <li>Paris Van Java (PVJ)</li>
+                    <li>Summarecon Mall</li>
+                  </ul>
+                </div>
+              
+                <!-- Gambar -->
+                <div class="w-[70%] rounded-[20px] overflow-hidden">
+                  <img
+                    src="./public/assets/medias/routes/bandung2.png"
+                    alt="Bandung City"
+                    class="w-full h-[180px] object-cover object-center"
+                  />
+                </div>
+              </div>
+            
+            </div>
+          </li>
 
-  </div>
-</li>
+          <!-- BANDUNG (DEKSTOP VERSION) -->
+          <li class="sticky top-0 hidden md:hidden md:pt-[calc(2.5*1.5em)]">
+            <div class="bg-[#DDEBFF] rounded-[20px] w-[95vw] flex flex-col p-4 px-6 mx-auto my-4 shadow-[0_0_30px_rgba(0,0,0,0.1)] text-[#6A8299]">
+
+              <!-- ROW 1: Nomor + Judul -->
+              <div class="flex justify-between items-center mb-4">
+                <div class="w-10 h-7 rounded-full bg-white flex items-center justify-center text-[#6D94C5] text-sm font-semibold">
+                  02
+                </div>
+                <h1 class="text-4xl font-fontspringheavy text-[#5A78B1] tracking-tight text-right">BANDUNG</h1>
+              </div>
+            
+              <!-- ROW 2: Lokasi + Gambar -->
+              <div class="flex flex-row w-full justify-between">
+                <!-- Lokasi -->
+                <div class="w-[30%] flex flex-col justify-center">
+                  <ul class="flex flex-col items-start space-y-[10px] text-[13px] font-medium leading-tight">
+                    <li>Jalan Braga</li>
+                    <li>Cihampelas Walk</li>
+                    <li>Alun-Alun Bandung</li>
+                    <li>Paris Van Java (PVJ)</li>
+                    <li>Summarecon Mall</li>
+                  </ul>
+                </div>
+              
+                <!-- Gambar -->
+                <div class="w-[70%] rounded-[20px] overflow-hidden">
+                  <img
+                    src="./public/assets/medias/routes/bandung2.png"
+                    alt="Bandung City"
+                    class="w-full h-[180px] object-cover object-center"
+                  />
+                </div>
+              </div>
+            
+            </div>
+          </li>
+
 
 
 
@@ -362,87 +439,77 @@
         </ul>
       </section>
 
-      <!-- SIMULATE YOUR RIDE SECTION -->
-      <section id="simulate" data-scroll-section class="relative w-full md:hidden flex flex-col items-center justify-center bg-white py-24 z-[1000]">
-        <div class="bg-white rounded-2xl border-4 border-[#CBDCEB] p-6 w-80 select-none">
-          <div class="bg-[url('/public/assets/medias/routes/bgsimulate.png')] bg-cover bg-center rounded-2xl h-40 flex items-center justify-center opacity-80 mb-4 relative"> 
-            <img src="public/assets/medias/routes/logosimulate.png" alt="Bike" class="relative w-32">
-          </div>
+<!-- SIMULATE YOUR RIDE (MOBILE) -->
+<section id="simulate-mobile" data-scroll-section class="relative w-full md:hidden flex flex-col items-center justify-center bg-white py-24 z-[1000]">
+  <div class="bg-white rounded-2xl border-4 border-[#CBDCEB] p-6 w-80 select-none">
+    <div class="bg-[url('/public/assets/medias/routes/bgsimulate.png')] bg-cover bg-center rounded-2xl h-40 flex items-center justify-center opacity-80 mb-4 relative"> 
+      <img src="public/assets/medias/routes/logosimulate.png" alt="Bike" class="relative w-32">
+    </div>
 
-          <p class="text-sm text-[#6D94C5] font-figtree">Predict the cost to your future ride.</p>
-          <h2 class="text-[#6D94C5] font-bold text-lg mb-4 font-fontspringmedium">SIMULATE YOUR RIDE</h2>
+    <p class="text-sm text-[#6D94C5] font-figtree">Predict the cost to your future ride.</p>
+    <h2 class="text-[#6D94C5] font-bold text-lg mb-4 font-fontspringmedium">SIMULATE YOUR RIDE</h2>
 
-          <!-- Track -->
-          <div id="track" class="relative w-full h-10 mb-8 cursor-pointer">
-            <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 rounded-full transform -translate-y-1/2"></div>
-            
-            <div id="circle" class="absolute top-1/2 w-5 h-5 border-4 border-[#b6905f] rounded-full transform -translate-y-1/2 z-10"></div>
-            
-            <div id="bike" class="absolute text-2xl transform -translate-y-[100%] text-[#b6905f] select-none">
-              <img src="./public/assets/medias/routes/logosimulate2.png" alt="Bike" class="relative w-5">
-            </div>
-          </div>
+    <div id="track-mobile" class="relative w-full h-10 mb-8 cursor-pointer">
+      <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 rounded-full transform -translate-y-1/2"></div>
+      <div id="circle-mobile" class="absolute top-1/2 w-5 h-5 border-4 border-[#b6905f] rounded-full transform -translate-y-1/2 z-10"></div>
+      <div id="bike-mobile" class="absolute text-2xl transform -translate-y-[100%] text-[#b6905f] select-none">
+        <img src="./public/assets/medias/routes/logosimulate2.png" alt="Bike" class="relative w-5">
+      </div>
+    </div>
 
-          <!-- Info -->
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="text-[#6D94C5] font-figtree font-extrabold text-[20px]">Hours =</span>
-              <span id="hours" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-3 py-1 rounded-xl">4</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <span class="text-[#6D94C5] font-figtree font-extrabold text-[20px]">IDR =</span>
-              <span id="cost" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-3 py-1 rounded-xl">24.000</span>
-            </div>
-          </div>
+    <div class="space-y-2">
+      <div class="flex justify-between items-center">
+        <span class="text-[#6D94C5] font-figtree font-extrabold text-[20px]">Hours =</span>
+        <span id="hours-mobile" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-3 py-1 rounded-xl">4</span>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-[#6D94C5] font-figtree font-extrabold text-[20px]">IDR =</span>
+        <span id="cost-mobile" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-3 py-1 rounded-xl">24.000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATE YOUR RIDE (TABLET) -->
+<section id="simulate-tablet" data-scroll-section class="relative w-full hidden md:flex justify-center items-center bg-white py-24 px-7 z-[1000]">
+  <div class="bg-white rounded-2xl border-4 border-[#CBDCEB] flex flex-row p-10 w-full max-w-[900px] gap-10">
+    <div class="flex flex-col justify-center w-1/2 space-y-6">
+      <div>
+        <p class="text-base text-[#6D94C5] font-figtree mb-1">Predict the cost to your future ride.</p>
+        <h2 class="text-[#6D94C5] font-fontspringmedium font-bold text-2xl">SIMULATE YOUR RIDE</h2>
+      </div>
+
+      <div id="track-tablet" class="relative w-full h-10 mb-2 cursor-pointer">
+        <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 rounded-full transform -translate-y-1/2"></div>
+        <div id="circle-tablet" class="absolute top-1/2 w-5 h-5 border-4 border-[#b6905f] rounded-full transform -translate-y-1/2 z-10 left-[25%]"></div>
+        <div id="bike-tablet" class="absolute text-2xl transform -translate-y-[100%] text-[#b6905f] left-[25%]">
+          <img src="./public/assets/medias/routes/logosimulate2.png" alt="Bike" class="w-5">
         </div>
-      </section>
+      </div>
 
-      <!-- SIMULATE YOUR RIDE (TABLET VERSION) -->
-      <section id="simulate" data-scroll-section class="relative w-full hidden md:flex justify-center items-center bg-white py-24 px-7 z-[1000]">
-        <div class="bg-white rounded-2xl border-4 border-[#CBDCEB] flex flex-row p-10 w-full max-w-[900px] gap-10">
-        
-          <!-- LEFT SIDE -->
-          <div class="flex flex-col justify-center w-1/2 space-y-6">
-            <div>
-              <p class="text-base text-[#6D94C5] font-figtree mb-1">Predict the cost to your future ride.</p>
-              <h2 class="text-[#6D94C5] font-fontspringmedium font-bold text-2xl">SIMULATE YOUR RIDE</h2>
-            </div>
-          
-            <!-- Track -->
-            <div id="track" class="relative w-full h-10 mb-2 cursor-pointer">
-              <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 rounded-full transform -translate-y-1/2"></div>
-              <div id="circle" class="absolute top-1/2 w-5 h-5 border-4 border-[#b6905f] rounded-full transform -translate-y-1/2 z-10 left-[25%]"></div>
-              <div id="bike" class="absolute text-2xl transform -translate-y-[100%] text-[#b6905f] left-[25%]">
-                <img src="./public/assets/medias/routes/logosimulate2.png" alt="Bike" class="w-5">
-              </div>
-            </div>
-          
-            <!-- Info -->
-            <div class="space-y-3 pt-1">
-              <div class="flex justify-between items-center">
-                <span class="text-[#6D94C5] font-figtree font-extrabold text-[24px]">Hours =</span>
-                <span id="hours" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-5 py-[3px] rounded-xl text-[18px]">4</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-[#6D94C5] font-figtree font-extrabold text-[24px]">IDR =</span>
-                <span id="cost" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-5 py-[3px] rounded-xl text-[18px]">24.000</span>
-              </div>
-            </div>
-          </div>
-        
-          <!-- RIGHT SIDE -->
-          <div class="w-1/2 flex justify-center">
-            <div class="bg-[url('/public/assets/medias/routes/bgsimulate.png')] bg-cover bg-center rounded-2xl h-[200px] w-[320px] flex items-center justify-center opacity-90 relative">
-              <img src="public/assets/medias/routes/logosimulate.png" alt="Bike" class="relative w-32">
-            </div>
-          </div>
-        
+      <div class="space-y-3 pt-1">
+        <div class="flex justify-between items-center">
+          <span class="text-[#6D94C5] font-figtree font-extrabold text-[24px]">Hours =</span>
+          <span id="hours-tablet" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-5 py-[3px] rounded-xl text-[18px]">4</span>
         </div>
-      </section>
+        <div class="flex justify-between items-center">
+          <span class="text-[#6D94C5] font-figtree font-extrabold text-[24px]">IDR =</span>
+          <span id="cost-tablet" class="bg-[#f5f2ed] text-[#b6905f] font-bold px-5 py-[3px] rounded-xl text-[18px]">24.000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-1/2 flex justify-center">
+      <div class="bg-[url('/public/assets/medias/routes/bgsimulate.png')] bg-cover bg-center rounded-2xl h-[200px] w-[320px] flex items-center justify-center opacity-90 relative">
+        <img src="public/assets/medias/routes/logosimulate.png" alt="Bike" class="relative w-32">
+      </div>
+    </div>
+  </div>
+</section>
 
       
 
-            <footer
+    <footer
         id="footer-section"
         data-scroll-section
         class="bg-white w-full h-min z-[5000] flex lg:flex-row flex-col justify-between items-center md:px-8 px-4 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
@@ -722,7 +789,7 @@
 
             <div
         data-scroll-section
-        class="w-full lg:h-[45vh] md:h-[30vh] h-[10vh] z-[5001] bg-white -mt-4 md:px-10 px-2"
+        class="w-full lg:h-[45vh] md:h-[10vh] h-[10vh] z-[5001] bg-white -mt-4 md:px-10 px-2"
       >
         <img
           src="/public/assets/medias/TAPAS.svg"

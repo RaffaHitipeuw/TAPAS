@@ -198,3 +198,5 @@ missionBtn.addEventListener("click", () => {
     visionBtn.querySelector(".line1").classList.remove("-rotate-0");
   }
 });
+
+// IMPACT & GOAL

@@ -5,6 +5,7 @@ export default {
     "./index.html",
     "./about.html",
     "./routes.html",
+    "./contact.html",
     "./src/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {

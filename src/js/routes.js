@@ -383,3 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', initializeSlider);
 });
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+}

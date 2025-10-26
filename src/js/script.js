@@ -501,3 +501,8 @@ rideScroll.addEventListener("mousemove", (e) => {
 
 // event saat scroll biasa (pakai touchpad / mobile)
 rideScroll.addEventListener("scroll", checkScrollLoop);
+
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+}

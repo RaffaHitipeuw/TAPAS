@@ -321,3 +321,7 @@ function switchToGoal() {
 
 impactBtn.addEventListener("click", switchToImpact);
 goalBtn.addEventListener("click", switchToGoal);
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+}

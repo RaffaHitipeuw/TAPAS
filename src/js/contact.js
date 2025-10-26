@@ -141,3 +141,7 @@ btn.addEventListener("click", () => {
     );
   }
 });
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+}

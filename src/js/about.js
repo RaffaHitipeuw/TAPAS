@@ -201,66 +201,123 @@ missionBtn.addEventListener("click", () => {
 
 
 // IMPACT & GOAL
-  const activeEffect = document.getElementById("activeEffect");
-  const impactBtn = document.getElementById("impactBtn");
-  const goalBtn = document.getElementById("goalBtn");
-  const bottomBox = document.getElementById("bottomBox");
-  const impactContent = document.getElementById("impactContent");
-  const goalContent = document.getElementById("goalContent");
+const activeEffect = document.getElementById("activeEffect");
+const impactBtn = document.getElementById("impactBtn");
+const goalBtn = document.getElementById("goalBtn");
+const impactContent = document.getElementById("impactContent");
+const goalContent = document.getElementById("goalContent");
+const bottomBox = document.getElementById("bottomBox");
+const slideBox = document.getElementById("slideBox");
 
-  let current = "goal"; // default visible
+let current = "goal";
+let isAnimating = false;
 
-  // Helper buat animasi translateY manual
-  function animateSlide(element, from, to, duration, callback) {
-    const start = performance.now();
-
-    function step(timestamp) {
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const value = from + (to - from) * progress;
-      element.style.transform = `translateY(${value}%)`;
-      element.style.opacity = 1 - Math.abs(value) / 100;
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else if (callback) callback();
-    }
-
-    requestAnimationFrame(step);
+// Helper animasi vertikal (HP)
+function animateSlide(element, from, to, duration, callback) {
+  const start = performance.now();
+  function step(timestamp) {
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const value = from + (to - from) * progress;
+    element.style.transform = `translateY(${value}%)`;
+    element.style.opacity = 1 - Math.abs(value) / 100;
+    if (progress < 1) requestAnimationFrame(step);
+    else if (callback) callback();
   }
+  requestAnimationFrame(step);
+}
 
-  function impactToggle() {
-    if (current === "impact") return;
-    current = "impact";
+// Deteksi tablet
+function isTablet() {
+  return window.matchMedia("(min-width: 768px)").matches;
+}
 
-    activeEffect.style.left = "5px";
-    impactBtn.style.color = "#FFFFFF";
-    goalBtn.style.color = "#9EBCE2";
+// IMPACT
+function switchToImpact() {
+  if (isAnimating || current === "impact") return;
+  isAnimating = true;
+  current = "impact";
+  activeEffect.style.left = "5px";
+  impactBtn.style.color = "white";
+  goalBtn.style.color = "#9EBCE2";
 
-    // Turunin container ke bawah
+  if (isTablet()) {
+    // tablet animasi
+    slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+    slideBox.style.transform = "translateX(-120%)";
+
+    setTimeout(() => {
+      slideBox.style.transition = "none";
+      slideBox.style.transform = "translateX(200%)";
+
+      goalContent.classList.add("hidden");
+      impactContent.classList.remove("hidden");
+      slideBox.style.backgroundColor = "#6D94C5";
+      slideBox.classList.add("text-white");
+      slideBox.classList.remove("text-[#4A6FA5]");
+
+      setTimeout(() => {
+        slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+        slideBox.style.transform = "translateX(75%)";
+      }, 50);
+    }, 700);
+
+    setTimeout(() => (isAnimating = false), 1500);
+  } else {
+    // hp animasi
     animateSlide(bottomBox, 0, 120, 400, () => {
       bottomBox.style.backgroundColor = "#6D94C5";
       goalContent.style.opacity = "0";
       impactContent.style.opacity = "1";
       goalContent.style.transform = "translateY(100%)";
-      impactContent.style.transform = "translateY(0)";  
-      animateSlide(bottomBox, 120, 0, 400);
+      impactContent.style.transform = "translateY(0)";
+      animateSlide(bottomBox, 120, 0, 400, () => (isAnimating = false));
     });
   }
+}
 
-  function goalToggle() {
-    if (current === "goal") return;
-    current = "goal";
+// GOAL
+function switchToGoal() {
+  if (isAnimating || current === "goal") return;
+  isAnimating = true;
+  current = "goal";
+  activeEffect.style.left = "calc(50% + 1px)";
+  goalBtn.style.color = "white";
+  impactBtn.style.color = "#9EBCE2";
 
-    activeEffect.style.left = "calc(50% + 1px)";
-    goalBtn.style.color = "#FFFFFF";
-    impactBtn.style.color = "#9EBCE2";
+  if (isTablet()) {
+    // tablet animasi
+    slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+    slideBox.style.transform = "translateX(200%)";
 
+    setTimeout(() => {
+      slideBox.style.transition = "none";
+      slideBox.style.transform = "translateX(-120%)";
+
+      impactContent.classList.add("hidden");
+      goalContent.classList.remove("hidden");
+      slideBox.style.backgroundColor = "#CBDCEB";
+      slideBox.classList.remove("text-white");
+      slideBox.classList.add("text-[#4A6FA5]");
+
+      setTimeout(() => {
+        slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+        slideBox.style.transform = "translateX(0%)";
+      }, 50);
+    }, 700);
+
+    setTimeout(() => (isAnimating = false), 1500);
+  } else {
+    // hp animasi
     animateSlide(bottomBox, 0, 120, 400, () => {
       bottomBox.style.backgroundColor = "#CBDCEB";
       impactContent.style.opacity = "0";
       goalContent.style.opacity = "1";
       impactContent.style.transform = "translateY(100%)";
       goalContent.style.transform = "translateY(0)";
-      animateSlide(bottomBox, 120, 0, 400);
+      animateSlide(bottomBox, 120, 0, 400, () => (isAnimating = false));
     });
   }
+}
+
+impactBtn.addEventListener("click", switchToImpact);
+goalBtn.addEventListener("click", switchToGoal);

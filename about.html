@@ -295,12 +295,11 @@
 <section
   data-scroll-section
   id="impactGoal"
-  class="relative w-full h-[100vh] md:h-[100vh] section-light z-[4001] rounded-b-[50px] -mt-12 px-4 md:px-6 lg:px-24 pt-20 flex flex-col md:flex-row-reverse gap-3 pb-16"
+  class="relative w-full h-[100vh] md:h-[100vh] section-light z-[4001] rounded-b-[50px] -mt-12 px-4 md:px-6 pt-20 flex flex-col md:flex-row-reverse gap-3 pb-16"
 >
-  <div
-    class="w-full h-full rounded-[40px] bg-cover bg-bottom flex flex-col justify-between"
-    style="background-image: url(/public/assets/medias/about/bgwhat.jpg)"
-  >
+    <div class="w-full h-full rounded-[40px] bg-cover bg-bottom flex flex-col justify-between md:hidden"
+      style="background-image: url(/public/assets/medias/about/bgwhat.jpg)"
+    >
     <!-- * TOP * -->
     <div class="flex flex-row gap-9 mt-5 justify-center">
       <!-- Toggle Button -->
@@ -485,6 +484,107 @@
 
 
   </div>
+
+  <section
+  id="simulate-tablet"
+  class="hidden md:flex w-full justify-center items-center bg-[#F3EEE6] px-6 py-16"
+>
+  <div
+    class="relative w-full max-w-[1100px] h-[450px] rounded-[40px] flex overflow-hidden"
+  >
+    <!-- Background Image -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/public/assets/medias/about/bgwhat.jpg');"
+    ></div>
+
+    <!-- ======= SLIDE BOX (same element, reused) ======= -->
+    <div
+      id="slideBox"
+      class="absolute top-0 left-0 h-full w-[55%] bg-[#CBDCEB] rounded-[40px] flex flex-col justify-center px-10 text-[#4A6FA5] z-10 transition-transform duration-700 ease-[cubic-bezier(0.55,0,0.1,1)]"
+    >
+      <!-- Toggle Button -->
+      <div
+        class="absolute top-6 right-6 flex flex-row items-center justify-between w-[160px] h-10 bg-white rounded-[16.33px] p-1 font-semibold text-[14px]"
+      >
+        <div
+          id="activeEffect"
+          class="absolute h-[calc(100%-8px)] w-[45%] bg-[#CBDCEB] top-1 left-[calc(50%+1px)] rounded-[16.33px] transition-all duration-300 ease-in-out"
+        ></div>
+
+        <button
+          id="impactBtn"
+          class="relative z-10 flex-1 text-[#9EBCE2] transition-colors duration-300"
+          onclick="switchToImpact()"
+        >
+          Impact
+        </button>
+        <button
+          id="goalBtn"
+          class="relative z-10 flex-1 text-white transition-colors duration-300"
+          onclick="switchToGoal()"
+        >
+          Goal
+        </button>
+      </div>
+
+      <!-- CONTENT WRAPPER -->
+      <div id="contentWrapper" class="transition-none">
+        <!-- GOAL CONTENT -->
+        <div id="goalContent">
+          <h2 class="font-figtree text-[18px] mb-2">
+            <span class="font-fontspringheavy">TAPAS</span> aims to cut
+          </h2>
+          <h1
+            class="text-[80px] md:text-[100px] font-fontspringheavy font-bold leading-none tracking-tight"
+          >
+            1000
+          </h1>
+          <h2 class="text-[40px] md:text-[55px] font-fontspringheavy leading-none">
+            TONS OF
+          </h2>
+          <h3 class="text-[20px] font-semibold md:text-[26px] mt-3 mb-4">
+            CO₂ emissions by 2026
+          </h3>
+          <p class="text-[14px] md:text-[16px] mb-6">
+            For every 10 kilometers ridden on an e-bike instead of driving a car,
+            a rider can save approximately 2 kilograms of CO₂ emissions.
+          </p>
+
+          <button
+            class="mt-3 flex flex-row gap-2 items-center border border-[#4A6FA5] text-[#4A6FA5] rounded-full py-2 px-6 hover:bg-[#4A6FA5] hover:text-white transition-all"
+          >
+            Join the Movement
+          </button>
+        </div>
+
+        <!-- IMPACT CONTENT -->
+        <div id="impactContent" class="hidden text-white">
+          <h2 class="font-figtree text-[18px] mb-2">
+            <span class="font-fontspringheavy">TAPAS</span> aims to bring
+          </h2>
+          <h1
+            class="text-[36px] md:text-[45px] font-fontspringheavy font-bold leading-tight tracking-tight"
+          >
+            LESS FUEL USAGE <br />
+            HEALTHIER CITIES <br />
+            LESS TRAFFIC <br />
+            CLEANER AIR
+          </h1>
+          <p class="text-[14px] md:text-[16px] mt-5 mb-6">
+            TAPAS is here to make cities cleaner, healthier, and easier to move
+            through—one electric ride at a time.
+          </p>
+          <button
+            class="mt-3 flex flex-row gap-2 items-center border border-white text-white rounded-full py-2 px-6 hover:bg-white hover:text-[#4A6FA5] transition-all"
+          >
+            Join the Movement
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </section>
 
       <!-- FOOTER SECTION -->

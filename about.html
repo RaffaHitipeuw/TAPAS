@@ -93,7 +93,7 @@
         <div class="absolute w-full h-full bg-black bg-opacity-15 top-0"></div>
       </header>
 
-      <!-- FIRST SECTION -->
+      <!-- *FIRST SECTION -->
       <section
         data-scroll-section
         class="relative w-full h-[110vh] md:h-[550px] lg:h-[700px] px-4 md:px-6 lg:px-24 section-light rounded-[50px] z-[4003] -mb-3 pt-5 md:pt-10 lg:pt-14"
@@ -134,10 +134,9 @@
           </div>
         </div>
 
-        <!-- MISSION & VISION -->
+        <!-- !MISSION & VISION -->
         <div
-          class="relative flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]"
-        >
+          class="relative flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]">
           <div
             id="missionBtn"
             class="relative cursor-pointer lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
@@ -207,7 +206,6 @@
           </div>
         </div>
       </section>
-
       <!-- SECTION 2 BENEFITS -->
 
       <section
@@ -294,42 +292,200 @@
 
       <!-- SECTION 3 -->
 
-      <section
-        data-scroll-section
-        id="impactGoal"
-        class="relative w-full h-[100vh] md:h-[100vh] section-light z-[4001] rounded-b-[50px] -mt-12 px-4 md:px-6 lg:px-24 pt-20 flex flex-col md:flex-row-reverse gap-3 pb-16"
+<section
+  data-scroll-section
+  id="impactGoal"
+  class="relative w-full h-[100vh] md:h-[100vh] section-light z-[4001] rounded-b-[50px] -mt-12 px-4 md:px-6 lg:px-24 pt-20 flex flex-col md:flex-row-reverse gap-3 pb-16"
+>
+  <div
+    class="w-full h-full rounded-[40px] bg-cover bg-bottom flex flex-col justify-between"
+    style="background-image: url(/public/assets/medias/about/bgwhat.jpg)"
+  >
+    <!-- * TOP * -->
+    <div class="flex flex-row gap-9 mt-5 justify-center">
+      <!-- Toggle Button -->
+      <div
+        class="relative flex flex-row items-center justify-between w-[160px] h-10 bg-white rounded-[16.33px] p-1 font-semibold text-[14px]"
       >
+        <!-- Active highlight -->
         <div
-          class="w-full h-full rounded-[40px] bg-cover bg-bottom"
-          style="background-image: url(/public/assets/medias/about/bgwhat.jpg)"
+          id="activeEffect"
+          class="absolute h-[calc(100%-8px)] w-[45%] bg-[#CBDCEB] top-1 left-[calc(50%+1px)] rounded-[16.33px] transition-all duration-300 ease-in-out"
+        ></div>
+
+        <!-- Impact -->
+        <button
+          id="impactBtn"
+          class="relative z-10 flex-1 text-[#9EBCE2] transition-colors duration-300"
+          onclick="impactToggle()"
         >
-          <div class="flex-row flex p-8 gap-4">
-            <div
-              class="relative w-1/2 h-min bg-white font-semibold rounded-full py-2 flex flex-row justify-evenly items-center"
-            >
-              <button
-                class="impactBtn z-[4002]"
-                onclick="impactToggle()"
-              >
-                Impact
-              </button>
-              <button
-                class="goalBtn z-[4002]"
-                onclick="goalToggle()"
-                >Goal</button
-              >
+          Impact
+        </button>
+
+        <!-- Goal -->
+        <button
+          id="goalBtn"
+          class="relative z-10 flex-1 text-white transition-colors duration-300"
+          onclick="goalToggle()"
+        >
+          Goal
+        </button>
+      </div>
+
+      <!-- Gambar di kanan -->
+      <img
+        src="/public/assets/medias/logo-tapas.png"
+        alt="logo tapas"
+        class="w-[100px] h-auto"
+      />
+    </div>
+
+    <!-- * BOTTOM * -->
+<div
+  id="bottomBox"
+  class="bg-[#CBDCEB] rounded-[40px] p-8 w-full mx-auto text-[#4A6FA5] font-figtree transition-slide overflow-hidden relative"
+>
+<div
+  id="impactContent"
+  class="absolute top-0 left-0 w-full h-full flex flex-col items-end justify-center text-end p-8 text-white opacity-0 translate-y-full transition-slide"
+>
+  <h2 class="font-figtree text-[18px] mb-4 text-right self-end">
+    <span class="font-fontspringheavy text-white">TAPAS</span> aims to bring
+  </h2>
+
+  <div class="flex flex-col leading-tight font-fontspringmedium font-semibold mb-6 text-right self-end">
+    <h1 class="text-[25px]">LESS FUEL USAGE</h1>
+    <h1 class="text-[25px]">HEALTHIER CITIES</h1>
+    <h1 class="text-[25px]">LESS TRAFFIC</h1>
+    <h1 class="text-[25px]">CLEANER AIR</h1>
+  </div>
+
+  <p class="text-[14px] md:text-[16px] text-white w-56 mb-6 text-right self-end">
+    TAPAS is here to make cities cleaner, healthier, and easier to move through—one electric ride at a time.
+  </p>
+
+  <button class="mt-3 flex flex-row gap-0 group self-end">
+    <div
+      class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="white"
+        stroke-width="1"
+        class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M7 17l10-10M7 7h10v10"
+        />
+      </svg>
+    </div>
+
+    <div
+      class="lg:py-4 py-2 lg:px-8 px-4 border-white border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
+    >
+      Join the Movement
+    </div>
+
+    <div
+      class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="white"
+        stroke-width="1"
+        class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M7 17l10-10M7 7h10v10"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+
+
+
+  <div id="goalContent"
+    class="relative opacity-1 translate-y-0 transition-slide"
+  >
+    <h2 class="font-figtree text-[#6D94C5] text-[18px] md:text-[22px]">
+      <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span> aims to cut
+    </h2>
+    <h1
+      class="text-[80px] md:text-[100px] font-fontspringheavy font-bold leading-none text-[#6D94C5] tracking-tight"
+    >
+      1000
+    </h1>
+    <h2
+      class="text-[40px] md:text-[55px] font-fontspringheavy leading-none text-[#6D94C5]"
+    >
+      TONS OF
+    </h2>
+    <h3 class="text-[20px] font-semibold md:text-[26px] text-[#6D94C5] mt-3 mb-4">
+      CO₂ emissions by 2026
+    </h3>
+    <p class="text-[14px] md:text-[16px] text-[#6D94C5] mb-6">
+      For every 10 kilometers ridden on an e-bike instead of driving a car,
+      a rider can save approximately 2 kilograms (2,400 grams) of CO₂ emissions
+    </p>
+            <button class="mt-3 flex flex-row gap-0 group">
               <div
-                class="activeEffect absolute h-full w-3/5 bg-[#CBDCEB] top-0 left-0 rounded-full z-[4001]"
-              ></div>
-            </div>
-            <img
-              src="/public/assets/medias/logo-tapas.png"
-              alt=""
-              class="w-1/2 h-auto"
-            />
-          </div>
-        </div>
-      </section>
+                class="lg:py-4 lg:px-4 py-2 px-2 border-[#6D94C5] border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#6D94C5"
+                  stroke-width="1"
+                  class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+              <div
+                class="lg:py-4 py-2 lg:px-8 px-4 border-[#6D94C5] border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
+              >
+                Join the Movement
+              </div>
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-[#6D94C5] border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="#6D94C5"
+                stroke-width="1"
+                class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
+              >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+            </button>
+  </div>
+</div>
+
+
+  </div>
+</section>
 
       <!-- FOOTER SECTION -->
       <footer

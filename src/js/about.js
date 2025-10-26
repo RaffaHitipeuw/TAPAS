@@ -143,60 +143,124 @@ btn.addEventListener("click", () => {
 });
 
 // MISSION & VISION BUTTON :b
-
 const missionBtn = document.getElementById("missionBtn");
 const visionBtn = document.getElementById("visionBtn");
 const answerMission = missionBtn.querySelector(".answer");
 const answerVision = visionBtn.querySelector(".answer");
 
-let isOpenVision = false;
 let isOpenMission = false;
+let isOpenVision = false;
+
+function setIcon(btn, open) {
+  const line1 = btn.querySelector(".line1");
+  const line2 = btn.querySelector(".line2");
+
+  line1.style.transition = "transform 0.3s ease";
+  line2.style.transition = "transform 0.3s ease";
+
+  if (open) {
+    line1.style.transform = "rotate(0deg)";
+  } else {
+    line1.style.transform = "rotate(90deg)";
+  }
+}
 
 visionBtn.addEventListener("click", () => {
   isOpenVision = !isOpenVision;
-  visionBtn
-    .querySelector(".line2")
-    .classList.toggle("rotate-180", isOpenVision);
-  visionBtn.querySelector(".line1").classList.toggle("-rotate-0", isOpenVision);
-  isOpenVision
-    ? (answerVision.style.height = "200px")
-    : (answerVision.style.height = "0px");
 
-  answerVision.classList.toggle("opacity-100", isOpenVision);
+  answerVision.style.height = isOpenVision ? "200px" : "0px";
+  answerVision.style.opacity = isOpenVision ? "1" : "0";
+  answerVision.style.transition = "all 0.3s ease";
+
+  setIcon(visionBtn, isOpenVision);
+
   if (isOpenVision) {
     isOpenMission = false;
     answerMission.style.height = "0px";
-    answerMission.classList.remove("opacity-100");
-
-    missionBtn.querySelector(".line2").classList.remove("rotate-180");
-    missionBtn.querySelector(".line1").classList.remove("-rotate-0");
+    answerMission.style.opacity = "0";
+    setIcon(missionBtn, false);
   }
 });
 
 missionBtn.addEventListener("click", () => {
   isOpenMission = !isOpenMission;
 
-  missionBtn
-    .querySelector(".line2")
-    .classList.toggle("rotate-180", isOpenMission);
+  answerMission.style.height = isOpenMission ? "400px" : "0px";
+  answerMission.style.opacity = isOpenMission ? "1" : "0";
+  answerMission.style.transition = "all 0.3s ease";
 
-  missionBtn
-    .querySelector(".line1")
-    .classList.toggle("-rotate-0", isOpenMission);
-  isOpenMission
-    ? (answerMission.style.height = "400px")
-    : (answerMission.style.height = "0px");
-
-  answerMission.classList.toggle("opacity-100", isOpenMission);
+  setIcon(missionBtn, isOpenMission);
 
   if (isOpenMission) {
     isOpenVision = false;
     answerVision.style.height = "0px";
-    answerVision.classList.remove("opacity-100");
-
-    visionBtn.querySelector(".line2").classList.remove("rotate-180");
-    visionBtn.querySelector(".line1").classList.remove("-rotate-0");
+    answerVision.style.opacity = "0";
+    setIcon(visionBtn, false);
   }
 });
 
+
 // IMPACT & GOAL
+  const activeEffect = document.getElementById("activeEffect");
+  const impactBtn = document.getElementById("impactBtn");
+  const goalBtn = document.getElementById("goalBtn");
+  const bottomBox = document.getElementById("bottomBox");
+  const impactContent = document.getElementById("impactContent");
+  const goalContent = document.getElementById("goalContent");
+
+  let current = "goal"; // default visible
+
+  // Helper buat animasi translateY manual
+  function animateSlide(element, from, to, duration, callback) {
+    const start = performance.now();
+
+    function step(timestamp) {
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const value = from + (to - from) * progress;
+      element.style.transform = `translateY(${value}%)`;
+      element.style.opacity = 1 - Math.abs(value) / 100;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else if (callback) callback();
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function impactToggle() {
+    if (current === "impact") return;
+    current = "impact";
+
+    activeEffect.style.left = "5px";
+    impactBtn.style.color = "#FFFFFF";
+    goalBtn.style.color = "#9EBCE2";
+
+    // Turunin container ke bawah
+    animateSlide(bottomBox, 0, 120, 400, () => {
+      bottomBox.style.backgroundColor = "#6D94C5";
+      goalContent.style.opacity = "0";
+      impactContent.style.opacity = "1";
+      goalContent.style.transform = "translateY(100%)";
+      impactContent.style.transform = "translateY(0)";  
+      animateSlide(bottomBox, 120, 0, 400);
+    });
+  }
+
+  function goalToggle() {
+    if (current === "goal") return;
+    current = "goal";
+
+    activeEffect.style.left = "calc(50% + 1px)";
+    goalBtn.style.color = "#FFFFFF";
+    impactBtn.style.color = "#9EBCE2";
+
+    animateSlide(bottomBox, 0, 120, 400, () => {
+      bottomBox.style.backgroundColor = "#CBDCEB";
+      impactContent.style.opacity = "0";
+      goalContent.style.opacity = "1";
+      impactContent.style.transform = "translateY(100%)";
+      goalContent.style.transform = "translateY(0)";
+      animateSlide(bottomBox, 120, 0, 400);
+    });
+  }

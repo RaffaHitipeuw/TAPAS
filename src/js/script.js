@@ -7,9 +7,9 @@ const btn = document.getElementById("menuBtn");
 
 const items = [
   { label: "HOME", href: "#" },
-  { label: "CONTACT", href: "#" },
-  { label: "ROUTES", href: "routes.html" },
   { label: "ABOUT", href: "#" },
+  { label: "ROUTES", href: "routes.html" },
+  { label: "CONTACT", href: "#" },
 ];
 
 let isOpen = false;

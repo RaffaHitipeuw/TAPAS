@@ -143,43 +143,181 @@ btn.addEventListener("click", () => {
 });
 
 // MISSION & VISION BUTTON :b
-
 const missionBtn = document.getElementById("missionBtn");
 const visionBtn = document.getElementById("visionBtn");
+const answerMission = missionBtn.querySelector(".answer");
+const answerVision = visionBtn.querySelector(".answer");
 
+let isOpenMission = false;
 let isOpenVision = false;
+
+function setIcon(btn, open) {
+  const line1 = btn.querySelector(".line1");
+  const line2 = btn.querySelector(".line2");
+
+  line1.style.transition = "transform 0.3s ease";
+  line2.style.transition = "transform 0.3s ease";
+
+  if (open) {
+    line1.style.transform = "rotate(0deg)";
+  } else {
+    line1.style.transform = "rotate(90deg)";
+  }
+}
 
 visionBtn.addEventListener("click", () => {
   isOpenVision = !isOpenVision;
-  // btn.getElementsByTagName(button)
-  visionBtn
-    .querySelector(".line2")
-    .classList.toggle("rotate-180", isOpenVision);
-  visionBtn
-    .querySelector(".line2")
-    .classList.toggle("translate-y-0", isOpenVision);
-  visionBtn
-    .querySelector(".line1")
-    .classList.toggle("rotate-180", isOpenVision);
-  visionBtn
-    .querySelector(".line1")
-    .classList.toggle("translate-y-0", isOpenVision);
+
+  answerVision.style.height = isOpenVision ? "200px" : "0px";
+  answerVision.style.opacity = isOpenVision ? "1" : "0";
+  answerVision.style.transition = "all 0.3s ease";
+
+  setIcon(visionBtn, isOpenVision);
+
+  if (isOpenVision) {
+    isOpenMission = false;
+    answerMission.style.height = "0px";
+    answerMission.style.opacity = "0";
+    setIcon(missionBtn, false);
+  }
 });
-let isOpenMission = false;
 
 missionBtn.addEventListener("click", () => {
   isOpenMission = !isOpenMission;
-  // btn.getElementsByTagName(button)
-  missionBtn
-    .querySelector(".line2")
-    .classList.toggle("rotate-180", isOpenMission);
-  missionBtn
-    .querySelector(".line2")
-    .classList.toggle("translate-y-0", isOpenMission);
-  missionBtn
-    .querySelector(".line1")
-    .classList.toggle("rotate-180", isOpenMission);
-  missionBtn
-    .querySelector(".line1")
-    .classList.toggle("translate-y-0", isOpenMission);
+
+  answerMission.style.height = isOpenMission ? "400px" : "0px";
+  answerMission.style.opacity = isOpenMission ? "1" : "0";
+  answerMission.style.transition = "all 0.3s ease";
+
+  setIcon(missionBtn, isOpenMission);
+
+  if (isOpenMission) {
+    isOpenVision = false;
+    answerVision.style.height = "0px";
+    answerVision.style.opacity = "0";
+    setIcon(visionBtn, false);
+  }
 });
+
+
+// IMPACT & GOAL
+const activeEffect = document.getElementById("activeEffect");
+const impactBtn = document.getElementById("impactBtn");
+const goalBtn = document.getElementById("goalBtn");
+const impactContent = document.getElementById("impactContent");
+const goalContent = document.getElementById("goalContent");
+const bottomBox = document.getElementById("bottomBox");
+const slideBox = document.getElementById("slideBox");
+
+let current = "goal";
+let isAnimating = false;
+
+// Helper animasi vertikal (HP)
+function animateSlide(element, from, to, duration, callback) {
+  const start = performance.now();
+  function step(timestamp) {
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const value = from + (to - from) * progress;
+    element.style.transform = `translateY(${value}%)`;
+    element.style.opacity = 1 - Math.abs(value) / 100;
+    if (progress < 1) requestAnimationFrame(step);
+    else if (callback) callback();
+  }
+  requestAnimationFrame(step);
+}
+
+// Deteksi tablet
+function isTablet() {
+  return window.matchMedia("(min-width: 768px)").matches;
+}
+
+// IMPACT
+function switchToImpact() {
+  if (isAnimating || current === "impact") return;
+  isAnimating = true;
+  current = "impact";
+  activeEffect.style.left = "5px";
+  impactBtn.style.color = "white";
+  goalBtn.style.color = "#9EBCE2";
+
+  if (isTablet()) {
+    // tablet animasi
+    slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+    slideBox.style.transform = "translateX(-120%)";
+
+    setTimeout(() => {
+      slideBox.style.transition = "none";
+      slideBox.style.transform = "translateX(200%)";
+
+      goalContent.classList.add("hidden");
+      impactContent.classList.remove("hidden");
+      slideBox.style.backgroundColor = "#6D94C5";
+      slideBox.classList.add("text-white");
+      slideBox.classList.remove("text-[#4A6FA5]");
+
+      setTimeout(() => {
+        slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+        slideBox.style.transform = "translateX(75%)";
+      }, 50);
+    }, 700);
+
+    setTimeout(() => (isAnimating = false), 1500);
+  } else {
+    // hp animasi
+    animateSlide(bottomBox, 0, 120, 400, () => {
+      bottomBox.style.backgroundColor = "#6D94C5";
+      goalContent.style.opacity = "0";
+      impactContent.style.opacity = "1";
+      goalContent.style.transform = "translateY(100%)";
+      impactContent.style.transform = "translateY(0)";
+      animateSlide(bottomBox, 120, 0, 400, () => (isAnimating = false));
+    });
+  }
+}
+
+// GOAL
+function switchToGoal() {
+  if (isAnimating || current === "goal") return;
+  isAnimating = true;
+  current = "goal";
+  activeEffect.style.left = "calc(50% + 1px)";
+  goalBtn.style.color = "white";
+  impactBtn.style.color = "#9EBCE2";
+
+  if (isTablet()) {
+    // tablet animasi
+    slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+    slideBox.style.transform = "translateX(200%)";
+
+    setTimeout(() => {
+      slideBox.style.transition = "none";
+      slideBox.style.transform = "translateX(-120%)";
+
+      impactContent.classList.add("hidden");
+      goalContent.classList.remove("hidden");
+      slideBox.style.backgroundColor = "#CBDCEB";
+      slideBox.classList.remove("text-white");
+      slideBox.classList.add("text-[#4A6FA5]");
+
+      setTimeout(() => {
+        slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
+        slideBox.style.transform = "translateX(0%)";
+      }, 50);
+    }, 700);
+
+    setTimeout(() => (isAnimating = false), 1500);
+  } else {
+    // hp animasi
+    animateSlide(bottomBox, 0, 120, 400, () => {
+      bottomBox.style.backgroundColor = "#CBDCEB";
+      impactContent.style.opacity = "0";
+      goalContent.style.opacity = "1";
+      impactContent.style.transform = "translateY(100%)";
+      goalContent.style.transform = "translateY(0)";
+      animateSlide(bottomBox, 120, 0, 400, () => (isAnimating = false));
+    });
+  }
+}
+
+impactBtn.addEventListener("click", switchToImpact);
+goalBtn.addEventListener("click", switchToGoal);

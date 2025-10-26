@@ -2,7 +2,11 @@
 export default {
   mode: 'jit',
   content: [
-    "./index.html","./src/**/*.{js,ts,jsx,tsx,html}","./about.html",
+    "./index.html",
+    "./about.html",
+    "./routes.html",
+    "./contact.html",
+    "./src/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {
     extend: {

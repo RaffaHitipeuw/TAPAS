@@ -19,10 +19,10 @@ const scroll = new LocomotiveScroll({
 // NAV
 
 const items = [
-  { label: "HOME", href: "#" },
-  { label: "ABOUT", href: "#" },
-  { label: "ROUTES", href: "#" },
-  { label: "CONTACT", href: "#" },
+  { label: "HOME", href: "../index.html" },
+  { label: "ABOUT", href: "../about.html" },
+  { label: "ROUTES", href: "../routes.html" },
+  { label: "CONTACT", href: "../contact.html" },
 ];
 
 let isOpen = false;
@@ -141,3 +141,7 @@ btn.addEventListener("click", () => {
     );
   }
 });
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+}

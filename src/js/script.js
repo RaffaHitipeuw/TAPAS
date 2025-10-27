@@ -6,10 +6,10 @@ const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
 
 const items = [
-  { label: "HOME", href: "#" },
-  { label: "ABOUT", href: "#" },
-  { label: "ROUTES", href: "routes.html" },
-  { label: "CONTACT", href: "#" },
+  { label: "HOME", href: "../index.html" },
+  { label: "ABOUT", href: "../about.html" },
+  { label: "ROUTES", href: "../routes.html" },
+  { label: "CONTACT", href: "../contact.html" },
 ];
 
 let isOpen = false;
@@ -207,7 +207,10 @@ const observer = new IntersectionObserver(
           entry.target.classList.contains("image-slide-left")
         );
       } else {
-        entry.target.classList.remove("translate-x-[40%]", "translate-x-[-40%]");
+        entry.target.classList.remove(
+          "translate-x-[40%]",
+          "translate-x-[-40%]"
+        );
       }
     });
   },
@@ -337,7 +340,8 @@ questionHover.className =
   "fixed top-0 left-0 w-[400px] h-[400px] rounded-full flex flex-col items-center justify-center pointer-events-none p-12 text-center overflow-hidden";
 questionHover.style.zIndex = "9999";
 questionHover.style.background = "white";
-questionHover.style.transition = "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
+questionHover.style.transition =
+  "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
 questionHover.style.transform = "scale(0)";
 document.body.appendChild(questionHover);
 
@@ -497,3 +501,8 @@ rideScroll.addEventListener("mousemove", (e) => {
 
 // event saat scroll biasa (pakai touchpad / mobile)
 rideScroll.addEventListener("scroll", checkScrollLoop);
+
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+}

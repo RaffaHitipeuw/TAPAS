@@ -142,3 +142,25 @@
   scrollbar-width: none;
 }
 
+  .transition-slide {
+    transition: all 0.8s ease-in-out;
+  }
+
+  .slide-out {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+
+  .slide-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #bottomBox {
+    transition: background-color 0.6s ease-in-out, transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  }
+
+  #impactContent,
+  #goalContent {
+    transition: all 0.8s ease-in-out;
+  }

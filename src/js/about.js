@@ -19,10 +19,10 @@ const scroll = new LocomotiveScroll({
 // NAV
 
 const items = [
-  { label: "HOME", href: "#" },
-  { label: "CONTACT", href: "#" },
-  { label: "ROUTES", href: "#" },
-  { label: "ABOUT", href: "#" },
+  { label: "HOME", href: "../index.html" },
+  { label: "ABOUT", href: "../about.html" },
+  { label: "ROUTES", href: "../routes.html" },
+  { label: "CONTACT", href: "../contact.html" },
 ];
 
 let isOpen = false;
@@ -143,43 +143,106 @@ btn.addEventListener("click", () => {
 });
 
 // MISSION & VISION BUTTON :b
-
 const missionBtn = document.getElementById("missionBtn");
 const visionBtn = document.getElementById("visionBtn");
+const answerMission = missionBtn.querySelector(".answer");
+const answerVision = visionBtn.querySelector(".answer");
 
+let isOpenMission = false;
 let isOpenVision = false;
+
+function setIcon(btn, open) {
+  const line1 = btn.querySelector(".line1");
+  const line2 = btn.querySelector(".line2");
+
+  line1.style.transition = "transform 0.3s ease";
+  line2.style.transition = "transform 0.3s ease";
+
+  if (open) {
+    line1.style.transform = "rotate(0deg)";
+  } else {
+    line1.style.transform = "rotate(90deg)";
+  }
+}
 
 visionBtn.addEventListener("click", () => {
   isOpenVision = !isOpenVision;
-  // btn.getElementsByTagName(button)
-  visionBtn
-    .querySelector(".line2")
-    .classList.toggle("rotate-180", isOpenVision);
-  visionBtn
-    .querySelector(".line2")
-    .classList.toggle("translate-y-0", isOpenVision);
-  visionBtn
-    .querySelector(".line1")
-    .classList.toggle("rotate-180", isOpenVision);
-  visionBtn
-    .querySelector(".line1")
-    .classList.toggle("translate-y-0", isOpenVision);
+
+  answerVision.style.height = isOpenVision ? "200px" : "0px";
+  answerVision.style.opacity = isOpenVision ? "1" : "0";
+  answerVision.style.transition = "all 0.3s ease";
+
+  setIcon(visionBtn, isOpenVision);
+
+  if (isOpenVision) {
+    isOpenMission = false;
+    answerMission.style.height = "0px";
+    answerMission.style.opacity = "0";
+    setIcon(missionBtn, false);
+  }
 });
-let isOpenMission = false;
 
 missionBtn.addEventListener("click", () => {
   isOpenMission = !isOpenMission;
-  // btn.getElementsByTagName(button)
-  missionBtn
-    .querySelector(".line2")
-    .classList.toggle("rotate-180", isOpenMission);
-  missionBtn
-    .querySelector(".line2")
-    .classList.toggle("translate-y-0", isOpenMission);
-  missionBtn
-    .querySelector(".line1")
-    .classList.toggle("rotate-180", isOpenMission);
-  missionBtn
-    .querySelector(".line1")
-    .classList.toggle("translate-y-0", isOpenMission);
+
+  answerMission.style.height = isOpenMission ? "400px" : "0px";
+  answerMission.style.opacity = isOpenMission ? "1" : "0";
+  answerMission.style.transition = "all 0.3s ease";
+
+  setIcon(missionBtn, isOpenMission);
+
+  if (isOpenMission) {
+    isOpenVision = false;
+    answerVision.style.height = "0px";
+    answerVision.style.opacity = "0";
+    setIcon(visionBtn, false);
+  }
 });
+
+// IMPACT & GOAL REVISION :P
+const btnCard = document.getElementById("cardButton");
+const currentEffect = document.getElementById("currentEffect");
+const textGoal = document.getElementById("goalText");
+const textImpact = document.getElementById("impactText");
+const cardImpact = document.getElementById("impactCard");
+const cardGoal = document.getElementById("goalCard");
+const cardBike = document.getElementById("cardBike");
+cardImpact.style.opacity = 0;
+
+function impactCard(params) {
+  currentEffect.style.right = "50%";
+  currentEffect.style.backgroundColor = "#6D94C5";
+  textImpact.classList.remove("text-[#CBDCEB]");
+  textImpact.classList.add("text-white");
+  textGoal.classList.remove("text-white");
+  textGoal.classList.add("text-[#6D94C5]");
+  slideImpact();
+}
+function goalCard(params) {
+  currentEffect.style.right = "0px";
+  currentEffect.style.backgroundColor = "#CBDCEB";
+  textImpact.classList.remove("text-white");
+  textImpact.classList.add("text-[#CBDCEB]");
+  textGoal.classList.remove("text-[#6D94C5]");
+  textGoal.classList.add("text-white");
+  slideGoal();
+}
+
+function slideImpact() {
+  cardGoal.style.left = "-100%";
+  cardImpact.style.right = "0px";
+  cardBike.style.right = "70%";
+  cardImpact.style.opacity = 1;
+  cardGoal.style.opacity = 0;
+}
+function slideGoal() {
+  cardGoal.style.left = "0px";
+  cardImpact.style.right = "-100%";
+  cardBike.style.right = "40px";
+  cardImpact.style.opacity = 0;
+  cardGoal.style.opacity = 1;
+}
+
+const imgClick = () => {
+  window.location.href = "../index.html";
+};

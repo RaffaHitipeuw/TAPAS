@@ -20,9 +20,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script
       src="./src/js/contact.js"
       defer
@@ -63,7 +60,8 @@
             <img
               src="/public/assets/medias/logo-tapas.png"
               alt=""
-              class="md:w-[40px] w-[30px] mt-[5px]"
+              class="md:w-[40px] w-[30px] mt-[5px] cursor-pointer"
+              onclick="imgClick()"
             />
           </div>
           <div class="absolute left-1/2 -translate-x-1/2 mt-[10x]">
@@ -315,7 +313,7 @@
             <p class="text-[14px] text-[#9BB3E1]">Explore</p>
             <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
               <a
-                href="#"
+                href="/index.html"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">HOME</h2>
@@ -337,29 +335,7 @@
                 </span>
               </a>
               <a
-                href="#"
-                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
-              >
-                <h2 class="footer-links cursor-none">ROUTES</h2>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="#6A8ACB"
-                    stroke-width="2"
-                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M7 17l10-10M7 7h10v10"
-                    />
-                  </svg>
-                </span>
-              </a>
-              <a
-                href="#"
+                href="/about.html"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">ABOUT</h2>
@@ -381,7 +357,29 @@
                 </span>
               </a>
               <a
-                href="#"
+                href="/routes.html"
+                class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
+              >
+                <h2 class="footer-links cursor-none">ROUTES</h2>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#6A8ACB"
+                    stroke-width="2"
+                    class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17l10-10M7 7h10v10"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="/contact.html"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">CONTACT</h2>
@@ -410,7 +408,7 @@
             <p class="text-[14px] text-[#9BB3E1]">Connect</p>
             <div class="flex flex-col divide-y divide-[#D0DBF0] -mt-[15px]">
               <a
-                href="#"
+                href="https://instagram.com"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">INSTAGRAM</h2>
@@ -432,7 +430,7 @@
                 </span>
               </a>
               <a
-                href="#"
+                href="https://linkedin.com"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">LINKEDIN</h2>
@@ -454,7 +452,7 @@
                 </span>
               </a>
               <a
-                href="#"
+                href="https://x.com"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">TWITTER</h2>
@@ -476,7 +474,7 @@
                 </span>
               </a>
               <a
-                href="#"
+                href="https://youtube.com"
                 class="group flex justify-between items-center py-3 lg:text-[30px] md:text-[20px] text-[15px] font-fontspringmedium hover:text-[#2E3A59] transition-all"
               >
                 <h2 class="footer-links cursor-none">YOUTUBE</h2>
@@ -498,45 +496,6 @@
                 </span>
               </a>
             </div>
-          </div>
-        </div>
-
-        <!-- RIGHT SIDE: BRAND INFO DESKTOP-->
-        <div class="hidden lg:flex flex-col items-end text-right space-y-4">
-          <div class="flex flex-row items-center space-x-2">
-            <img
-              src="/public/assets/medias/logo-tapas-blue.png"
-              alt="TAPAS Logo"
-              class="w-[50px] h-[40px]"
-            />
-            <p
-              class="font-fontspringmedium text-[#6D94C5] text-[18px] leading-tight"
-            >
-              ZERO EMISSION,<br />FULL AMBITION.
-            </p>
-          </div>
-
-          <div class="text-[15px] text-[#6D94C5] leading-relaxed">
-            <p>+62 0813 1456 8945</p>
-            <p>Jakarta Selatan, Indonesia</p>
-            <p>
-              Copyright ©
-              <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span>
-              2025
-            </p>
-          </div>
-
-          <div class="flex flex-row items-center space-x-3 mt-2">
-            <img
-              src="/public/assets/medias/APPSTORE.png"
-              alt="App Store"
-              class="w-[120px] h-auto"
-            />
-            <img
-              src="/public/assets/medias/GOOGLEPLAY.png"
-              alt="Google Play"
-              class="w-[120px] h-auto"
-            />
           </div>
         </div>
         <!-- RIGHT SIDE: BRAND INFO MOBILE-->
@@ -603,9 +562,6 @@
         class="menu-list flex flex-col justify-center h-full pl-[3vw] pr-[6vw] space-y-8"
       ></ul>
     </div>
-
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   </body>
 </html>

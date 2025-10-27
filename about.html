@@ -24,9 +24,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
 
   <body
@@ -137,7 +134,8 @@
 
         <!-- !MISSION & VISION -->
         <div
-          class="relative flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]">
+          class="relative flex flex-col md:flex-row w-full mt-6 space-y-2 md:space-y-0 text-[#7A9CC6] font-figtree font-extrabold md:px-6 md:py-3 border-0 md:border-[6px] rounded-[40px] border-[var(--section-bg-dark)]"
+        >
           <div
             id="missionBtn"
             class="relative cursor-pointer lg:text-[44px] md:text-[40px] text-[30px] w-full flex flex-row justify-between items-center px-6 py-7 leading-none border-[6px] rounded-[40px] border-[var(--section-bg-dark)] tracking-tight md:border-0"
@@ -211,7 +209,7 @@
 
       <section
         data-scroll-section
-        class="relative w-full h-[90vh] md:h-[65vh] section-dark z-[4002] rounded-[50px] -mt-24 px-4 md:px-6 lg:px-24 pt-36 flex flex-col md:flex-row-reverse gap-3 pb-16"
+        class="relative w-full h-[90vh] md:h-[55vh] section-dark z-[4002] rounded-[50px] -mt-24 px-4 md:px-6 lg:px-24 pt-36 flex flex-col md:flex-row-reverse gap-3 pb-16"
       >
         <div class="text-end">
           <h1
@@ -235,7 +233,7 @@
               />
             </div>
             <div
-              class="text-[20px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
+              class="text-[16px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
             >
               Strategic Parking Spots
             </div>
@@ -251,7 +249,7 @@
               />
             </div>
             <div
-              class="text-[20px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
+              class="text-[16px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
             >
               Zero-emission Vehicles
             </div>
@@ -267,7 +265,7 @@
               />
             </div>
             <div
-              class="text-[20px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
+              class="text-[16px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
             >
               App Based Convenience
             </div>
@@ -283,7 +281,7 @@
               />
             </div>
             <div
-              class="text-[20px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
+              class="text-[16px] lg:text-[24px] text-[#6D94C5] font-medium leading-tight"
             >
               Affordable Pricing
             </div>
@@ -291,152 +289,83 @@
         </div>
       </section>
 
-      <!-- SECTION 3 -->
+      <!-- SECTION 3 REVISED -->
 
-<section
-  data-scroll-section
-  id="impactGoal"
-  class="relative w-full h-[100vh] md:h-[100vh] section-light z-[4001] rounded-b-[50px] -mt-12 px-4 md:px-6 pt-20 flex flex-col md:flex-row-reverse gap-3 pb-16"
->
-    <div class="w-full h-full rounded-[40px] bg-cover bg-bottom flex flex-col justify-between md:hidden"
-      style="background-image: url(/public/assets/medias/about/bgwhat.jpg)"
-    >
-    <!-- * TOP * -->
-    <div class="flex flex-row gap-9 mt-5 justify-center">
-      <!-- Toggle Button -->
-      <div
-        class="relative flex flex-row items-center justify-between w-[160px] h-10 bg-white rounded-[16.33px] p-1 font-semibold text-[14px]"
+      <section
+        data-scroll-section
+        id="impactGoal"
+        class="w-full h-[115vh] section-light z-[4001] rounded-b-[50px] -mt-12 px-4 md:px-6 lg:px-24 pt-20 flex flex-col md:flex-row-reverse gap-3 pb-16"
       >
-        <!-- Active highlight -->
         <div
-          id="activeEffect"
-          class="absolute h-[calc(100%-8px)] w-[45%] bg-[#CBDCEB] top-1 left-[calc(50%+1px)] rounded-[16.33px] transition-all duration-300 ease-in-out"
-        ></div>
-
-        <!-- Impact -->
-        <button
-          id="impactBtn"
-          class="relative z-10 flex-1 text-[#9EBCE2] transition-colors duration-300"
-          onclick="impactToggle()"
+          class="relative w-full h-full bg-cover rounded-[70px] overflow-hidden"
+          style="background-image: url(/public/assets/medias/about/bgwhat.jpg)"
         >
-          Impact
-        </button>
-
-        <!-- Goal -->
-        <button
-          id="goalBtn"
-          class="relative z-10 flex-1 text-white transition-colors duration-300"
-          onclick="goalToggle()"
-        >
-          Goal
-        </button>
-      </div>
-
-      <!-- Gambar di kanan -->
-      <img
-        src="/public/assets/medias/logo-tapas.png"
-        alt="logo tapas"
-        class="w-[100px] h-auto"
-      />
-    </div>
-
-    <!-- * BOTTOM * -->
-<div
-  id="bottomBox"
-  class="bg-[#CBDCEB] rounded-[40px] p-8 w-full mx-auto text-[#4A6FA5] font-figtree transition-slide overflow-hidden relative"
->
-<div
-  id="impactContent"
-  class="absolute top-0 left-0 w-full h-full flex flex-col items-end justify-center text-end p-8 text-white opacity-0 translate-y-full transition-slide"
->
-  <h2 class="font-figtree text-[18px] mb-4 text-right self-end">
-    <span class="font-fontspringheavy text-white">TAPAS</span> aims to bring
-  </h2>
-
-  <div class="flex flex-col leading-tight font-fontspringmedium font-semibold mb-6 text-right self-end">
-    <h1 class="text-[25px]">LESS FUEL USAGE</h1>
-    <h1 class="text-[25px]">HEALTHIER CITIES</h1>
-    <h1 class="text-[25px]">LESS TRAFFIC</h1>
-    <h1 class="text-[25px]">CLEANER AIR</h1>
-  </div>
-
-  <p class="text-[14px] md:text-[16px] text-white w-56 mb-6 text-right self-end">
-    TAPAS is here to make cities cleaner, healthier, and easier to move through—one electric ride at a time.
-  </p>
-
-  <button class="mt-3 flex flex-row gap-0 group self-end">
-    <div
-      class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="white"
-        stroke-width="1"
-        class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M7 17l10-10M7 7h10v10"
-        />
-      </svg>
-    </div>
-
-    <div
-      class="lg:py-4 py-2 lg:px-8 px-4 border-white border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
-    >
-      Join the Movement
-    </div>
-
-    <div
-      class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="white"
-        stroke-width="1"
-        class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M7 17l10-10M7 7h10v10"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
-
-
-
-  <div id="goalContent"
-    class="relative opacity-1 translate-y-0 transition-slide"
-  >
-    <h2 class="font-figtree text-[#6D94C5] text-[18px] md:text-[22px]">
-      <span class="font-fontspringheavy text-[#6D94C5]">TAPAS</span> aims to cut
-    </h2>
-    <h1
-      class="text-[80px] md:text-[100px] font-fontspringheavy font-bold leading-none text-[#6D94C5] tracking-tight"
-    >
-      1000
-    </h1>
-    <h2
-      class="text-[40px] md:text-[55px] font-fontspringheavy leading-none text-[#6D94C5]"
-    >
-      TONS OF
-    </h2>
-    <h3 class="text-[20px] font-semibold md:text-[26px] text-[#6D94C5] mt-3 mb-4">
-      CO₂ emissions by 2026
-    </h3>
-    <p class="text-[14px] md:text-[16px] text-[#6D94C5] mb-6">
-      For every 10 kilometers ridden on an e-bike instead of driving a car,
-      a rider can save approximately 2 kilograms (2,400 grams) of CO₂ emissions
-    </p>
-            <button class="mt-3 flex flex-row gap-0 group">
+          <div
+            id="cardBike"
+            class="absolute md:bottom-10 top-10 md:top-auto right-10 w-3/12 h-auto z-[5000] transition-all duration-700"
+          >
+            <img
+              src="public/assets/medias/logo-tapas.png"
+              alt=""
+            />
+          </div>
+          <div
+            id="cardButton"
+            class="absolute top-2 left-1/2 -translate-x-1/2 w-min bg-white py-2 px-8 flex flex-row gap-16 rounded-full font-semibold z-[5001] border-8 border-white transition-all duration-500 "
+          >
+            <div
+              id="impactText"
+              class="z-[5001] text-[#CBDCEB] cursor-pointer transition-colors"
+              onclick="impactCard()"
+            >
+              Impact
+            </div>
+            <div
+              id="goalText"
+              class="z-[5001] text-white cursor-pointer transition-colors"
+              onclick="goalCard()"
+            >
+              Goal
+            </div>
+            <div
+              id="currentEffect"
+              class="currentEffect absolute bg-[#CBDCEB] rounded-full w-1/2 h-full top-0 right-0 transition-all ease-in-out duration-500"
+            ></div>
+          </div>
+          <div
+            class="absolute w-full h-full bg-black bg-opacity-15 top-0"
+          ></div>
+          <div
+            id="goalCard"
+            class="goalcard absolute flex flex-col justify-between md:w-4/6 w-full -left-0 md:h-full bottom-0 h-3/4 bg-[#CBDCEB] rounded-t-[70px] md:rounded-r-[70px] px-12 py-14 text-[#6D94C5] z-[5000] transition-all duration-700 ease-in-out delay-100"
+          >
+            <div class="lg:text-[42px] md:text-[30px] text-[24px] font-semibold">
+              <span class="font-fontspringheavy">TAPAS</span> aims to cut
+            </div>
+            <div>
+              <div
+                class="font-fontspringheavy lg:text-[180px] md:text-[150px] text-[100px] leading-[0.8] tracking-tighter"
+              >
+                1000
+              </div>
+              <div class="font-fontspringmedium md:text-[80px] text-[40px] uppercase">
+                tons of
+              </div>
+            </div>
+            <div class="lg:text-[42px] md:text-[30px] text-[24px] font-semibold">
+              CO₂ emissions by 2026
+            </div>
+            <div
+              class="lg:text-[22px] md:text-[18px] text-[15px] text-[#7A9CC6]"
+            >
+              For every 10 kilometers ridden on an e-bike instead of driving a
+              car, a rider can save approximately 2 kilograms (2,400 grams) of
+              CO₂ emissions
+            </div>
+            <button
+              class="mt-3 flex flex-row items-center gap-0 group"
+              onclick="window.location.href='./about.html'"
+            >
               <div
                 class="lg:py-4 lg:px-4 py-2 px-2 border-[#6D94C5] border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
               >
@@ -458,20 +387,19 @@
               <div
                 class="lg:py-4 py-2 lg:px-8 px-4 border-[#6D94C5] border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
               >
-                Join the Movement
+                Join the Movement!
               </div>
               <div
                 class="lg:py-4 lg:px-4 py-2 px-2 border-[#6D94C5] border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
               >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="#6D94C5"
-                stroke-width="1"
-                class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
-              >
-
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#6D94C5"
+                  stroke-width="1"
+                  class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
+                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -480,119 +408,85 @@
                 </svg>
               </div>
             </button>
-  </div>
-</div>
-
-
-  </div>
-
-  <section
-  id="simulate-tablet"
-  class="hidden md:flex w-full justify-center items-center bg-[#F3EEE6] px-6 py-16"
->
-  <div
-    class="relative w-full max-w-[1100px] h-[450px] rounded-[40px] flex overflow-hidden"
-  >
-    <!-- Background Image -->
-    <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/public/assets/medias/about/bgwhat.jpg');"
-    ></div>
-
-    <!-- ======= SLIDE BOX (same element, reused) ======= -->
-    <div
-      id="slideBox"
-      class="absolute top-0 left-0 h-full w-[55%] bg-[#CBDCEB] rounded-[40px] flex flex-col justify-center px-10 text-[#4A6FA5] z-10 transition-transform duration-700 ease-[cubic-bezier(0.55,0,0.1,1)]"
-    >
-      <!-- Toggle Button -->
-      <div
-        class="absolute top-6 right-6 flex flex-row items-center justify-between w-[160px] h-10 bg-white rounded-[16.33px] p-1 font-semibold text-[14px]"
-      >
-        <div
-          id="activeEffect"
-          class="absolute h-[calc(100%-8px)] w-[45%] bg-[#CBDCEB] top-1 left-[calc(50%+1px)] rounded-[16.33px] transition-all duration-300 ease-in-out"
-        ></div>
-
-        <button
-          id="impactBtn"
-          class="relative z-10 flex-1 text-[#9EBCE2] transition-colors duration-300"
-          onclick="switchToImpact()"
-        >
-          Impact
-        </button>
-        <button
-          id="goalBtn"
-          class="relative z-10 flex-1 text-white transition-colors duration-300"
-          onclick="switchToGoal()"
-        >
-          Goal
-        </button>
-      </div>
-
-      <!-- CONTENT WRAPPER -->
-      <div id="contentWrapper" class="transition-none">
-        <!-- GOAL CONTENT -->
-        <div id="goalContent">
-          <h2 class="font-figtree text-[18px] mb-2">
-            <span class="font-fontspringheavy">TAPAS</span> aims to cut
-          </h2>
-          <h1
-            class="text-[80px] md:text-[100px] font-fontspringheavy font-bold leading-none tracking-tight"
+          </div>
+          <div
+            id="impactCard"
+            class="impactcard absolute flex flex-col justify-between items-end text-end md:w-4/6 w-full md:h-full bottom-0 h-3/4 -right-3/4 bg-[#6D94C5] rounded-t-[70px] md:rounded-l-[70px] px-12 py-14 text-white z-[5000] transition-all duration-700 ease-in-out delay-100"
           >
-            1000
-          </h1>
-          <h2 class="text-[40px] md:text-[55px] font-fontspringheavy leading-none">
-            TONS OF
-          </h2>
-          <h3 class="text-[20px] font-semibold md:text-[26px] mt-3 mb-4">
-            CO₂ emissions by 2026
-          </h3>
-          <p class="text-[14px] md:text-[16px] mb-6">
-            For every 10 kilometers ridden on an e-bike instead of driving a car,
-            a rider can save approximately 2 kilograms of CO₂ emissions.
-          </p>
-
-          <button
-            class="mt-3 flex flex-row gap-2 items-center border border-[#4A6FA5] text-[#4A6FA5] rounded-full py-2 px-6 hover:bg-[#4A6FA5] hover:text-white transition-all"
-          >
-            Join the Movement
-          </button>
+            <div class="lg:text-[42px] text-[30px] font-semibold">
+              <span class="font-fontspringheavy">TAPAS</span> aims to bring
+            </div>
+            <div>
+              <div
+                class="font-fontspringmedium lg:text-[70px] md:text-[40px] text-[30px] uppercase tracking-tight lg:leading-[75px] md:leading-[50px] leading-10"
+              >
+                <div>less fuel usage</div>
+                <div>healthier cities</div>
+                <div>less traffic</div>
+                <div>cleaner air</div>
+              </div>
+            </div>
+            <div
+              class="lg:text-[22px] md:text-[18px] text-[15px] text-white w-4/5"
+            >
+              TAPAS is here to make cities cleaner, healthier, and easier to
+              move through—one electric ride at a time.
+            </div>
+            <button
+              class="mt-3 flex flex-row items-center gap-0 group -mr-12"
+              onclick="window.location.href='./about.html'"
+            >
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  stroke-width="1"
+                  class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+              <div
+                class="lg:py-4 py-2 lg:px-8 px-4 border-white border-[1px] lg:text-[18px] md:text-[14px] rounded-full font-extralight group-hover:-translate-x-12 transition-all delay-100"
+              >
+                Join the Movement!
+              </div>
+              <div
+                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all scale-0 group-hover:scale-100 delay-100 overflow-hidden ease-in-out duration-400 -translate-x-12"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  stroke-width="1"
+                  class="w-5 h-5 transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 scale-150 group-hover:scale-100 transition-all duration-300 delay-200"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7 17l10-10M7 7h10v10"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
-
-        <!-- IMPACT CONTENT -->
-        <div id="impactContent" class="hidden text-white">
-          <h2 class="font-figtree text-[18px] mb-2">
-            <span class="font-fontspringheavy">TAPAS</span> aims to bring
-          </h2>
-          <h1
-            class="text-[36px] md:text-[45px] font-fontspringheavy font-bold leading-tight tracking-tight"
-          >
-            LESS FUEL USAGE <br />
-            HEALTHIER CITIES <br />
-            LESS TRAFFIC <br />
-            CLEANER AIR
-          </h1>
-          <p class="text-[14px] md:text-[16px] mt-5 mb-6">
-            TAPAS is here to make cities cleaner, healthier, and easier to move
-            through—one electric ride at a time.
-          </p>
-          <button
-            class="mt-3 flex flex-row gap-2 items-center border border-white text-white rounded-full py-2 px-6 hover:bg-white hover:text-[#4A6FA5] transition-all"
-          >
-            Join the Movement
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</section>
+      </section>
 
       <!-- FOOTER SECTION -->
       <footer
         id="footer-section"
         data-scroll-section
-        class="bg-white w-full h-min z-[5000] flex lg:flex-row flex-col justify-between items-center md:px-8 px-4 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
+        class="bg-white w-full h-min z-[4000] flex lg:flex-row flex-col justify-between items-center md:px-8 px-4 py-[60px] text-[#6A8ACB] border-t border-[#D0DBF0] -mt-[30px]"
       >
         <!-- LEFT SIDE: NAV LINKS -->
         <div class="flex flex-row gap-[20px] lg:w-1/2 w-full mb-2">
@@ -890,9 +784,6 @@
         class="menu-list flex flex-col justify-center h-full pl-[3vw] pr-[6vw] space-y-8"
       ></ul>
     </div>
-
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   </body>
 </html>

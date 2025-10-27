@@ -22,7 +22,7 @@ const items = [
   { label: "HOME", href: "../index.html" },
   { label: "ABOUT", href: "../about.html" },
   { label: "ROUTES", href: "../routes.html" },
-   { label: "CONTACT", href: "../contact.html" },
+  { label: "CONTACT", href: "../contact.html" },
 ];
 
 let isOpen = false;
@@ -199,129 +199,50 @@ missionBtn.addEventListener("click", () => {
   }
 });
 
+// IMPACT & GOAL REVISION :P
+const btnCard = document.getElementById("cardButton");
+const currentEffect = document.getElementById("currentEffect");
+const textGoal = document.getElementById("goalText");
+const textImpact = document.getElementById("impactText");
+const cardImpact = document.getElementById("impactCard");
+const cardGoal = document.getElementById("goalCard");
+const cardBike = document.getElementById("cardBike");
+cardImpact.style.opacity = 0;
 
-// IMPACT & GOAL
-const activeEffect = document.getElementById("activeEffect");
-const impactBtn = document.getElementById("impactBtn");
-const goalBtn = document.getElementById("goalBtn");
-const impactContent = document.getElementById("impactContent");
-const goalContent = document.getElementById("goalContent");
-const bottomBox = document.getElementById("bottomBox");
-const slideBox = document.getElementById("slideBox");
-
-let current = "goal";
-let isAnimating = false;
-
-// Helper animasi vertikal (HP)
-function animateSlide(element, from, to, duration, callback) {
-  const start = performance.now();
-  function step(timestamp) {
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const value = from + (to - from) * progress;
-    element.style.transform = `translateY(${value}%)`;
-    element.style.opacity = 1 - Math.abs(value) / 100;
-    if (progress < 1) requestAnimationFrame(step);
-    else if (callback) callback();
-  }
-  requestAnimationFrame(step);
+function impactCard(params) {
+  currentEffect.style.right = "50%";
+  currentEffect.style.backgroundColor = "#6D94C5";
+  textImpact.classList.remove("text-[#CBDCEB]");
+  textImpact.classList.add("text-white");
+  textGoal.classList.remove("text-white");
+  textGoal.classList.add("text-[#6D94C5]");
+  slideImpact();
+}
+function goalCard(params) {
+  currentEffect.style.right = "0px";
+  currentEffect.style.backgroundColor = "#CBDCEB";
+  textImpact.classList.remove("text-white");
+  textImpact.classList.add("text-[#CBDCEB]");
+  textGoal.classList.remove("text-[#6D94C5]");
+  textGoal.classList.add("text-white");
+  slideGoal();
 }
 
-// Deteksi tablet
-function isTablet() {
-  return window.matchMedia("(min-width: 768px)").matches;
+function slideImpact() {
+  cardGoal.style.left = "-100%";
+  cardImpact.style.right = "0px";
+  cardBike.style.right = "70%";
+  cardImpact.style.opacity = 1;
+  cardGoal.style.opacity = 0;
 }
-
-// IMPACT
-function switchToImpact() {
-  if (isAnimating || current === "impact") return;
-  isAnimating = true;
-  current = "impact";
-  activeEffect.style.left = "5px";
-  impactBtn.style.color = "white";
-  goalBtn.style.color = "#9EBCE2";
-
-  if (isTablet()) {
-    // tablet animasi
-    slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
-    slideBox.style.transform = "translateX(-120%)";
-
-    setTimeout(() => {
-      slideBox.style.transition = "none";
-      slideBox.style.transform = "translateX(200%)";
-
-      goalContent.classList.add("hidden");
-      impactContent.classList.remove("hidden");
-      slideBox.style.backgroundColor = "#6D94C5";
-      slideBox.classList.add("text-white");
-      slideBox.classList.remove("text-[#4A6FA5]");
-
-      setTimeout(() => {
-        slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
-        slideBox.style.transform = "translateX(75%)";
-      }, 50);
-    }, 700);
-
-    setTimeout(() => (isAnimating = false), 1500);
-  } else {
-    // hp animasi
-    animateSlide(bottomBox, 0, 120, 400, () => {
-      bottomBox.style.backgroundColor = "#6D94C5";
-      goalContent.style.opacity = "0";
-      impactContent.style.opacity = "1";
-      goalContent.style.transform = "translateY(100%)";
-      impactContent.style.transform = "translateY(0)";
-      animateSlide(bottomBox, 120, 0, 400, () => (isAnimating = false));
-    });
-  }
+function slideGoal() {
+  cardGoal.style.left = "0px";
+  cardImpact.style.right = "-100%";
+  cardBike.style.right = "40px";
+  cardImpact.style.opacity = 0;
+  cardGoal.style.opacity = 1;
 }
-
-// GOAL
-function switchToGoal() {
-  if (isAnimating || current === "goal") return;
-  isAnimating = true;
-  current = "goal";
-  activeEffect.style.left = "calc(50% + 1px)";
-  goalBtn.style.color = "white";
-  impactBtn.style.color = "#9EBCE2";
-
-  if (isTablet()) {
-    // tablet animasi
-    slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
-    slideBox.style.transform = "translateX(200%)";
-
-    setTimeout(() => {
-      slideBox.style.transition = "none";
-      slideBox.style.transform = "translateX(-120%)";
-
-      impactContent.classList.add("hidden");
-      goalContent.classList.remove("hidden");
-      slideBox.style.backgroundColor = "#CBDCEB";
-      slideBox.classList.remove("text-white");
-      slideBox.classList.add("text-[#4A6FA5]");
-
-      setTimeout(() => {
-        slideBox.style.transition = "transform 0.7s cubic-bezier(0.55,0,0.1,1)";
-        slideBox.style.transform = "translateX(0%)";
-      }, 50);
-    }, 700);
-
-    setTimeout(() => (isAnimating = false), 1500);
-  } else {
-    // hp animasi
-    animateSlide(bottomBox, 0, 120, 400, () => {
-      bottomBox.style.backgroundColor = "#CBDCEB";
-      impactContent.style.opacity = "0";
-      goalContent.style.opacity = "1";
-      impactContent.style.transform = "translateY(100%)";
-      goalContent.style.transform = "translateY(0)";
-      animateSlide(bottomBox, 120, 0, 400, () => (isAnimating = false));
-    });
-  }
-}
-
-impactBtn.addEventListener("click", switchToImpact);
-goalBtn.addEventListener("click", switchToGoal);
 
 const imgClick = () => {
   window.location.href = "../index.html";
-}
+};

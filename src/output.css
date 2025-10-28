@@ -2658,6 +2658,10 @@ video {
     height: 70vh;
   }
 
+  .md\:h-\[0vh\] {
+    height: 0vh;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }

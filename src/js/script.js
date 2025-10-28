@@ -212,7 +212,6 @@ const fadeObserver = new IntersectionObserver(
 );
 fadeUpElements.forEach((el) => fadeObserver.observe(el));
 
-
 // QUESTION HOVER EFFECT
 // ================== DESKTOP LOGIC ==================
 if (window.innerWidth >= 1024) {
@@ -230,7 +229,7 @@ if (window.innerWidth >= 1024) {
   document.body.appendChild(questionHover);
 
   const questionAnswers = {
-      1: `<div class="text-center w-full transition-all duration-300 origin-center">
+    1: `<div class="text-center w-full transition-all duration-300 origin-center">
         <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1st Question</p>
         <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] mb-3">
           What is TAPAS and how does it work?
@@ -239,11 +238,11 @@ if (window.innerWidth >= 1024) {
           E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles.
         </p>
       </div>`,
-  2: `
+    2: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">2nd Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        How do e-bikes help reduce air pollution?
+        How do electric bikes help reduce air pollution?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
         E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
@@ -251,11 +250,11 @@ if (window.innerWidth >= 1024) {
       </p>
     </div>
   `,
-  3: `
+    3: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">3rd Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        Are e-bikes effective in reducing traffic congestion?
+        Are electric bikes effective in reducing traffic congestion?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
         Absolutely. E-bikes take up less space, reduce dependency on cars, 
@@ -263,18 +262,18 @@ if (window.innerWidth >= 1024) {
       </p>
     </div>
   `,
-  4: `
+    4: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">4th Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        Are e-bikes safe to use on city roads?
+        Are electric bikes safe to use on city roads?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
         Our e-bikes are equipped with high safety standards, including advanced braking systems, front and rear lights, and GPS tracking. We also encourage riders to wear helmets and follow traffic rules for everyone's safety.
       </p>
     </div>
   `,
-  5: `
+    5: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">5th Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
@@ -285,11 +284,11 @@ if (window.innerWidth >= 1024) {
       </p>
     </div>
   `,
-  6: `
+    6: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">6th Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        Why should I choose an e-bike over other types of transportation?
+        Why should I choose an electric bike over other types of transportation?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
          E-bikes are an eco-friendly, cost-effective, and practical transportation option for urban travel. By renting an e-bike, you're supporting a sustainable lifestyle and helping to reduce the negative environmental and traffic impacts of conventional transport.
@@ -340,15 +339,14 @@ else {
     const svg = btn.querySelector("svg path");
     svg.style.transition = "transform 0.3s ease";
 
-if (!btn.parentNode.querySelector(".answer")) {
-  const answer = document.createElement("div");
-  answer.className =
-    "answer max-h-0 overflow-hidden opacity-0 transition-[max-height,opacity] duration-500 ease-in-out text-[#6D94C5] text-sm mt-3 px-3 bg-white rounded-2xl";
-  answer.innerHTML =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.";
-  btn.parentNode.appendChild(answer);
-}
-
+    if (!btn.parentNode.querySelector(".answer")) {
+      const answer = document.createElement("div");
+      answer.className =
+        "answer max-h-0 overflow-hidden opacity-0 transition-[max-height,opacity] duration-500 ease-in-out text-[#6D94C5] text-sm mt-3 px-3 bg-white rounded-2xl";
+      answer.innerHTML =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.";
+      btn.parentNode.appendChild(answer);
+    }
 
     btn.addEventListener("click", () => {
       const answer = btn.nextElementSibling;
@@ -366,8 +364,6 @@ if (!btn.parentNode.querySelector(".answer")) {
     });
   });
 }
-
-
 
 // Horizontal scroll pakai drag mouse
 const rideScroll = document.getElementById("ride-scroll");
@@ -395,52 +391,52 @@ rideScroll.addEventListener("mousemove", (e) => {
   rideScroll.scrollLeft = scrollLeft - walk;
 });
 
+// CAROUSEL LOLOL
 
-const imgs = document.querySelectorAll('.carousel-img');
-    const total = imgs.length;
-    let center = 2; // mulai dari tengah
+const imgs = document.querySelectorAll(".carousel-img");
+const total = imgs.length;
+let center = 2; // mulai dari tengah
 
 function updateCarousel() {
   imgs.forEach((img, i) => {
     const offset = (i - center + total) % total;
 
     if (offset === 0) {
-      img.style.transform = 'translateX(-50vw) scale(0.8)';
-      img.style.opacity = '0.4';
+      img.style.transform = "translateX(-50vw) scale(0.8)";
+      img.style.opacity = "0.4";
       img.style.zIndex = 1;
     } else if (offset === 1) {
-      img.style.transform = 'translateX(-30vw) scale(0.9)';
-      img.style.opacity = '0.7';
+      img.style.transform = "translateX(-30vw) scale(0.9)";
+      img.style.opacity = "0.7";
       img.style.zIndex = 3;
     } else if (offset === 2) {
-      img.style.transform = 'translateX(0) scale(1.1)';
-      img.style.opacity = '1';
+      img.style.transform = "translateX(0) scale(1.1)";
+      img.style.opacity = "1";
       img.style.zIndex = 10;
     } else if (offset === 3) {
-      img.style.transform = 'translateX(30vw) scale(0.9)';
-      img.style.opacity = '0.7';
+      img.style.transform = "translateX(30vw) scale(0.9)";
+      img.style.opacity = "0.7";
       img.style.zIndex = 3;
     } else if (offset === 4) {
-      img.style.transform = 'translateX(50vw) scale(0.8)';
-      img.style.opacity = '0.4';
+      img.style.transform = "translateX(50vw) scale(0.8)";
+      img.style.opacity = "0.4";
       img.style.zIndex = 1;
     }
 
-    img.style.width = '28vw';
-    img.style.height = '320px';
-    img.style.transition = 'all 0.7s ease-in-out';
+    img.style.width = "28vw";
+    img.style.height = "320px";
+    img.style.transition = "all 0.7s ease-in-out";
   });
 }
 
+document.getElementById("next").addEventListener("click", () => {
+  center = (center + 1) % total;
+  updateCarousel();
+});
 
-    document.getElementById('next').addEventListener('click', () => {
-      center = (center + 1) % total;
-      updateCarousel();
-    });
+document.getElementById("prev").addEventListener("click", () => {
+  center = (center - 1 + total) % total;
+  updateCarousel();
+});
 
-    document.getElementById('prev').addEventListener('click', () => {
-      center = (center - 1 + total) % total;
-      updateCarousel();
-    });
-
-    updateCarousel();
+updateCarousel();

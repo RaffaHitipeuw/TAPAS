@@ -168,7 +168,7 @@ function setIcon(btn, open) {
 visionBtn.addEventListener("click", () => {
   isOpenVision = !isOpenVision;
 
-  answerVision.style.height = isOpenVision ? "200px" : "0px";
+  answerVision.style.height = isOpenVision ? "250px" : "0px";
   answerVision.style.opacity = isOpenVision ? "1" : "0";
   answerVision.style.transition = "all 0.3s ease";
 

@@ -1,3 +1,75 @@
+/* === CLEANED UTILITIES ADDED AUTOMATICALLY ===
+   - hero-container uses @apply to keep HTML concise (Tailwind utilities)
+   - bg-hero-* classes centralize background images previously inline
+   - tapas-prefixed utility class group for project scoping
+*/
+
+.hero-container {
+  position: relative;
+  margin-bottom: -80px;
+  display: flex;
+  height: 90vh;
+  width: 92vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 54px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 5vw;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    width: 95vw;
+  }
+}
+
+.bg-hero-home {
+  background-image: url('../public/assets/medias/home/bghero.png');
+}
+
+.bg-hero-about {
+  background-image: url('../public/assets/medias/about/bghero.png');
+}
+
+.bg-hero-contact {
+  background-image: url('../public/assets/medias/contact/bghero.png');
+}
+
+.bg-hero-routes {
+  background-image: url('../public/assets/medias/routes/bgsimulate.png');
+}
+
+.bg-card-solution {
+  background-image: url('../public/assets/medias/home/blurred.png');
+}
+
+/* Example reusable components using @apply */
+
+.tps-card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 70px;
+  padding: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.tps-btn {
+  border-radius: 9999px;
+  font-weight: 200;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* End preamble */
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -106,8 +178,7 @@
   --tw-contain-style:  ;
 }
 
-/*
-! tailwindcss v3.4.18 | MIT License | https://tailwindcss.com
+/* ! tailwindcss v3.4.18 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -2667,10 +2738,6 @@ video {
 
   .md\:h-\[55vh\] {
     height: 55vh;
-  }
-
-  .md\:h-\[60vh\] {
-    height: 60vh;
   }
 
   .md\:h-\[80vh\] {

@@ -3,77 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tapas</title>
+    <title>TAPAS</title>
     <link
       rel="icon"
       type="image/x-icon"
       href="./public/assets/medias/favicon.ico"
     />
     <link rel="stylesheet" href="./src/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"/>
     <script src="./src/js/script.js" defer></script>
   </head>
 
-  <body
-    class="bg-white items-center justify-center overflow-hidden pt-6 font-figtree"
-  >
+  <body class="bg-white items-center justify-center overflow-hidden pt-6 font-figtree">
+    
     <!-- MENU BUTTON -->
-    <button
-      id="menuBtn"
-      class="fixed top-[58px] lg:right-[120px] md:right-[60px] right-[50px] flex flex-col items-center justify-center w-10 h-10 md:w-14 md:h-14 cursor-pointer z-[4001]"
-    >
-      <span
-        class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"
-      ></span>
-      <span
-        class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300"
-      ></span>
+    <button id="menuBtn" class="fixed top-[58px] lg:right-[120px] md:right-[60px] right-[50px] flex flex-col items-center justify-center w-10 h-10 md:w-14 md:h-14 cursor-pointer z-[4001]">
+      <span class="line1 block w-[26px] h-[2px] rounded bg-white transition-transform duration-300"></span>
+      <span class="line2 block w-[26px] h-[2px] rounded bg-white mt-[6px] transition-transform duration-300" ></span>
     </button>
 
     <!-- SCROLL CONTAINER -->
-    <div
-      data-scroll-container
-      class="relative w-full flex flex-col items-center"
-    >
+    <div data-scroll-container class="relative w-full flex flex-col items-center">
       <!-- HERO -->
-      <header
-        class="relative lg:w-[95vw] w-[92vw] h-[90vh] bg-[var(--hero-bg)] rounded-[54px] overflow-hidden shadow-2xl flex flex-col items-center justify-center mb-[-80px] z-0 bg-cover bg-center pt-[5vw]"
-        style="background-image: url('public/assets/medias/home/bghero.png')"
-      >
+      <header class="relative lg:w-[95vw] w-[92vw] h-[90vh] bg-[var(--hero-bg)] rounded-[54px] overflow-hidden shadow-2xl flex flex-col items-center justify-center mb-[-80px] z-0 bg-cover bg-center pt-[5vw] bg-hero-home hero-container">
         <div class="absolute w-full h-full bg-black bg-opacity-15 top-0"></div>
+
         <!-- NAVIGATION -->
-        <nav
-          class="fixed top-[40px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]"
-        >
+        <nav class="fixed top-[40px] left-1/2 -translate-x-1/2 flex items-center justify-between w-[90%] px-8 py-6 z-[1002]">
           <div id="logo">
-            <img
-              src="/public/assets/medias/logo-tapas.png"
-              alt=""
-              class="md:w-[40px] w-[30px] mt-[5px] cursor-pointer"
-              onclick="imgClick()"
-            />
+            <img src="/public/assets/medias/logo-tapas.png" alt="" class="md:w-[40px] w-[30px] mt-[5px] cursor-pointer" onclick="imgClick()"/>
           </div>
           <div class="absolute left-1/2 -translate-x-1/2 mt-[10x]">
-            <span
-              class="text-xl font-fontspringheavy font-bold tracking-tighter text-white"
-              >Tapas</span
-            >
+            <span class="text-xl font-fontspringheavy font-bold tracking-tighter text-white" >Tapas</span>
           </div>
         </nav>
 
         <!-- HERO TEXT -->
-        <div
-          class="text-center z-10 -mt-[100px] h-full flex flex-col md:justify-center justify-start md:pt-0 pt-36"
-        >
-          <div
-            class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] text-[35px] lg:leading-[85px] md:leading-[54px] leading-[30px] flex flex-col"
-          >
+        <div class="text-center z-10 -mt-[100px] h-full flex flex-col md:justify-center justify-start md:pt-0 pt-36">
+          <div class="text-white font-fontspringmedium lg:text-[110px] md:text-[70px] text-[35px] lg:leading-[85px] md:leading-[54px] leading-[30px] flex flex-col">
             <h1 class="">SOLUTION TO</h1>
             <h1 class="">YOUR POLLUTION</h1>
             <h1 class="">AND TRAFFIC</h1>
@@ -84,36 +51,19 @@
         </div>
 
         <!-- HERO IMAGE -->
-        <div
-          class="absolute -bottom-14 md:left-auto md:right-auto right-0 lg:w-full md:w-[110vw] w-[170vw] flex justify-center"
-        >
-          <img
-            src="public/assets/medias/home/sepedah.png"
-            alt="Bicycle"
-            class="lg:h-[90vh] md:w-full object-contain"
-            draggable="false"
-          />
+        <div class="absolute -bottom-14 md:left-auto md:right-auto right-0 lg:w-full md:w-[110vw] w-[170vw] flex justify-center">
+          <img src="public/assets/medias/home/sepedah.png" alt="Bicycle" class="lg:h-[90vh] md:w-full object-contain" draggable="false"/>
         </div>
       </header>
 
       <!-- PARALLAX SECTION -->
-      <section
-        data-scroll-section
-        class="relative w-full h-[45px] section-light flex items-center justify-center rounded-t-[50px] z-[4002] -mb-3 pt-40"
-      >
-        <h2
-          class="lg:text-[50px] md:text-[40px] text-[30px] text-center font-semibold text-[var(--primary-color)] tracking-tight leading-none w-3/5"
-        >
-          <span class="font-fontspringheavy font-bold tracking-tighter"
-            >TAPAS</span
-          >
-          aims to reduce Indonesia’s
+      <section data-scroll-section class="relative w-full h-[45px] section-light flex items-center justify-center rounded-t-[50px] z-[4002] -mb-3 pt-40">
+        <h2 class="lg:text-[50px] md:text-[40px] text-[30px] text-center font-semibold text-[var(--primary-color)] tracking-tight leading-none w-3/5">
+          <span class="font-fontspringheavy font-bold tracking-tighter">TAPAS</span>aims to reduce Indonesia’s
         </h2>
 
         <!-- MARQUEE -->
-        <div
-          class="fixed left-0 top-64 w-screen -translate-y-1/2 overflow-hidden z-50"
-        >
+        <div class="fixed left-0 top-64 w-screen -translate-y-1/2 overflow-hidden z-50">
           <div id="marquee" class="overflow-hidden">
             <div class="marquee-track inline-flex">
               <h1 class="tag">Noise Pollution</h1>
@@ -130,61 +80,27 @@
       </section>
 
       <!-- MASALAH CARDS -->
-      <section
-        data-scroll-section
-        class="w-full h-min section-light flex md:flex-row flex-col items-end justify-center lg:px-24 md:px-6 px-0 lg:gap-x-10 md:gap-x-1 z-[4001] pb-28 -mb-8 pt-52"
-      >
+      <section data-scroll-section class="w-full h-min section-light flex md:flex-row flex-col items-end justify-center lg:px-24 md:px-6 px-0 lg:gap-x-10 md:gap-x-1 z-[4001] pb-28 -mb-8 pt-52">
         <!-- CARD 1 -->
 
-        <div
-          class="w-full lg:h-[500px] md:h-[400px] h-[300px] lg:rounded-[70px] md:rounded-[50px] rounded-3xl text-white flex flex-col justify-between lg:p-12 md:p-8 p-6 overflow-hidden"
-          style="
-            background: linear-gradient(
-              225deg,
-              hsla(208, 52%, 78%, 1) 46%,
-              hsla(209, 19%, 51%, 1) 100%
-            );
-          "
-        >
+        <div class="w-full lg:h-[500px] md:h-[400px] h-[300px] lg:rounded-[70px] md:rounded-[50px] rounded-3xl text-white flex flex-col justify-between lg:p-12 md:p-8 p-6 overflow-hidden" style="background: linear-gradient(225deg,hsla(208, 52%, 78%, 1) 46%,hsla(209, 19%, 51%, 1) 100%);">
           <div>
             <h2 class="lg:text-[20px] text-[12px]">The Problem</h2>
-            <h1
-              class="lg:text-[38px] md:=text-[28px] text-[24px] font-fontspringmedium"
-            >
+            <h1 class="lg:text-[38px] md:=text-[28px] text-[24px] font-fontspringmedium">
               WHAT WE ARE
             </h1>
-            <h1
-              class="lg:text-[38px] md:text-[28px] text-[24px] font-fontspringmedium -mt-3"
-            >
+            <h1 class="lg:text-[38px] md:text-[28px] text-[24px] font-fontspringmedium -mt-3">
               TRYING TO FIX
             </h1>
           </div>
-          <p
-            class="lg:text-[22px] md:text-[18px] text-[15px] text-white leading-tight"
-          >
+          <p class="lg:text-[22px] md:text-[18px] text-[15px] text-white leading-tight">
             Indonesia was ranked as the most polluted country in Southeast Asia
             and 15th worst globally, scores that should not be taken lightly.
             <br />
-            <button
-              class="mt-3 flex flex-row gap-0 group"
-              onclick="window.location.href='./about.html'"
-            >
-              <div
-                class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="white"
-                  stroke-width="1"
-                  class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M7 17l10-10M7 7h10v10"
-                  />
+            <button class="mt-3 flex flex-row gap-0 group" onclick="window.location.href='./about.html'">
+              <div class="lg:py-4 lg:px-4 py-2 px-2 border-white border-[1px] text-[18px] rounded-full font-extralight transition-all group-hover:scale-0 delay-100 overflow-hidden ease-in-out duration-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1" class="w-5 h-5 transform group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:scale-150 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10"/>
                 </svg>
               </div>
               <div
@@ -217,10 +133,7 @@
         <!-- CARD 2 -->
 
         <div
-          class="w-full lg:h-[500px] md:h-[400px] h-[300px] lg:rounded-[70px] md:rounded-[50px] rounded-3xl text-white bg-cover bg-center bg-no-repeat flex flex-col justify-between lg:p-12 md:p-8 p-6 overflow-hidden"
-          style="
-            background-image: url('./public/assets/medias/home/blurred.png');
-          "
+          class="w-full lg:h-[500px] md:h-[400px] h-[300px] lg:rounded-[70px] md:rounded-[50px] rounded-3xl text-white bg-card-solution bg-cover bg-center bg-no-repeat flex flex-col justify-between lg:p-12 md:p-8 p-6 overflow-hidden"
         >
           <div>
             <h2 class="lg:text-[20px] text-[12px]">The Solution</h2>
@@ -1361,7 +1274,6 @@
       ></ul>
     </div>
 
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   </body>

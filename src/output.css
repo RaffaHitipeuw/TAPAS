@@ -1046,6 +1046,10 @@ video {
   height: min-content;
 }
 
+.max-h-0 {
+  max-height: 0px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -1854,6 +1858,11 @@ video {
   padding-bottom: 60px;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .pb-16 {
   padding-bottom: 4rem;
 }
@@ -1932,6 +1941,10 @@ video {
 
 .pt-\[5vw\] {
   padding-top: 5vw;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .text-left {
@@ -2230,6 +2243,12 @@ video {
 
 .transition-transform {
   transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-\[max-height\2c opacity\] {
+  transition-property: max-height,opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }

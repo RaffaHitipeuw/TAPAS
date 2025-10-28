@@ -1,24 +1,16 @@
 const overlay = document.getElementById("overlay");
 const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
-const marquee = document.getElementById("marquee");
-const marqueeTrack = document.createElement("div");
-
 const items = [
-  { label: "HOME", href: "#" },
-  { label: "CONTACT", href: "#" },
-  { label: "ROUTES", href: "#" },
-  { label: "ABOUT", href: "#" },
+  { label: "HOME", href: "./index.html" },
+  { label: "CONTACT", href: "./contact.html" },
+  { label: "ROUTES", href: "./routes.html" },
+  { label: "ABOUT", href: "./about.html" },
 ];
 
 let isOpen = false;
 const centerX = 90;
 const centerY = 13;
-
-marqueeTrack.className = "marquee-track inline-flex";
-marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
-marquee.innerHTML = "";
-marquee.appendChild(marqueeTrack);
 
 let lastScrollY = 0;
 let currentX = 0;
@@ -59,53 +51,62 @@ hoverCircle.innerHTML = `
 `;
 document.body.appendChild(hoverCircle);
 
+const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
 const menuLinks = document.querySelectorAll(".menu-list a");
 const footerLinks = document.querySelectorAll("#footer-section .footer-links");
+
 let cursorTargetX = 0;
 let cursorTargetY = 0;
 let cursorX = 0;
 let cursorY = 0;
 
-menuLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
+if (!isTouchDevice) {
+  menuLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      hoverCircle.style.transition =
+        "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+      hoverCircle.style.transform = "scale(1)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      hoverCircle.style.transition =
+        "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+      hoverCircle.style.transform = "scale(0)";
+    });
   });
 
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
-  });
-});
-footerLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
+  footerLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      hoverCircle.style.transition =
+        "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+      hoverCircle.style.transform = "scale(1)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      hoverCircle.style.transition =
+        "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+      hoverCircle.style.transform = "scale(0)";
+    });
   });
 
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
+  window.addEventListener("mousemove", (e) => {
+    cursorTargetX = e.clientX - 80;
+    cursorTargetY = e.clientY - 80;
   });
-});
 
-window.addEventListener("mousemove", (e) => {
-  cursorTargetX = e.clientX - 80;
-  cursorTargetY = e.clientY - 80;
-});
+  function animateCircle() {
+    cursorX += (cursorTargetX - cursorX) * 0.2;
+    cursorY += (cursorTargetY - cursorY) * 0.2;
+    hoverCircle.style.left = `${cursorX}px`;
+    hoverCircle.style.top = `${cursorY}px`;
+    requestAnimationFrame(animateCircle);
+  }
+  animateCircle();
+} else {
 
-function animateCircle() {
-  cursorX += (cursorTargetX - cursorX) * 0.2;
-  cursorY += (cursorTargetY - cursorY) * 0.2;
-  hoverCircle.style.left = `${cursorX}px`;
-  hoverCircle.style.top = `${cursorY}px`;
-  requestAnimationFrame(animateCircle);
+  hoverCircle.style.display = "none";
 }
-animateCircle();
 
 btn.addEventListener("click", () => {
   isOpen = !isOpen;
@@ -137,6 +138,7 @@ btn.addEventListener("click", () => {
   }
 });
 
+
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
@@ -153,6 +155,14 @@ const scroll = new LocomotiveScroll({
 
 window.addEventListener("resize", () => scroll.update());
 
+const marquee = document.getElementById("marquee");
+const marqueeTrack = document.createElement("div");
+
+marqueeTrack.className = "marquee-track inline-flex";
+marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
+marquee.innerHTML = "";
+marquee.appendChild(marqueeTrack);
+
 scroll.on("scroll", (obj) => {
   const delta = obj.scroll.y - lastScrollY;
   lastScrollY = obj.scroll.y;
@@ -162,10 +172,10 @@ scroll.on("scroll", (obj) => {
 function animateMarquee() {
   currentX += (targetX - currentX) * 0.1;
   const halfWidth = marqueeTrack.scrollWidth / 2;
-  if (currentX > halfWidth) {
-    currentX -= halfWidth;
-    targetX -= halfWidth;
-  }
+
+  currentX = ((currentX % halfWidth) + halfWidth) % halfWidth;
+  targetX = ((targetX % halfWidth) + halfWidth) % halfWidth;
+
   marqueeTrack.style.transform = `translateX(${-currentX}px)`;
   requestAnimationFrame(animateMarquee);
 }
@@ -245,7 +255,7 @@ if (window.innerWidth >= 1024) {
         How do electric bikes help reduce air pollution?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
-        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
+        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles.
         More e-bikes on the road means cleaner air and quieter cities.
       </p>
     </div>
@@ -257,7 +267,7 @@ if (window.innerWidth >= 1024) {
         Are electric bikes effective in reducing traffic congestion?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
-        Absolutely. E-bikes take up less space, reduce dependency on cars, 
+        Absolutely. E-bikes take up less space, reduce dependency on cars,
         and let you skip through traffic with minimal delay.
       </p>
     </div>
@@ -339,14 +349,14 @@ else {
     const svg = btn.querySelector("svg path");
     svg.style.transition = "transform 0.3s ease";
 
-    if (!btn.parentNode.querySelector(".answer")) {
-      const answer = document.createElement("div");
-      answer.className =
-        "answer max-h-0 overflow-hidden opacity-0 transition-[max-height,opacity] duration-500 ease-in-out text-[#6D94C5] text-sm mt-3 px-3 bg-white rounded-2xl";
-      answer.innerHTML =
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.";
-      btn.parentNode.appendChild(answer);
-    }
+if (!btn.parentNode.querySelector(".answer")) {
+  const answer = document.createElement("div");
+  answer.className =
+    "answer max-h-0 overflow-hidden opacity-0 transition-[max-height,opacity] duration-500 ease-in-out text-[#6D94C5] text-sm mt-3 px-3 bg-white rounded-2xl";
+  answer.innerHTML =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.";
+  btn.parentNode.appendChild(answer);
+}
 
     btn.addEventListener("click", () => {
       const answer = btn.nextElementSibling;
@@ -391,11 +401,9 @@ rideScroll.addEventListener("mousemove", (e) => {
   rideScroll.scrollLeft = scrollLeft - walk;
 });
 
-// CAROUSEL LOLOL
-
-const imgs = document.querySelectorAll(".carousel-img");
-const total = imgs.length;
-let center = 2; // mulai dari tengah
+const imgs = document.querySelectorAll('.carousel-img');
+    const total = imgs.length;
+    let center = 2; // mulai dari tengah
 
 function updateCarousel() {
   imgs.forEach((img, i) => {
@@ -429,14 +437,14 @@ function updateCarousel() {
   });
 }
 
-document.getElementById("next").addEventListener("click", () => {
-  center = (center + 1) % total;
-  updateCarousel();
-});
+    document.getElementById('next').addEventListener('click', () => {
+      center = (center + 1) % total;
+      updateCarousel();
+    });
 
-document.getElementById("prev").addEventListener("click", () => {
-  center = (center - 1 + total) % total;
-  updateCarousel();
-});
+    document.getElementById('prev').addEventListener('click', () => {
+      center = (center - 1 + total) % total;
+      updateCarousel();
+    });
 
-updateCarousel();
+    updateCarousel();

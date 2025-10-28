@@ -1,3 +1,29 @@
+
+/* === CLEANED UTILITIES ADDED AUTOMATICALLY ===
+   - hero-container uses @apply to keep HTML concise (Tailwind utilities)
+   - bg-hero-* classes centralize background images previously inline
+   - tapas-prefixed utility class group for project scoping
+*/
+.hero-container {
+  @apply relative lg:w-[95vw] w-[92vw] h-[90vh] rounded-[54px] overflow-hidden flex flex-col items-center justify-center mb-[-80px] bg-cover bg-center pt-[5vw];
+}
+
+.bg-hero-home { background-image: url('../public/assets/medias/home/bghero.png'); }
+.bg-hero-about { background-image: url('../public/assets/medias/about/bghero.png'); }
+.bg-hero-contact { background-image: url('../public/assets/medias/contact/bghero.png'); }
+.bg-hero-routes { background-image: url('../public/assets/medias/routes/bgsimulate.png'); }
+.bg-card-solution {background-image: url('../public/assets/medias/home/blurred.png');}
+
+/* Example reusable components using @apply */
+.tps-card {
+  @apply w-full rounded-[70px] text-white flex flex-col justify-between p-6 overflow-hidden;
+}
+.tps-btn {
+  @apply rounded-full font-extralight transition-all;
+}
+
+/* End preamble */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -118,6 +144,19 @@
   }
 }
 
+/* ! Section horizontal full-screen */
+.horizontal-section {
+  width: 100%;
+  overflow-x: auto; /* Aktifkan scroll horizontal */
+  overflow-y: hidden; /* Sembunyikan scroll vertikal */
+  white-space: nowrap; /* Pertahankan elemen berjejer */
+}
+/* Container track sebagai flex row */
+.horizontal-track {
+  display: inline-flex;
+  width: max-content; /* Lebar sesuai total elemen */
+}
+
 .ride-card {
   scroll-snap-align: center;
 }
@@ -151,3 +190,4 @@
   #goalContent {
     transition: all 0.8s ease-in-out;
   }
+

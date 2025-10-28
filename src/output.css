@@ -2719,6 +2719,10 @@ video {
     display: flex;
   }
 
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:h-14 {
     height: 3.5rem;
   }

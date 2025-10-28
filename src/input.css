@@ -118,6 +118,19 @@
   }
 }
 
+/* ! Section horizontal full-screen */
+.horizontal-section {
+  width: 100%;
+  overflow-x: auto; /* Aktifkan scroll horizontal */
+  overflow-y: hidden; /* Sembunyikan scroll vertikal */
+  white-space: nowrap; /* Pertahankan elemen berjejer */
+}
+/* Container track sebagai flex row */
+.horizontal-track {
+  display: inline-flex;
+  width: max-content; /* Lebar sesuai total elemen */
+}
+
 .ride-card {
   scroll-snap-align: center;
 }
@@ -151,3 +164,4 @@
   #goalContent {
     transition: all 0.8s ease-in-out;
   }
+

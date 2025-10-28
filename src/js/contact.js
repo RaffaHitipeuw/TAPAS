@@ -159,4 +159,3 @@ const imgClick = () => {
 const reportClick = () => {
   scroll.scrollTo("#contactSection");
 }
-

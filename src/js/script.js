@@ -5,10 +5,10 @@ const marquee = document.getElementById("marquee");
 const marqueeTrack = document.createElement("div");
 
 const items = [
-  { label: "HOME", href: "#" },
-  { label: "CONTACT", href: "#" },
-  { label: "ROUTES", href: "#" },
-  { label: "ABOUT", href: "#" },
+  { label: "HOME", href: "./index.html" },
+  { label: "CONTACT", href: "./contact.html" },
+  { label: "ROUTES", href: "./routes.html" },
+  { label: "ABOUT", href: "./about.html" },
 ];
 
 let isOpen = false;

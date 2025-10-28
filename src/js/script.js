@@ -16,6 +16,12 @@ let lastScrollY = 0;
 let currentX = 0;
 let targetX = 0;
 
+// Tambahan fungsi deteksi mobile
+function isMobileUserAgent() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+}
+
 items.forEach((item) => {
   const li = document.createElement("li");
   li.className =
@@ -35,6 +41,7 @@ items.forEach((item) => {
   list.appendChild(li);
 });
 
+// Buat hover circle (cuma untuk desktop)
 const hoverCircle = document.createElement("div");
 hoverCircle.id = "hoverCircle";
 hoverCircle.className =
@@ -49,19 +56,19 @@ hoverCircle.innerHTML = `
     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
   </svg>
 `;
-document.body.appendChild(hoverCircle);
 
-const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+// Hanya tambahkan hoverCircle kalau bukan mobile
+if (!isMobileUserAgent()) {
+  document.body.appendChild(hoverCircle);
 
-const menuLinks = document.querySelectorAll(".menu-list a");
-const footerLinks = document.querySelectorAll("#footer-section .footer-links");
+  const menuLinks = document.querySelectorAll(".menu-list a");
+  const footerLinks = document.querySelectorAll("#footer-section .footer-links");
 
-let cursorTargetX = 0;
-let cursorTargetY = 0;
-let cursorX = 0;
-let cursorY = 0;
+  let cursorTargetX = 0;
+  let cursorTargetY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
 
-if (!isTouchDevice) {
   menuLinks.forEach((link) => {
     link.addEventListener("mouseenter", () => {
       hoverCircle.style.transition =
@@ -103,11 +110,9 @@ if (!isTouchDevice) {
     requestAnimationFrame(animateCircle);
   }
   animateCircle();
-} else {
-
-  hoverCircle.style.display = "none";
 }
 
+// tombol menu overlay
 btn.addEventListener("click", () => {
   isOpen = !isOpen;
   btn.querySelector(".line1").classList.toggle("rotate-45", isOpen);
@@ -137,6 +142,7 @@ btn.addEventListener("click", () => {
     );
   }
 });
+
 
 
 const scroll = new LocomotiveScroll({
@@ -402,13 +408,16 @@ rideScroll.addEventListener("mousemove", (e) => {
 });
 
 const imgs = document.querySelectorAll('.carousel-img');
-    const total = imgs.length;
-    let center = 2; // mulai dari tengah
+const total = imgs.length;
+let center = 2;
 
 function updateCarousel() {
   imgs.forEach((img, i) => {
     const offset = (i - center + total) % total;
 
+    img.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+
+    // posisi awal
     if (offset === 0) {
       img.style.transform = "translateX(-50vw) scale(0.8)";
       img.style.opacity = "0.4";
@@ -418,9 +427,16 @@ function updateCarousel() {
       img.style.opacity = "0.7";
       img.style.zIndex = 3;
     } else if (offset === 2) {
-      img.style.transform = "translateX(0) scale(1.1)";
+      // tahap 1
+      img.style.transform = "translateX(0) scale(0.9)";
       img.style.opacity = "1";
       img.style.zIndex = 10;
+
+      // tahap 2
+      setTimeout(() => {
+        img.style.transition = "transform 0.4s ease";
+        img.style.transform = "translateX(0) scale(1.1)";
+      }, 500);
     } else if (offset === 3) {
       img.style.transform = "translateX(30vw) scale(0.9)";
       img.style.opacity = "0.7";
@@ -431,20 +447,20 @@ function updateCarousel() {
       img.style.zIndex = 1;
     }
 
-    img.style.width = "28vw";
+    img.style.width = "80vw";
     img.style.height = "320px";
-    img.style.transition = "all 0.7s ease-in-out";
   });
 }
 
-    document.getElementById('next').addEventListener('click', () => {
-      center = (center + 1) % total;
-      updateCarousel();
-    });
+document.getElementById('next').addEventListener('click', () => {
+  center = (center + 1) % total;
+  updateCarousel();
+});
 
-    document.getElementById('prev').addEventListener('click', () => {
-      center = (center - 1 + total) % total;
-      updateCarousel();
-    });
+document.getElementById('prev').addEventListener('click', () => {
+  center = (center - 1 + total) % total;
+  updateCarousel();
+});
 
-    updateCarousel();
+updateCarousel();
+  

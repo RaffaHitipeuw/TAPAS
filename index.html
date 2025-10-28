@@ -2,20 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tapas</title>
     <link
       rel="icon"
       type="image/x-icon"
       href="./public/assets/medias/favicon.ico"
     />
-    <link
-      rel="stylesheet"
-      href="./src/output.css"
-    />
+    <link rel="stylesheet" href="./src/output.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"
@@ -23,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="./src/js/script.js" defer></script>
+    <script src="./src/js/script.js" defer></script>
   </head>
 
   <body
@@ -120,10 +114,7 @@
         <div
           class="fixed left-0 top-64 w-screen -translate-y-1/2 overflow-hidden z-50"
         >
-          <div
-            id="marquee"
-            class="overflow-hidden"
-          >
+          <div id="marquee" class="overflow-hidden">
             <div class="marquee-track inline-flex">
               <h1 class="tag">Noise Pollution</h1>
               <h1 class="tag">Polluted Cities</h1>
@@ -486,9 +477,9 @@
 
       <!-- ! PENGGANTI HORIZONTAL -->
       <section
-      id="tapas-section"
+        id="tapas-section"
         data-scroll-section
-        class="bg-white z-[4001] h-[500px] w-full flex flex-col items-center justify-center">
+        class="bg-white z-[4001] h-[500px] w-full flex flex-col items-center justify-center -mt-[150px]">
           <div class="relative w-full h-[360px] overflow-hidden flex items-center justify-center">
     <div id="carousel" class="relative w-full h-full flex items-center justify-center">
       <img src="./public/assets/medias/home/BALI.png" alt="Bali" class="carousel-img absolute rounded-[30px] object-cover transition-all duration-700 ease-in-out" />
@@ -498,13 +489,19 @@
       <img src="./public/assets/medias/home/BANDUNG.png" alt="Bandung" class="carousel-img absolute rounded-[30px] object-cover transition-all duration-700 ease-in-out" />
     </div>
 
-    <button id="prev" class="absolute left-6 top-1/2 -translate-y-1/2 bg-white text-gray-800 rounded-full p-2 shadow z-[1000]">
-      &#10094;
-    </button>
-    <button id="next" class="absolute right-6 top-1/2 -translate-y-1/2 bg-white text-gray-800 rounded-full p-2 shadow z-[1000]">
-      &#10095;
-    </button>
-  </div>
+          <button
+            id="prev"
+            class="absolute left-6 top-1/2 -translate-y-1/2 bg-white text-gray-800 rounded-full p-2 shadow z-[1000]"
+          >
+            &#10094;
+          </button>
+          <button
+            id="next"
+            class="absolute right-6 top-1/2 -translate-y-1/2 bg-white text-gray-800 rounded-full p-2 shadow z-[1000]"
+          >
+            &#10095;
+          </button>
+        </div>
       </section>
 
       <!-- AFTER HORIZONTAL SECTION -->
@@ -664,7 +661,7 @@
                 class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
               ></div>
               <div class="z-[4002]">
-                <p class="text-[14px] text-[#6D94C5]">1th Question</p>
+                <p class="text-[14px] text-[#6D94C5]">1st Question</p>
                 <h2
                   class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
                 >
@@ -722,7 +719,7 @@
                 class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
               ></div>
               <div class="z-[4002]">
-                <p class="text-[14px] text-[#6D94C5]">1th Question</p>
+                <p class="text-[14px] text-[#6D94C5]">5th Question</p>
                 <h2
                   class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
                 >
@@ -736,7 +733,7 @@
                 class="absolute w-[35px] h-[35px] rounded-full bg-white -ml-2 -mt-2"
               ></div>
               <div class="z-[4002]">
-                <p class="text-[14px] text-[#6D94C5]">1th Question</p>
+                <p class="text-[14px] text-[#6D94C5]">6th Question</p>
                 <h2
                   class="text-[20px] font-bold text-[#6D94C5] leading-tight hover:underline cursor-none"
                 >
@@ -758,161 +755,308 @@
       </section>
 
       <!-- QUESTION MOBILE SECTION -->
-<section
-  data-scroll-section
-  class="lg:hidden bg-[#D8E9FF] w-full md:h-[60vh] h-min flex flex-col items-center justify-center rounded-[50px] px-6 py-9 z-[5001] -mt-14"
->
-  <h1 class="text-[40px] font-fontspringmedium text-[#6D94C5] mb-2">
-    QUESTIONS?
-  </h1>
-  <p class="text-[15px] text-[#6A8ACB] mb-10">We got you covered.</p>
+      <section
+        data-scroll-section
+        class="lg:hidden bg-[#D8E9FF] w-full h-min flex flex-col items-center justify-center rounded-[50px] px-6 py-9 z-[5001] -mt-14"
+      >
+        <h1 class="text-[40px] font-fontspringmedium text-[#6D94C5] mb-2">
+          QUESTIONS?
+        </h1>
+        <p class="text-[15px] text-[#6A8ACB] mb-10">We got you covered.</p>
 
-  <!-- Dua kolom terpisah -->
-  <div class="w-full flex flex-col md:flex-row gap-5">
-    <!-- Kolom kiri -->
-    <div class="flex flex-col gap-5 w-full md:w-1/2">
-      <!-- 1 -->
-      <div class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-        <button
-          class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
-        >
-          <div class="w-[90%]">
-            <p class="text-[12px] text-[#6D94C5]">1th Question</p>
-            <h2 class="text-[15px] font-bold text-[#6D94C5]">
-              What is <span class="font-fontspringheavy">TAPAS</span> and how does it work?
-            </h2>
+        <!-- Dua kolom terpisah -->
+        <div class="w-full flex flex-col md:flex-row gap-5">
+          <!-- Kolom kiri -->
+          <div class="flex flex-col gap-5 w-full md:w-1/2">
+            <!-- 1 -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">1th Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    What is <span class="font-fontspringheavy">TAPAS</span> and
+                    how does it work?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                E-bikes produce zero tailpipe emissions, helping cut down CO₂
+                and fine particles from vehicles.
+              </div>
+            </div>
+<!-- 2 muncul pas di mobile-->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out md:hidden"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">2nd Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    How do e-bikes help reduce air pollution?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                E-bikes produce zero tailpipe emissions, helping cut down CO₂
+                and fine particles from vehicles. More e-bikes on the road means
+                cleaner air and quieter cities.
+              </div>
+            </div>
+            <!-- 3 -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">3rd Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    Absolutely. E-bikes take up less space, reduce dependency on
+                    cars, and let you skip through traffic with minimal delay.
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                at vehicula odio, ut convallis justo. Donec at felis sit amet
+                orci placerat malesuada.
+              </div>
+            </div>
+            <!-- 4 muncul pas di mobile -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out md:hidden"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">4th Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    Are e-bikes safe to use on city roads?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                Our e-bikes are equipped with high safety standards, including
+                advanced braking systems, front and rear lights, and GPS
+                tracking. We also encourage riders to wear helmets and follow
+                traffic rules for everyone's safety.
+              </div>
+            </div>
+
+            <!-- 5 -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">5th Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    Is this service available across Indonesia?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                Currently, our service is available in several major cities in
+                Indonesia and continues to expand. You can check service
+                availability in your city through our app or website.
+              </div>
+            </div>
+            <!-- 6 muncul pas di mobile -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out md:hidden"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">6th Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    Why should I choose an e-bike over other types of
+                    transportation?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                E-bikes are an eco-friendly, cost-effective, and practical
+                transportation option for urban travel. By renting an e-bike,
+                you're supporting a sustainable lifestyle and helping to reduce
+                the negative environmental and traffic impacts of conventional
+                transport.
+              </div>
+            </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300">
-            <path
-              d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
-            />
-          </svg>
-        </button>
-        <div
-          class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.
-        </div>
-      </div>
 
-      <!-- 3 -->
-      <div class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-        <button class="questionButton w-full py-3 px-5 flex items-center justify-between text-left">
-          <div class="w-[90%]">
-            <p class="text-[12px] text-[#6D94C5]">3rd Question</p>
-            <h2 class="text-[15px] font-bold text-[#6D94C5]">
-              Are e-bikes effective in reducing traffic congestion?
-            </h2>
+          <!-- Kolom kanan -->
+          <div class="flex flex-col gap-5 w-full md:w-1/2">
+            <!-- 2 -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out max-sm:hidden"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">2nd Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    How do e-bikes help reduce air pollution?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                E-bikes produce zero tailpipe emissions, helping cut down CO₂
+                and fine particles from vehicles. More e-bikes on the road means
+                cleaner air and quieter cities.
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out max-sm:hidden"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">4th Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    Are e-bikes safe to use on city roads?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                Our e-bikes are equipped with high safety standards, including
+                advanced braking systems, front and rear lights, and GPS
+                tracking. We also encourage riders to wear helmets and follow
+                traffic rules for everyone's safety.
+              </div>
+            </div>
+
+            <!-- 6 -->
+            <div
+              class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out max-sm:hidden"
+            >
+              <button
+                class="questionButton w-full py-3 px-5 flex items-center justify-between text-left"
+              >
+                <div class="w-[90%]">
+                  <p class="text-[12px] text-[#6D94C5]">6th Question</p>
+                  <h2 class="text-[15px] font-bold text-[#6D94C5]">
+                    Why should I choose an e-bike over other types of
+                    transportation?
+                  </h2>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300"
+                >
+                  <path
+                    d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
+              >
+                E-bikes are an eco-friendly, cost-effective, and practical
+                transportation option for urban travel. By renting an e-bike,
+                you're supporting a sustainable lifestyle and helping to reduce
+                the negative environmental and traffic impacts of conventional
+                transport.
+              </div>
+            </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300">
-            <path
-              d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
-            />
-          </svg>
-        </button>
-        <div
-          class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.
         </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-        <button class="questionButton w-full py-3 px-5 flex items-center justify-between text-left">
-          <div class="w-[90%]">
-            <p class="text-[12px] text-[#6D94C5]">5th Question</p>
-            <h2 class="text-[15px] font-bold text-[#6D94C5]">
-              Is this service available across Indonesia?
-            </h2>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300">
-            <path
-              d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
-            />
-          </svg>
-        </button>
-        <div
-          class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.
-        </div>
-      </div>
-    </div>
-
-    <!-- Kolom kanan -->
-    <div class="flex flex-col gap-5 w-full md:w-1/2">
-      <!-- 2 -->
-      <div class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-        <button class="questionButton w-full py-3 px-5 flex items-center justify-between text-left">
-          <div class="w-[90%]">
-            <p class="text-[12px] text-[#6D94C5]">2nd Question</p>
-            <h2 class="text-[15px] font-bold text-[#6D94C5]">
-              How do e-bikes help reduce air pollution?
-            </h2>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300">
-            <path
-              d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
-            />
-          </svg>
-        </button>
-        <div
-          class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-        <button class="questionButton w-full py-3 px-5 flex items-center justify-between text-left">
-          <div class="w-[90%]">
-            <p class="text-[12px] text-[#6D94C5]">4th Question</p>
-            <h2 class="text-[15px] font-bold text-[#6D94C5]">
-              Are e-bikes safe to use on city roads?
-            </h2>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300">
-            <path
-              d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
-            />
-          </svg>
-        </button>
-        <div
-          class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="questionItem bg-white rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-        <button class="questionButton w-full py-3 px-5 flex items-center justify-between text-left">
-          <div class="w-[90%]">
-            <p class="text-[12px] text-[#6D94C5]">6th Question</p>
-            <h2 class="text-[15px] font-bold text-[#6D94C5]">
-              Why should I choose an e-bike over other types of transportation?
-            </h2>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-[#CBDCEB] transition-transform duration-300">
-            <path
-              d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z"
-            />
-          </svg>
-        </button>
-        <div
-          class="answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out text-[#6D94C5] text-sm px-5 pb-3"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
+      </section>
 
       <!-- FOOTER SECTION -->
       <footer

@@ -408,13 +408,16 @@ rideScroll.addEventListener("mousemove", (e) => {
 });
 
 const imgs = document.querySelectorAll('.carousel-img');
-    const total = imgs.length;
-    let center = 2; // mulai dari tengah
+const total = imgs.length;
+let center = 2;
 
 function updateCarousel() {
   imgs.forEach((img, i) => {
     const offset = (i - center + total) % total;
 
+    img.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+
+    // posisi awal
     if (offset === 0) {
       img.style.transform = "translateX(-50vw) scale(0.8)";
       img.style.opacity = "0.4";
@@ -424,9 +427,16 @@ function updateCarousel() {
       img.style.opacity = "0.7";
       img.style.zIndex = 3;
     } else if (offset === 2) {
-      img.style.transform = "translateX(0) scale(1.1)";
+      // tahap 1
+      img.style.transform = "translateX(0) scale(0.9)";
       img.style.opacity = "1";
       img.style.zIndex = 10;
+
+      // tahap 2
+      setTimeout(() => {
+        img.style.transition = "transform 0.4s ease";
+        img.style.transform = "translateX(0) scale(1.1)";
+      }, 500);
     } else if (offset === 3) {
       img.style.transform = "translateX(30vw) scale(0.9)";
       img.style.opacity = "0.7";
@@ -437,20 +447,20 @@ function updateCarousel() {
       img.style.zIndex = 1;
     }
 
-    img.style.width = "28vw";
+    img.style.width = "80vw";
     img.style.height = "320px";
-    img.style.transition = "all 0.7s ease-in-out";
   });
 }
 
-    document.getElementById('next').addEventListener('click', () => {
-      center = (center + 1) % total;
-      updateCarousel();
-    });
+document.getElementById('next').addEventListener('click', () => {
+  center = (center + 1) % total;
+  updateCarousel();
+});
 
-    document.getElementById('prev').addEventListener('click', () => {
-      center = (center - 1 + total) % total;
-      updateCarousel();
-    });
+document.getElementById('prev').addEventListener('click', () => {
+  center = (center - 1 + total) % total;
+  updateCarousel();
+});
 
-    updateCarousel();
+updateCarousel();
+  

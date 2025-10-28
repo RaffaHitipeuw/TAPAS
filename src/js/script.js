@@ -234,101 +234,6 @@ const fadeObserver = new IntersectionObserver(
 fadeUpElements.forEach((el) => fadeObserver.observe(el));
 
 // =========================================================
-// ↔️ HORIZONTAL SCROLL LOCK SECTION
-// =========================================================
-const horizontalSection = document.querySelector("#horizontal-section");
-const horizontalTrack = horizontalSection.querySelector(".horizontal-track");
-
-let inHorizontal = false;
-let scrollX = 0;
-let cooldown = false;
-let lockTriggered = false;
-
-document.body.style.overscrollBehavior = "none";
-document.documentElement.style.overscrollBehavior = "none";
-
-scroll.on("scroll", () => {
-  const rect = horizontalSection.getBoundingClientRect();
-  const vh = window.innerHeight;
-
-  const fullyInView = rect.top <= 0 && rect.bottom >= vh;
-
-  if (!inHorizontal && fullyInView && !lockTriggered) {
-    lockTriggered = true;
-    scroll.scrollTo(horizontalSection, {
-      offset: 0,
-      duration: 300,
-      easing: [0.25, 0.1, 0.25, 1],
-    });
-
-    setTimeout(() => {
-      scroll.stop();
-      document.body.style.overflow = "hidden";
-      inHorizontal = true;
-    }, 310);
-  }
-
-  const outOfView = rect.bottom < vh * 0.95 || rect.top > vh * 0.05;
-  if (inHorizontal && outOfView) {
-    document.body.style.overflow = "";
-    scroll.start();
-    inHorizontal = false;
-    lockTriggered = false;
-  }
-});
-
-// Mouse wheel horizontal control
-window.addEventListener(
-  "wheel",
-  (e) => {
-    if (!inHorizontal || cooldown) return;
-    e.preventDefault();
-
-    const maxScroll =
-      horizontalTrack.scrollWidth - horizontalSection.clientWidth;
-
-    scrollX += e.deltaY * 0.8;
-    scrollX = Math.max(0, Math.min(maxScroll, scrollX));
-    horizontalSection.scrollLeft = scrollX;
-
-    // Keluar ke bawah section
-    if (scrollX >= maxScroll && e.deltaY > 0) {
-      cooldown = true;
-      setTimeout(() => {
-        document.body.style.overflow = "";
-        scroll.start();
-        inHorizontal = false;
-        lockTriggered = false;
-        cooldown = false;
-        scroll.scrollTo(horizontalSection.nextElementSibling, {
-          offset: 0,
-          duration: 500,
-          easing: [0.25, 0.1, 0.25, 1],
-        });
-      }, 200);
-    }
-
-    // Keluar ke atas section
-    if (scrollX <= 0 && e.deltaY < 0) {
-      cooldown = true;
-      setTimeout(() => {
-        document.body.style.overflow = "";
-        scroll.start();
-        inHorizontal = false;
-        lockTriggered = false;
-        cooldown = false;
-        scroll.scrollTo(horizontalSection.previousElementSibling, {
-          offset: 0,
-          duration: 500,
-          easing: [0.25, 0.1, 0.25, 1],
-        });
-      }, 200);
-    }
-  },
-  { passive: false }
-);
-
-// =========================================================
 // ❓ QUESTION HOVER BUBBLE (Q&A INTERACTION)
 // =========================================================
 const questionLinks = document.querySelectorAll("#question-section h2");
@@ -444,7 +349,6 @@ questionLinks.forEach((q, i) => {
   });
 });
 
-// Gerak bubble mengikuti cursor
 window.addEventListener("mousemove", (e) => {
   qCursorTargetX = e.clientX - 175;
   qCursorTargetY = e.clientY - 175;

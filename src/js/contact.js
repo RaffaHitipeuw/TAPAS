@@ -155,3 +155,8 @@ btnReport.forEach((btn) => {
 const imgClick = () => {
   window.location.href = "../index.html";
 };
+
+const reportClick = () => {
+  scroll.scrollTo("#contactSection");
+}
+

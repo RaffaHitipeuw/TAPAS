@@ -1,9 +1,6 @@
 const overlay = document.getElementById("overlay");
 const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
-const marquee = document.getElementById("marquee");
-const marqueeTrack = document.createElement("div");
-
 const items = [
   { label: "HOME", href: "./index.html" },
   { label: "CONTACT", href: "./contact.html" },
@@ -15,14 +12,15 @@ let isOpen = false;
 const centerX = 90;
 const centerY = 13;
 
-marqueeTrack.className = "marquee-track inline-flex";
-marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
-marquee.innerHTML = "";
-marquee.appendChild(marqueeTrack);
-
 let lastScrollY = 0;
 let currentX = 0;
 let targetX = 0;
+
+// Tambahan fungsi deteksi mobile
+function isMobileUserAgent() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+}
 
 items.forEach((item) => {
   const li = document.createElement("li");
@@ -43,6 +41,7 @@ items.forEach((item) => {
   list.appendChild(li);
 });
 
+// Buat hover circle (cuma untuk desktop)
 const hoverCircle = document.createElement("div");
 hoverCircle.id = "hoverCircle";
 hoverCircle.className =
@@ -57,56 +56,63 @@ hoverCircle.innerHTML = `
     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
   </svg>
 `;
-document.body.appendChild(hoverCircle);
 
-const menuLinks = document.querySelectorAll(".menu-list a");
-const footerLinks = document.querySelectorAll("#footer-section .footer-links");
-let cursorTargetX = 0;
-let cursorTargetY = 0;
-let cursorX = 0;
-let cursorY = 0;
+// Hanya tambahkan hoverCircle kalau bukan mobile
+if (!isMobileUserAgent()) {
+  document.body.appendChild(hoverCircle);
 
-menuLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
+  const menuLinks = document.querySelectorAll(".menu-list a");
+  const footerLinks = document.querySelectorAll("#footer-section .footer-links");
+
+  let cursorTargetX = 0;
+  let cursorTargetY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      hoverCircle.style.transition =
+        "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+      hoverCircle.style.transform = "scale(1)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      hoverCircle.style.transition =
+        "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+      hoverCircle.style.transform = "scale(0)";
+    });
   });
 
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
-  });
-});
-footerLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
+  footerLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      hoverCircle.style.transition =
+        "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+      hoverCircle.style.transform = "scale(1)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      hoverCircle.style.transition =
+        "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+      hoverCircle.style.transform = "scale(0)";
+    });
   });
 
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
+  window.addEventListener("mousemove", (e) => {
+    cursorTargetX = e.clientX - 80;
+    cursorTargetY = e.clientY - 80;
   });
-});
 
-window.addEventListener("mousemove", (e) => {
-  cursorTargetX = e.clientX - 80;
-  cursorTargetY = e.clientY - 80;
-});
-
-function animateCircle() {
-  cursorX += (cursorTargetX - cursorX) * 0.2;
-  cursorY += (cursorTargetY - cursorY) * 0.2;
-  hoverCircle.style.left = `${cursorX}px`;
-  hoverCircle.style.top = `${cursorY}px`;
-  requestAnimationFrame(animateCircle);
+  function animateCircle() {
+    cursorX += (cursorTargetX - cursorX) * 0.2;
+    cursorY += (cursorTargetY - cursorY) * 0.2;
+    hoverCircle.style.left = `${cursorX}px`;
+    hoverCircle.style.top = `${cursorY}px`;
+    requestAnimationFrame(animateCircle);
+  }
+  animateCircle();
 }
-animateCircle();
 
+// tombol menu overlay
 btn.addEventListener("click", () => {
   isOpen = !isOpen;
   btn.querySelector(".line1").classList.toggle("rotate-45", isOpen);
@@ -137,6 +143,8 @@ btn.addEventListener("click", () => {
   }
 });
 
+
+
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
@@ -153,6 +161,14 @@ const scroll = new LocomotiveScroll({
 
 window.addEventListener("resize", () => scroll.update());
 
+const marquee = document.getElementById("marquee");
+const marqueeTrack = document.createElement("div");
+
+marqueeTrack.className = "marquee-track inline-flex";
+marqueeTrack.innerHTML = marquee.innerHTML + marquee.innerHTML;
+marquee.innerHTML = "";
+marquee.appendChild(marqueeTrack);
+
 scroll.on("scroll", (obj) => {
   const delta = obj.scroll.y - lastScrollY;
   lastScrollY = obj.scroll.y;
@@ -162,10 +178,10 @@ scroll.on("scroll", (obj) => {
 function animateMarquee() {
   currentX += (targetX - currentX) * 0.1;
   const halfWidth = marqueeTrack.scrollWidth / 2;
-  if (currentX > halfWidth) {
-    currentX -= halfWidth;
-    targetX -= halfWidth;
-  }
+
+  currentX = ((currentX % halfWidth) + halfWidth) % halfWidth;
+  targetX = ((targetX % halfWidth) + halfWidth) % halfWidth;
+
   marqueeTrack.style.transform = `translateX(${-currentX}px)`;
   requestAnimationFrame(animateMarquee);
 }
@@ -212,7 +228,6 @@ const fadeObserver = new IntersectionObserver(
 );
 fadeUpElements.forEach((el) => fadeObserver.observe(el));
 
-
 // QUESTION HOVER EFFECT
 // ================== DESKTOP LOGIC ==================
 if (window.innerWidth >= 1024) {
@@ -230,7 +245,7 @@ if (window.innerWidth >= 1024) {
   document.body.appendChild(questionHover);
 
   const questionAnswers = {
-      1: `<div class="text-center w-full transition-all duration-300 origin-center">
+    1: `<div class="text-center w-full transition-all duration-300 origin-center">
         <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1st Question</p>
         <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] mb-3">
           What is TAPAS and how does it work?
@@ -239,42 +254,42 @@ if (window.innerWidth >= 1024) {
           E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles.
         </p>
       </div>`,
-  2: `
+    2: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">2nd Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        How do e-bikes help reduce air pollution?
+        How do electric bikes help reduce air pollution?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
-        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 
+        E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles.
         More e-bikes on the road means cleaner air and quieter cities.
       </p>
     </div>
   `,
-  3: `
+    3: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">3rd Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        Are e-bikes effective in reducing traffic congestion?
+        Are electric bikes effective in reducing traffic congestion?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
-        Absolutely. E-bikes take up less space, reduce dependency on cars, 
+        Absolutely. E-bikes take up less space, reduce dependency on cars,
         and let you skip through traffic with minimal delay.
       </p>
     </div>
   `,
-  4: `
+    4: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">4th Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        Are e-bikes safe to use on city roads?
+        Are electric bikes safe to use on city roads?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
         Our e-bikes are equipped with high safety standards, including advanced braking systems, front and rear lights, and GPS tracking. We also encourage riders to wear helmets and follow traffic rules for everyone's safety.
       </p>
     </div>
   `,
-  5: `
+    5: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">5th Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
@@ -285,11 +300,11 @@ if (window.innerWidth >= 1024) {
       </p>
     </div>
   `,
-  6: `
+    6: `
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">6th Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        Why should I choose an e-bike over other types of transportation?
+        Why should I choose an electric bike over other types of transportation?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
          E-bikes are an eco-friendly, cost-effective, and practical transportation option for urban travel. By renting an e-bike, you're supporting a sustainable lifestyle and helping to reduce the negative environmental and traffic impacts of conventional transport.
@@ -349,7 +364,6 @@ if (!btn.parentNode.querySelector(".answer")) {
   btn.parentNode.appendChild(answer);
 }
 
-
     btn.addEventListener("click", () => {
       const answer = btn.nextElementSibling;
       const isOpen = btn.classList.toggle("open");
@@ -366,8 +380,6 @@ if (!btn.parentNode.querySelector(".answer")) {
     });
   });
 }
-
-
 
 // Horizontal scroll pakai drag mouse
 const rideScroll = document.getElementById("ride-scroll");
@@ -395,52 +407,60 @@ rideScroll.addEventListener("mousemove", (e) => {
   rideScroll.scrollLeft = scrollLeft - walk;
 });
 
-
 const imgs = document.querySelectorAll('.carousel-img');
-    const total = imgs.length;
-    let center = 2; // mulai dari tengah
+const total = imgs.length;
+let center = 2;
 
 function updateCarousel() {
   imgs.forEach((img, i) => {
     const offset = (i - center + total) % total;
 
+    img.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+
+    // posisi awal
     if (offset === 0) {
-      img.style.transform = 'translateX(-50vw) scale(0.8)';
-      img.style.opacity = '0.4';
+      img.style.transform = "translateX(-50vw) scale(0.8)";
+      img.style.opacity = "0.4";
       img.style.zIndex = 1;
     } else if (offset === 1) {
-      img.style.transform = 'translateX(-30vw) scale(0.9)';
-      img.style.opacity = '0.7';
+      img.style.transform = "translateX(-30vw) scale(0.9)";
+      img.style.opacity = "0.7";
       img.style.zIndex = 3;
     } else if (offset === 2) {
-      img.style.transform = 'translateX(0) scale(1.1)';
-      img.style.opacity = '1';
+      // tahap 1
+      img.style.transform = "translateX(0) scale(0.9)";
+      img.style.opacity = "1";
       img.style.zIndex = 10;
+
+      // tahap 2
+      setTimeout(() => {
+        img.style.transition = "transform 0.4s ease";
+        img.style.transform = "translateX(0) scale(1.1)";
+      }, 500);
     } else if (offset === 3) {
-      img.style.transform = 'translateX(30vw) scale(0.9)';
-      img.style.opacity = '0.7';
+      img.style.transform = "translateX(30vw) scale(0.9)";
+      img.style.opacity = "0.7";
       img.style.zIndex = 3;
     } else if (offset === 4) {
-      img.style.transform = 'translateX(50vw) scale(0.8)';
-      img.style.opacity = '0.4';
+      img.style.transform = "translateX(50vw) scale(0.8)";
+      img.style.opacity = "0.4";
       img.style.zIndex = 1;
     }
 
-    img.style.width = '28vw';
-    img.style.height = '320px';
-    img.style.transition = 'all 0.7s ease-in-out';
+    img.style.width = "80vw";
+    img.style.height = "320px";
   });
 }
 
+document.getElementById('next').addEventListener('click', () => {
+  center = (center + 1) % total;
+  updateCarousel();
+});
 
-    document.getElementById('next').addEventListener('click', () => {
-      center = (center + 1) % total;
-      updateCarousel();
-    });
+document.getElementById('prev').addEventListener('click', () => {
+  center = (center - 1 + total) % total;
+  updateCarousel();
+});
 
-    document.getElementById('prev').addEventListener('click', () => {
-      center = (center - 1 + total) % total;
-      updateCarousel();
-    });
-
-    updateCarousel();
+updateCarousel();
+  

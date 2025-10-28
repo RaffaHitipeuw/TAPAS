@@ -1,33 +1,26 @@
 const overlay = document.getElementById("overlay");
 const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
-
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
-  smartphone: {
-    smooth: true,
-  },
-  tablet: {
-    smooth: true,
-  },
-
-  lerp: 0.08,
-  gestureDirection: "both",
-});
-
-// NAV
-
 const items = [
-  { label: "HOME", href: "../index.html" },
-  { label: "ABOUT", href: "../about.html" },
-  { label: "ROUTES", href: "../routes.html" },
-  { label: "CONTACT", href: "../contact.html" },
+  { label: "HOME", href: "./index.html" },
+  { label: "CONTACT", href: "./contact.html" },
+  { label: "ROUTES", href: "./routes.html" },
+  { label: "ABOUT", href: "./about.html" },
 ];
 
 let isOpen = false;
 const centerX = 90;
 const centerY = 13;
+
+let lastScrollY = 0;
+let currentX = 0;
+let targetX = 0;
+
+// Tambahan fungsi deteksi mobile
+function isMobileUserAgent() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+}
 
 items.forEach((item) => {
   const li = document.createElement("li");
@@ -48,6 +41,7 @@ items.forEach((item) => {
   list.appendChild(li);
 });
 
+// Buat hover circle (cuma untuk desktop)
 const hoverCircle = document.createElement("div");
 hoverCircle.id = "hoverCircle";
 hoverCircle.className =
@@ -62,56 +56,63 @@ hoverCircle.innerHTML = `
     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M7 7h10v10" />
   </svg>
 `;
-document.body.appendChild(hoverCircle);
 
-const menuLinks = document.querySelectorAll(".menu-list a");
-const footerLinks = document.querySelectorAll("#footer-section .footer-links");
-let cursorTargetX = 0;
-let cursorTargetY = 0;
-let cursorX = 0;
-let cursorY = 0;
+// Hanya tambahkan hoverCircle kalau bukan mobile
+if (!isMobileUserAgent()) {
+  document.body.appendChild(hoverCircle);
 
-menuLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
+  const menuLinks = document.querySelectorAll(".menu-list a");
+  const footerLinks = document.querySelectorAll("#footer-section .footer-links");
+
+  let cursorTargetX = 0;
+  let cursorTargetY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      hoverCircle.style.transition =
+        "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+      hoverCircle.style.transform = "scale(1)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      hoverCircle.style.transition =
+        "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+      hoverCircle.style.transform = "scale(0)";
+    });
   });
 
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
-  });
-});
-footerLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    hoverCircle.style.transition =
-      "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
-    hoverCircle.style.transform = "scale(1)";
+  footerLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      hoverCircle.style.transition =
+        "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)";
+      hoverCircle.style.transform = "scale(1)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      hoverCircle.style.transition =
+        "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
+      hoverCircle.style.transform = "scale(0)";
+    });
   });
 
-  link.addEventListener("mouseleave", () => {
-    hoverCircle.style.transition =
-      "transform 0.35s cubic-bezier(0.65, 0, 0.35, 1)";
-    hoverCircle.style.transform = "scale(0)";
+  window.addEventListener("mousemove", (e) => {
+    cursorTargetX = e.clientX - 80;
+    cursorTargetY = e.clientY - 80;
   });
-});
 
-window.addEventListener("mousemove", (e) => {
-  cursorTargetX = e.clientX - 80;
-  cursorTargetY = e.clientY - 80;
-});
-
-function animateCircle() {
-  cursorX += (cursorTargetX - cursorX) * 0.2;
-  cursorY += (cursorTargetY - cursorY) * 0.2;
-  hoverCircle.style.left = `${cursorX}px`;
-  hoverCircle.style.top = `${cursorY}px`;
-  requestAnimationFrame(animateCircle);
+  function animateCircle() {
+    cursorX += (cursorTargetX - cursorX) * 0.2;
+    cursorY += (cursorTargetY - cursorY) * 0.2;
+    hoverCircle.style.left = `${cursorX}px`;
+    hoverCircle.style.top = `${cursorY}px`;
+    requestAnimationFrame(animateCircle);
+  }
+  animateCircle();
 }
-animateCircle();
 
+// tombol menu overlay
 btn.addEventListener("click", () => {
   isOpen = !isOpen;
   btn.querySelector(".line1").classList.toggle("rotate-45", isOpen);
@@ -140,6 +141,20 @@ btn.addEventListener("click", () => {
       { once: true }
     );
   }
+});
+
+const scroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  smartphone: {
+    smooth: true,
+  },
+  tablet: {
+    smooth: true,
+  },
+
+  lerp: 0.08,
+  gestureDirection: "both",
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -273,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log('DOM loaded - initializing slider');
-  
+
   const bike = document.getElementById('bike');
   const circle = document.getElementById('circle');
   const hoursDisplay = document.getElementById('hours');
@@ -289,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const trackWidth = track.offsetWidth;
     const circleWidth = circle.offsetWidth;
     const initialPosition = (trackWidth - circleWidth) * 0.4;
-    
+
     circle.style.left = initialPosition + 'px';
     updateBikePosition(initialPosition);
     updateDisplay(initialPosition, trackWidth, circleWidth);
@@ -306,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const ratio = circlePosition / availableWidth;
     const hours = Math.min(maxHours, Math.max(0, Math.round(ratio * maxHours)));
     const totalCost = hours * pricePerHour;
-    
+
     hoursDisplay.textContent = hours;
     costDisplay.textContent = totalCost.toLocaleString('id-ID');
   }
@@ -324,37 +339,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function doDrag(e) {
     if (!isDragging) return;
-    
+
     const trackRect = track.getBoundingClientRect();
     const trackWidth = trackRect.width;
     const circleWidth = circle.offsetWidth;
-    
+
     let clientX;
     if (e.type.includes('touch')) {
       clientX = e.touches[0].clientX;
     } else {
       clientX = e.clientX;
     }
-    
+
     let newPosition = clientX - trackRect.left - (circleWidth / 2);
     newPosition = Math.max(0, Math.min(newPosition, trackWidth - circleWidth));
-    
+
     // Update circle position
     circle.style.left = newPosition + 'px';
-    
+
     updateBikePosition(newPosition);
-    
+
     updateDisplay(newPosition, trackWidth, circleWidth);
   }
 
   circle.addEventListener('mousedown', startDrag);
-  
+
   track.addEventListener('mousedown', function (e) {
     const trackRect = track.getBoundingClientRect();
     const circleWidth = circle.offsetWidth;
     let newPosition = e.clientX - trackRect.left - (circleWidth / 2);
     newPosition = Math.max(0, Math.min(newPosition, trackRect.width - circleWidth));
-    
+
     circle.style.left = newPosition + 'px';
     updateBikePosition(newPosition);
     updateDisplay(newPosition, trackRect.width, circleWidth);
@@ -364,13 +379,13 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('mouseup', stopDrag);
 
   circle.addEventListener('touchstart', startDrag);
-  
+
   track.addEventListener('touchstart', function (e) {
     const trackRect = track.getBoundingClientRect();
     const circleWidth = circle.offsetWidth;
     let newPosition = e.touches[0].clientX - trackRect.left - (circleWidth / 2);
     newPosition = Math.max(0, Math.min(newPosition, trackRect.width - circleWidth));
-    
+
     circle.style.left = newPosition + 'px';
     updateBikePosition(newPosition);
     updateDisplay(newPosition, trackRect.width, circleWidth);

@@ -394,3 +394,53 @@ rideScroll.addEventListener("mousemove", (e) => {
   const walk = (x - startX) * 1.5; // speed
   rideScroll.scrollLeft = scrollLeft - walk;
 });
+
+
+const imgs = document.querySelectorAll('.carousel-img');
+    const total = imgs.length;
+    let center = 2; // mulai dari tengah
+
+function updateCarousel() {
+  imgs.forEach((img, i) => {
+    const offset = (i - center + total) % total;
+
+    if (offset === 0) {
+      img.style.transform = 'translateX(-50vw) scale(0.8)';
+      img.style.opacity = '0.4';
+      img.style.zIndex = 1;
+    } else if (offset === 1) {
+      img.style.transform = 'translateX(-30vw) scale(0.9)';
+      img.style.opacity = '0.7';
+      img.style.zIndex = 3;
+    } else if (offset === 2) {
+      img.style.transform = 'translateX(0) scale(1.1)';
+      img.style.opacity = '1';
+      img.style.zIndex = 10;
+    } else if (offset === 3) {
+      img.style.transform = 'translateX(30vw) scale(0.9)';
+      img.style.opacity = '0.7';
+      img.style.zIndex = 3;
+    } else if (offset === 4) {
+      img.style.transform = 'translateX(50vw) scale(0.8)';
+      img.style.opacity = '0.4';
+      img.style.zIndex = 1;
+    }
+
+    img.style.width = '28vw';
+    img.style.height = '320px';
+    img.style.transition = 'all 0.7s ease-in-out';
+  });
+}
+
+
+    document.getElementById('next').addEventListener('click', () => {
+      center = (center + 1) % total;
+      updateCarousel();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      center = (center - 1 + total) % total;
+      updateCarousel();
+    });
+
+    updateCarousel();

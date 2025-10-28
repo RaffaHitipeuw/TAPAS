@@ -142,6 +142,16 @@ btn.addEventListener("click", () => {
   }
 });
 
+// Button Scrollto
+
+const btnReport = document.querySelectorAll("#reportSection button");
+
+btnReport.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    scroll.scrollTo("#contactSection");
+  });
+});
+
 const imgClick = () => {
   window.location.href = "../index.html";
-}
+};

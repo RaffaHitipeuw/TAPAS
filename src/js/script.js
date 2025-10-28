@@ -255,7 +255,7 @@ const questionAnswers = {
   1: `<div class="text-center w-full transition-all duration-300 origin-center">
         <p class="text-[#6A8ACB] font-figtree text-sm mb-2">1st Question</p>
         <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] mb-3">
-          What is an electric bike rental service and how does it work?
+          What is TAPAS and how does it work?
         </h3>
         <p class="text-[#6A8ACB] text-[13px] font-figtree">
           E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles.
@@ -265,7 +265,7 @@ const questionAnswers = {
     <div class="text-center w-full transition-all duration-300 origin-center">
       <p class="text-[#6A8ACB] font-figtree text-sm mb-2">2nd Question</p>
       <h3 class="font-fontspringheavy text-[#2E3A59] text-[18px] leading-snug mb-3">
-        How do electric bikes help reduce air pollution?
+        How do e-bikes help reduce air pollution?
       </h3>
       <p class="text-[#6A8ACB] text-[13px] leading-relaxed font-figtree">
         E-bikes produce zero tailpipe emissions, helping cut down CO₂ and fine particles from vehicles. 

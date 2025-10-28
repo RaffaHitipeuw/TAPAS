@@ -3,9 +3,9 @@ const list = overlay.querySelector(".menu-list");
 const btn = document.getElementById("menuBtn");
 const items = [
   { label: "HOME", href: "./index.html" },
-  { label: "CONTACT", href: "./contact.html" },
-  { label: "ROUTES", href: "./routes.html" },
   { label: "ABOUT", href: "./about.html" },
+  { label: "ROUTES", href: "./routes.html" },
+  { label: "CONTACT", href: "./contact.html" },
 ];
 
 let isOpen = false;

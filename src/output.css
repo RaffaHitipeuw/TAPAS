@@ -1858,6 +1858,10 @@ video {
   background-image: url('/public/assets/medias/routes/bgsimulate.webpTANGSEL.webp');
 }
 
+.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.\'\)\] {
+  background-image: url('/public/assets/medias/routes/bgsimulate.');
+}
+
 .bg-cover {
   background-size: cover;
 }

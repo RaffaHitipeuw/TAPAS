@@ -1,9 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* === CLEANED UTILITIES ADDED AUTOMATICALLY ===
-   - hero-container uses @apply to keep HTML concise (Tailwind utilities)
-   - bg-hero-* classes centralize background images previously inline
-   - tapas-prefixed utility class group for project scoping
-*/
 .hero-container {
   @apply relative lg:w-[95vw] w-[92vw] h-[90vh] rounded-[54px] overflow-hidden flex flex-col items-center justify-center mb-[-80px] bg-cover bg-center pt-[5vw];
 }
@@ -12,51 +10,33 @@
 .bg-hero-about { background-image: url('../public/assets/medias/about/bghero.png'); }
 .bg-hero-contact { background-image: url('../public/assets/medias/contact/bghero.png'); }
 .bg-hero-routes { background-image: url('../public/assets/medias/routes/bgsimulate.png'); }
-.bg-card-solution {background-image: url('../public/assets/medias/home/blurred.png');}
+.bg-card-solution { background-image: url('../public/assets/medias/home/blurred.png'); }
 
-/* Example reusable components using @apply */
 .tps-card {
   @apply w-full rounded-[70px] text-white flex flex-col justify-between p-6 overflow-hidden;
 }
+
 .tps-btn {
   @apply rounded-full font-extralight transition-all;
 }
 
-/* End preamble */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-}
-/* *FONT* */
 @font-face {
   font-family: "Figtree";
-  src: url("../public/assets/fonts/Figtree-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("../public/assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
   font-weight: 400 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "fontspringheavy";
-  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf")
-    format("truetype");
-  font-style: normal;
+  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "fontspringmedium";
-  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf")
-    format("truetype");
-  font-style: normal;
+  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf") format("truetype");
 }
 
-/* *COLOR* */
 :root {
   --primary-color: #6d94c5;
   --white: #ffffff;
@@ -77,20 +57,10 @@
   --marquee-text: #6d94c5;
 }
 
-/* *BUTTON* */
-
-.btn-easily {
-  background-color: var(--btn-easily-bg);
-}
-.btn-eco {
-  background-color: var(--btn-eco-bg);
-}
-.btn-mobility {
-  background-color: var(--btn-mobility-bg);
-}
-.btn-made {
-  background-color: var(--btn-made-bg);
-}
+.btn-easily { background-color: var(--btn-easily-bg); }
+.btn-eco { background-color: var(--btn-eco-bg); }
+.btn-mobility { background-color: var(--btn-mobility-bg); }
+.btn-made { background-color: var(--btn-made-bg); }
 
 .card-gradient {
   background: linear-gradient(
@@ -104,29 +74,20 @@
   overflow: hidden;
 }
 
-/* *SECTION* */
-.section-light {
-  background-color: var(--section-bg-light);
-}
-.section-dark {
-  background-color: var(--section-bg-dark);
-}
-.section-white {
-  background-color: var(--white);
-}
+.section-light { background-color: var(--section-bg-light); }
+.section-dark { background-color: var(--section-bg-dark); }
+.section-white { background-color: var(--white); }
 
-/* *MARQUEE* */
 .tag {
   @apply md:w-[260px] md:h-[80px] w-[170px] h-[50px] flex items-center justify-center rounded-[32.28px] md:text-[25px] text-[18px] font-figtree font-semibold flex-shrink-0;
   background-color: var(--marquee-bg);
   color: var(--marquee-text);
 }
 
-/* *ANIMATION* */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity .8s ease-out, transform .8s ease-out;
 }
 
 .fade-up-active {
@@ -134,59 +95,44 @@
   transform: translateY(0);
 }
 
-/* *UTILITYS* */
-@layer utilities {
-  .clip-circle {
-    clip-path: circle(0% at 95% 10%);
-  }
-  .clip-circle-open {
-    clip-path: circle(150% at 95% 10%);
-  }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* ! Section horizontal full-screen */
+.clip-circle { clip-path: circle(0% at 95% 10%); }
+.clip-circle-open { clip-path: circle(150% at 95% 10%); }
+
 .horizontal-section {
   width: 100%;
-  overflow-x: auto; /* Aktifkan scroll horizontal */
-  overflow-y: hidden; /* Sembunyikan scroll vertikal */
-  white-space: nowrap; /* Pertahankan elemen berjejer */
-}
-/* Container track sebagai flex row */
-.horizontal-track {
-  display: inline-flex;
-  width: max-content; /* Lebar sesuai total elemen */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
-.ride-card {
-  scroll-snap-align: center;
+.horizontal-track {
+  display: inline-flex;
+  width: max-content;
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+
+.ride-card { scroll-snap-align: center; }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-  .transition-slide {
-    transition: all 0.8s ease-in-out;
-  }
+.transition-slide { transition: all .8s ease-in-out; }
+.slide-out { transform: translateY(120%); opacity: 0; }
+.slide-in { transform: translateY(0); opacity: 1; }
 
-  .slide-out {
-    transform: translateY(120%);
-    opacity: 0;
-  }
+#bottomBox {
+  transition: background-color .6s ease-in-out, transform .8s ease-in-out, opacity .8s ease-in-out;
+}
 
-  .slide-in {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  #bottomBox {
-    transition: background-color 0.6s ease-in-out, transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
-  }
-
-  #impactContent,
-  #goalContent {
-    transition: all 0.8s ease-in-out;
-  }
+#impactContent,
+#goalContent {
+  transition: all .8s ease-in-out;
+}

@@ -1,75 +1,3 @@
-/* === CLEANED UTILITIES ADDED AUTOMATICALLY ===
-   - hero-container uses @apply to keep HTML concise (Tailwind utilities)
-   - bg-hero-* classes centralize background images previously inline
-   - tapas-prefixed utility class group for project scoping
-*/
-
-.hero-container {
-  position: relative;
-  margin-bottom: -80px;
-  display: flex;
-  height: 90vh;
-  width: 92vw;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 54px;
-  background-size: cover;
-  background-position: center;
-  padding-top: 5vw;
-}
-
-@media (min-width: 1024px) {
-  .hero-container {
-    width: 95vw;
-  }
-}
-
-.bg-hero-home {
-  background-image: url('../public/assets/medias/home/bghero.png');
-}
-
-.bg-hero-about {
-  background-image: url('../public/assets/medias/about/bghero.png');
-}
-
-.bg-hero-contact {
-  background-image: url('../public/assets/medias/contact/bghero.png');
-}
-
-.bg-hero-routes {
-  background-image: url('../public/assets/medias/routes/bgsimulate.png');
-}
-
-.bg-card-solution {
-  background-image: url('../public/assets/medias/home/blurred.png');
-}
-
-/* Example reusable components using @apply */
-
-.tps-card {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  border-radius: 70px;
-  padding: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.tps-btn {
-  border-radius: 9999px;
-  font-weight: 200;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-/* End preamble */
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -178,7 +106,8 @@
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.18 | MIT License | https://tailwindcss.com
+/*
+! tailwindcss v3.4.18 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1766,50 +1695,6 @@ video {
   --tw-bg-opacity: 0.25;
 }
 
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/BALI.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/BANDUNG.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/JAKARTA.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/PALEMBANG.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/TANGSEL.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.png\'\)\] {
-  background-image: url('/public/assets/medias/routes/bgsimulate.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.\'\)\] {
-  background-image: url('/public/assets/medias/home/BALI.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.\'\)\] {
-  background-image: url('/public/assets/medias/home/BANDUNG.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.\'\)\] {
-  background-image: url('/public/assets/medias/home/JAKARTA.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.\'\)\] {
-  background-image: url('/public/assets/medias/home/PALEMBANG.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.\'\)\] {
-  background-image: url('/public/assets/medias/home/TANGSEL.');
-}
-
 .bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.webp\'\)\] {
   background-image: url('/public/assets/medias/home/BALI.webp');
 }
@@ -1830,36 +1715,8 @@ video {
   background-image: url('/public/assets/medias/home/TANGSEL.webp');
 }
 
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/BALI.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/BANDUNG.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/JAKARTA.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/PALEMBANG.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/TANGSEL.webpGOOGLEPLAY.webp');
-}
-
 .bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.webp\'\)\] {
   background-image: url('/public/assets/medias/routes/bgsimulate.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.webpTANGSEL\.webp\'\)\] {
-  background-image: url('/public/assets/medias/routes/bgsimulate.webpTANGSEL.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.\'\)\] {
-  background-image: url('/public/assets/medias/routes/bgsimulate.');
 }
 
 .bg-cover {
@@ -2364,26 +2221,21 @@ video {
 
 .backdrop-blur-0 {
   --tw-backdrop-blur: blur(0);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .backdrop-blur-sm {
   --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .backdrop-blur-xl {
   --tw-backdrop-blur: blur(24px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2460,21 +2312,72 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+.hero-container {
+  position: relative;
+  margin-bottom: -80px;
+  display: flex;
+  height: 90vh;
+  width: 92vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 54px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 5vw;
 }
 
-.clip-circle {
-  clip-path: circle(0% at 95% 10%);
+@media (min-width: 1024px) {
+  .hero-container {
+    width: 95vw;
+  }
 }
 
-/* *FONT* */
+.bg-hero-home {
+  background-image: url('../public/assets/medias/home/bghero.png');
+}
+
+.bg-hero-about {
+  background-image: url('../public/assets/medias/about/bghero.png');
+}
+
+.bg-hero-contact {
+  background-image: url('../public/assets/medias/contact/bghero.png');
+}
+
+.bg-hero-routes {
+  background-image: url('../public/assets/medias/routes/bgsimulate.png');
+}
+
+.bg-card-solution {
+  background-image: url('../public/assets/medias/home/blurred.png');
+}
+
+.tps-card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 70px;
+  padding: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.tps-btn {
+  border-radius: 9999px;
+  font-weight: 200;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 
 @font-face {
   font-family: "Figtree";
 
-  src: url("../public/assets/fonts/Figtree-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("../public/assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
 
   font-weight: 400 700;
 
@@ -2484,22 +2387,14 @@ video {
 @font-face {
   font-family: "fontspringheavy";
 
-  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf")
-    format("truetype");
-
-  font-style: normal;
+  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "fontspringmedium";
 
-  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf")
-    format("truetype");
-
-  font-style: normal;
+  src: url("../public/assets/fonts/Fontspring-DEMO-integralcf-medium.ttf") format("truetype");
 }
-
-/* *COLOR* */
 
 :root {
   --primary-color: #6d94c5;
@@ -2517,8 +2412,6 @@ video {
   --marquee-bg: #cbdceb;
   --marquee-text: #6d94c5;
 }
-
-/* *BUTTON* */
 
 .btn-easily {
   background-color: var(--btn-easily-bg);
@@ -2548,8 +2441,6 @@ video {
   overflow: hidden;
 }
 
-/* *SECTION* */
-
 .section-light {
   background-color: var(--section-bg-light);
 }
@@ -2561,8 +2452,6 @@ video {
 .section-white {
   background-color: var(--white);
 }
-
-/* *MARQUEE* */
 
 .tag {
   display: flex;
@@ -2590,12 +2479,10 @@ video {
   color: var(--marquee-text);
 }
 
-/* *ANIMATION* */
-
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity .8s ease-out, transform .8s ease-out;
 }
 
 .fade-up-active {
@@ -2603,27 +2490,34 @@ video {
   transform: translateY(0);
 }
 
-/* *UTILITYS* */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
-/* ! Section horizontal full-screen */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.clip-circle {
+  clip-path: circle(0% at 95% 10%);
+}
+
+.clip-circle-open {
+  clip-path: circle(150% at 95% 10%);
+}
 
 .horizontal-section {
   width: 100%;
   overflow-x: auto;
-  /* Aktifkan scroll horizontal */
   overflow-y: hidden;
-  /* Sembunyikan scroll vertikal */
   white-space: nowrap;
-  /* Pertahankan elemen berjejer */
 }
-
-/* Container track sebagai flex row */
 
 .horizontal-track {
   display: inline-flex;
   width: -moz-max-content;
   width: max-content;
-  /* Lebar sesuai total elemen */
 }
 
 .ride-card {
@@ -2640,7 +2534,7 @@ video {
 }
 
 .transition-slide {
-  transition: all 0.8s ease-in-out;
+  transition: all .8s ease-in-out;
 }
 
 .slide-out {
@@ -2654,12 +2548,12 @@ video {
 }
 
 #bottomBox {
-  transition: background-color 0.6s ease-in-out, transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  transition: background-color .6s ease-in-out, transform .8s ease-in-out, opacity .8s ease-in-out;
 }
 
 #impactContent,
-  #goalContent {
-  transition: all 0.8s ease-in-out;
+#goalContent {
+  transition: all .8s ease-in-out;
 }
 
 .hover\:text-\[\#2E3A59\]:hover {
@@ -2673,7 +2567,6 @@ video {
 
 .hover\:backdrop-blur-md:hover {
   --tw-backdrop-blur: blur(12px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 

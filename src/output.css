@@ -1766,50 +1766,6 @@ video {
   --tw-bg-opacity: 0.25;
 }
 
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/BALI.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/BANDUNG.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/JAKARTA.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/PALEMBANG.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.png\'\)\] {
-  background-image: url('/public/assets/medias/home/TANGSEL.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.png\'\)\] {
-  background-image: url('/public/assets/medias/routes/bgsimulate.png');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.\'\)\] {
-  background-image: url('/public/assets/medias/home/BALI.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.\'\)\] {
-  background-image: url('/public/assets/medias/home/BANDUNG.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.\'\)\] {
-  background-image: url('/public/assets/medias/home/JAKARTA.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.\'\)\] {
-  background-image: url('/public/assets/medias/home/PALEMBANG.');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.\'\)\] {
-  background-image: url('/public/assets/medias/home/TANGSEL.');
-}
-
 .bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.webp\'\)\] {
   background-image: url('/public/assets/medias/home/BALI.webp');
 }
@@ -1828,30 +1784,6 @@ video {
 
 .bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.webp\'\)\] {
   background-image: url('/public/assets/medias/home/TANGSEL.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/BALI.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/BANDUNG.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/JAKARTA.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/PALEMBANG.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.webpGOOGLEPLAY\.webp\'\)\] {
-  background-image: url('/public/assets/medias/home/TANGSEL.webpGOOGLEPLAY.webp');
-}
-
-.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.webp\'\)\] {
-  background-image: url('/public/assets/medias/routes/bgsimulate.webp');
 }
 
 .bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.webpTANGSEL\.webp\'\)\] {
@@ -2360,26 +2292,21 @@ video {
 
 .backdrop-blur-0 {
   --tw-backdrop-blur: blur(0);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .backdrop-blur-sm {
   --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .backdrop-blur-xl {
   --tw-backdrop-blur: blur(24px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2669,7 +2596,6 @@ video {
 
 .hover\:backdrop-blur-md:hover {
   --tw-backdrop-blur: blur(12px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 

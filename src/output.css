@@ -1355,6 +1355,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .cursor-grab {
   cursor: grab;
 }
@@ -1365,10 +1369,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.cursor-default {
-  cursor: default;
 }
 
 .select-none {
@@ -1788,6 +1788,74 @@ video {
 
 .bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.png\'\)\] {
   background-image: url('/public/assets/medias/routes/bgsimulate.png');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.\'\)\] {
+  background-image: url('/public/assets/medias/home/BALI.');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.\'\)\] {
+  background-image: url('/public/assets/medias/home/BANDUNG.');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.\'\)\] {
+  background-image: url('/public/assets/medias/home/JAKARTA.');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.\'\)\] {
+  background-image: url('/public/assets/medias/home/PALEMBANG.');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.\'\)\] {
+  background-image: url('/public/assets/medias/home/TANGSEL.');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/BALI.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/BANDUNG.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/JAKARTA.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/PALEMBANG.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/TANGSEL.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/BALI\.webpGOOGLEPLAY\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/BALI.webpGOOGLEPLAY.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/BANDUNG\.webpGOOGLEPLAY\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/BANDUNG.webpGOOGLEPLAY.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/JAKARTA\.webpGOOGLEPLAY\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/JAKARTA.webpGOOGLEPLAY.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/PALEMBANG\.webpGOOGLEPLAY\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/PALEMBANG.webpGOOGLEPLAY.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/home\/TANGSEL\.webpGOOGLEPLAY\.webp\'\)\] {
+  background-image: url('/public/assets/medias/home/TANGSEL.webpGOOGLEPLAY.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.webp\'\)\] {
+  background-image: url('/public/assets/medias/routes/bgsimulate.webp');
+}
+
+.bg-\[url\(\'\/public\/assets\/medias\/routes\/bgsimulate\.webpTANGSEL\.webp\'\)\] {
+  background-image: url('/public/assets/medias/routes/bgsimulate.webpTANGSEL.webp');
 }
 
 .bg-cover {
@@ -3203,6 +3271,10 @@ video {
     font-size: 110px;
   }
 
+  .lg\:text-\[15px\] {
+    font-size: 15px;
+  }
+
   .lg\:text-\[180px\] {
     font-size: 180px;
   }
@@ -3261,14 +3333,6 @@ video {
 
   .lg\:text-\[80px\] {
     font-size: 80px;
-  }
-
-  .lg\:text-\[12px\] {
-    font-size: 12px;
-  }
-
-  .lg\:text-\[15px\] {
-    font-size: 15px;
   }
 
   .lg\:leading-\[75px\] {

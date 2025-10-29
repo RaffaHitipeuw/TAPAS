@@ -2719,6 +2719,10 @@ video {
     display: flex;
   }
 
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:h-14 {
     height: 3.5rem;
   }
@@ -2765,6 +2769,10 @@ video {
 
   .md\:h-\[55vh\] {
     height: 55vh;
+  }
+
+  .md\:h-\[60vh\] {
+    height: 60vh;
   }
 
   .md\:h-\[80vh\] {

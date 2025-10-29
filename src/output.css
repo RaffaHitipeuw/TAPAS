@@ -1367,6 +1367,10 @@ video {
   cursor: pointer;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2769,10 +2773,6 @@ video {
 
   .md\:h-\[55vh\] {
     height: 55vh;
-  }
-
-  .md\:h-\[60vh\] {
-    height: 60vh;
   }
 
   .md\:h-\[80vh\] {

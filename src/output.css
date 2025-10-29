@@ -3255,6 +3255,14 @@ video {
     font-size: 80px;
   }
 
+  .lg\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .lg\:text-\[15px\] {
+    font-size: 15px;
+  }
+
   .lg\:leading-\[75px\] {
     line-height: 75px;
   }

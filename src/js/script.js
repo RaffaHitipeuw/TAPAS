@@ -19,7 +19,9 @@ let targetX = 0;
 // Tambahan fungsi deteksi mobile
 function isMobileUserAgent() {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    userAgent
+  );
 }
 
 items.forEach((item) => {
@@ -62,7 +64,9 @@ if (!isMobileUserAgent()) {
   document.body.appendChild(hoverCircle);
 
   const menuLinks = document.querySelectorAll(".menu-list a");
-  const footerLinks = document.querySelectorAll("#footer-section .footer-links");
+  const footerLinks = document.querySelectorAll(
+    "#footer-section .footer-links"
+  );
 
   let cursorTargetX = 0;
   let cursorTargetY = 0;
@@ -142,8 +146,6 @@ btn.addEventListener("click", () => {
     );
   }
 });
-
-
 
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
@@ -355,14 +357,14 @@ else {
     const svg = btn.querySelector("svg path");
     svg.style.transition = "transform 0.3s ease";
 
-if (!btn.parentNode.querySelector(".answer")) {
-  const answer = document.createElement("div");
-  answer.className =
-    "answer max-h-0 overflow-hidden opacity-0 transition-[max-height,opacity] duration-500 ease-in-out text-[#6D94C5] text-sm mt-3 px-3 bg-white rounded-2xl";
-  answer.innerHTML =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.";
-  btn.parentNode.appendChild(answer);
-}
+    if (!btn.parentNode.querySelector(".answer")) {
+      const answer = document.createElement("div");
+      answer.className =
+        "answer max-h-0 overflow-hidden opacity-0 transition-[max-height,opacity] duration-500 ease-in-out text-[#6D94C5] text-sm mt-3 px-3 bg-white rounded-2xl";
+      answer.innerHTML =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at vehicula odio, ut convallis justo. Donec at felis sit amet orci placerat malesuada.";
+      btn.parentNode.appendChild(answer);
+    }
 
     btn.addEventListener("click", () => {
       const answer = btn.nextElementSibling;
@@ -407,7 +409,7 @@ rideScroll.addEventListener("mousemove", (e) => {
   rideScroll.scrollLeft = scrollLeft - walk;
 });
 
-const imgs = document.querySelectorAll('.carousel-img');
+const imgs = document.querySelectorAll(".carousel-img");
 const total = imgs.length;
 let center = 2;
 
@@ -447,20 +449,19 @@ function updateCarousel() {
       img.style.zIndex = 1;
     }
 
-    img.style.width = "80vw";
+    img.style.width = "70vw";
     img.style.height = "320px";
   });
 }
 
-document.getElementById('next').addEventListener('click', () => {
+document.getElementById("next").addEventListener("click", () => {
   center = (center + 1) % total;
   updateCarousel();
 });
 
-document.getElementById('prev').addEventListener('click', () => {
+document.getElementById("prev").addEventListener("click", () => {
   center = (center - 1 + total) % total;
   updateCarousel();
 });
 
 updateCarousel();
-  

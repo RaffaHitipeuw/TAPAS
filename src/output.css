@@ -3230,16 +3230,12 @@ video {
     font-size: 50px;
   }
 
-  .lg\:text-\[70px\] {
-    font-size: 70px;
+  .lg\:text-\[60px\] {
+    font-size: 60px;
   }
 
   .lg\:text-\[80px\] {
     font-size: 80px;
-  }
-
-  .lg\:text-\[60px\] {
-    font-size: 60px;
   }
 
   .lg\:leading-\[75px\] {
@@ -3248,15 +3244,5 @@ video {
 
   .lg\:leading-\[85px\] {
     line-height: 85px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:text-\[70px\] {
-    font-size: 70px;
-  }
-
-  .xl\:text-\[\] {
-    color: ;
   }
 }
